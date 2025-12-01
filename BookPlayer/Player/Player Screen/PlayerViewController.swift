@@ -175,6 +175,46 @@ class PlayerViewController: UIViewController, MVVMControllerProtocol, Storyboard
     self.modalPresentationCapturesStatusBarAppearance = true
 
     self.setNeedsStatusBarAppearanceUpdate()
+
+    // SQUABBLE: Fetch and display ghost markers
+    fetchAndDisplayGhosts(for: currentItem.title)
+  }
+
+  // SQUABBLE: Fetch guild members' progress and display as ghost markers
+  private func fetchAndDisplayGhosts(for bookTitle: String) {
+    // Generate book ID (same logic as sync service)
+    let bookId = bookTitle.lowercased()
+      .replacingOccurrences(of: " ", with: "-")
+      .replacingOccurrences(of: "[^a-z0-9-]", with: "", options: .regularExpression)
+
+    Task {
+      do {
+        let ghosts = try await SquabbleSyncService.shared.fetchGuildProgress(bookId: bookId)
+
+        // Filter out current user and convert to markers
+        let currentUserId = SquabbleAuthService.shared.userId
+        let ghostColors: [UIColor] = [.systemBlue, .systemGreen, .systemOrange, .systemPurple, .systemPink]
+
+        let markers: [GhostMarker] = ghosts.enumerated().compactMap { index, ghost in
+          // Skip current user's marker
+          guard ghost.odId != currentUserId else { return nil }
+
+          let color = ghostColors[index % ghostColors.count]
+          return GhostMarker(
+            percent: ghost.progressPercent,
+            color: color,
+            name: ghost.displayName
+          )
+        }
+
+        await MainActor.run {
+          self.progressSlider.ghostMarkers = markers
+          print("[Squabble] Displaying \(markers.count) ghost markers")
+        }
+      } catch {
+        print("[Squabble] Error fetching ghosts: \(error.localizedDescription)")
+      }
+    }
   }
 
   func updateView(with progressObject: ProgressObject, shouldSetSliderValue: Bool = true) {

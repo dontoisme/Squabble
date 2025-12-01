@@ -26,6 +26,24 @@ class LoadingCoordinator: Coordinator, AlertPresenter {
   }
 
   func didFinishLoadingSequence() {
+    // SQUABBLE: Check if user is authenticated before proceeding
+    if SquabbleAuthService.shared.isAuthenticated {
+      proceedToMainApp()
+    } else {
+      showSquabbleLogin()
+    }
+  }
+
+  // SQUABBLE: Show login screen
+  private func showSquabbleLogin() {
+    let loginVC = SquabbleLoginViewController { [weak self] in
+      self?.proceedToMainApp()
+    }
+    flow.navigationController.setViewControllers([loginVC], animated: true)
+  }
+
+  // SQUABBLE: Proceed to main app after authentication
+  private func proceedToMainApp() {
     let coreServices = AppDelegate.shared!.coreServices!
 
     let coordinator = MainCoordinator(

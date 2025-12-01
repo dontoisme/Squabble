@@ -12,6 +12,7 @@ import BackgroundTasks
 import BookPlayerKit
 import Combine
 import CoreData
+import FirebaseCore
 import Intents
 import MediaPlayer
 import RevenueCat
@@ -62,6 +63,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BPLogger {
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
   ) -> Bool {
     Self.shared = self
+
+    // Setup Firebase (Squabble)
+    FirebaseApp.configure()
 
     NotificationCenter.default.addObserver(
       self,
