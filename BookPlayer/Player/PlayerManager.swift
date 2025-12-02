@@ -1181,8 +1181,8 @@ extension PlayerManager {
     self.playbackService.updatePlaybackTime(item: item, time: time)
     let newPercentage = Int(item.percentCompleted)
 
-    // SQUABBLE: Sync progress to Firestore
-    SquabbleSyncService.shared.syncProgress(
+    // SQUABBLE: Post progress update notification - see PlayerManager+Squabble.swift
+    postSquabbleProgressUpdate(
       bookTitle: item.title,
       currentTime: time,
       duration: item.duration,

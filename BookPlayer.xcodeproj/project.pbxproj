@@ -10,6 +10,14 @@
 		A4ACCE871B1D427593C82CAB /* SquabbleSyncService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A825136D314596995B95A0 /* SquabbleSyncService.swift */; };
 		B7239E0F0750453FAD15DC4C /* SquabbleAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9E5CD8B0D4938B597FD5A /* SquabbleAuthService.swift */; };
 		7374520C5E1F444D98CB00AE /* SquabbleLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0837180426A349F987DA5C1F /* SquabbleLoginView.swift */; };
+		639954A45FB645B4AF35C534 /* SquabbleConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8952BCDDE4EF48A7BE92BFC1 /* SquabbleConfig.swift */; };
+		1E14CBB59E95412D84326BC2 /* SquabbleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5744BCDD4C3240C291926124 /* SquabbleManager.swift */; };
+		BD6585FBDA4D4B0298BCDCEB /* LoadingCoordinator+Squabble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE693E55D2548DCB5DB39EB /* LoadingCoordinator+Squabble.swift */; };
+		7F195CFB4AFB4ECABE88D2FA /* PlayerManager+Squabble.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CA717CC4D24DD3A012C990 /* PlayerManager+Squabble.swift */; };
+		B63D683A0F5E41E3BA3E0A80 /* AppDelegate+Squabble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FF1CF826C64177AC8A9899 /* AppDelegate+Squabble.swift */; };
+		6F91AEF2C20B4BB29B2B3F69 /* GhostMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F6F96D719B41F4B3D93B79 /* GhostMarker.swift */; };
+		41A63FE3CA5044E890103456 /* PlayerViewController+Squabble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403A7500DB644543B08C92FA /* PlayerViewController+Squabble.swift */; };
+		ADECA1C0C4944D7BB6049479 /* SquabbleGhostOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADECA1C0C4944D7BB6049478 /* SquabbleGhostOverlayView.swift */; };
 		3F66408A2E162ABF00356522 /* AudioMetadataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6640892E162ABF00356522 /* AudioMetadataService.swift */; };
 		3F66408D2E172DF500356522 /* MappingModel_v9_to_v10.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3F66408C2E172DF500356522 /* MappingModel_v9_to_v10.xcmappingmodel */; };
 		3F66408E2E172DF500356522 /* MappingModel_v9_to_v10.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3F66408C2E172DF500356522 /* MappingModel_v9_to_v10.xcmappingmodel */; };
@@ -723,6 +731,14 @@
 		F4A825136D314596995B95A0 /* SquabbleSyncService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquabbleSyncService.swift; sourceTree = "<group>"; };
 		8AA9E5CD8B0D4938B597FD5A /* SquabbleAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquabbleAuthService.swift; sourceTree = "<group>"; };
 		0837180426A349F987DA5C1F /* SquabbleLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquabbleLoginView.swift; sourceTree = "<group>"; };
+		8952BCDDE4EF48A7BE92BFC1 /* SquabbleConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquabbleConfig.swift; sourceTree = "<group>"; };
+		5744BCDD4C3240C291926124 /* SquabbleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquabbleManager.swift; sourceTree = "<group>"; };
+		D8F6F96D719B41F4B3D93B79 /* GhostMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GhostMarker.swift; sourceTree = "<group>"; };
+		3CE693E55D2548DCB5DB39EB /* LoadingCoordinator+Squabble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoadingCoordinator+Squabble.swift"; sourceTree = "<group>"; };
+		D7CA717CC4D24DD3A012C990 /* PlayerManager+Squabble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerManager+Squabble.swift"; sourceTree = "<group>"; };
+		ADECA1C0C4944D7BB6049478 /* SquabbleGhostOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquabbleGhostOverlayView.swift; sourceTree = "<group>"; };
+		403A7500DB644543B08C92FA /* PlayerViewController+Squabble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerViewController+Squabble.swift"; sourceTree = "<group>"; };
+		61FF1CF826C64177AC8A9899 /* AppDelegate+Squabble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Squabble.swift"; sourceTree = "<group>"; };
 		3F6640892E162ABF00356522 /* AudioMetadataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioMetadataService.swift; sourceTree = "<group>"; };
 		3F66408C2E172DF500356522 /* MappingModel_v9_to_v10.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = MappingModel_v9_to_v10.xcmappingmodel; sourceTree = "<group>"; };
 		3F6640932E17386400356522 /* DeleteUserBookData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteUserBookData.swift; sourceTree = "<group>"; };
@@ -1478,13 +1494,62 @@
 		31669D5EF3FC4C77AAC56B83 /* Squabble */ = {
 			isa = PBXGroup;
 			children = (
-				8AA9E5CD8B0D4938B597FD5A /* SquabbleAuthService.swift */,
-				F4A825136D314596995B95A0 /* SquabbleSyncService.swift */,
-				0837180426A349F987DA5C1F /* SquabbleLoginView.swift */,
+				6F076D1FE5DF4200819A6D2F /* Core */,
+				CB315F3B1C124BA0B822A032 /* Extensions */,
+				53C91531D1694CE4ABD50BAB /* Models */,
+				376B28D9575A441E8B1AFD67 /* Services */,
+				38CEC4EB1D184F049F67A6CC /* Views */,
 			);
 			path = Squabble;
 			sourceTree = "<group>";
 		};
+		6F076D1FE5DF4200819A6D2F /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				8952BCDDE4EF48A7BE92BFC1 /* SquabbleConfig.swift */,
+				5744BCDD4C3240C291926124 /* SquabbleManager.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		376B28D9575A441E8B1AFD67 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8AA9E5CD8B0D4938B597FD5A /* SquabbleAuthService.swift */,
+				F4A825136D314596995B95A0 /* SquabbleSyncService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		38CEC4EB1D184F049F67A6CC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0837180426A349F987DA5C1F /* SquabbleLoginView.swift */,
+				ADECA1C0C4944D7BB6049478 /* SquabbleGhostOverlayView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		53C91531D1694CE4ABD50BAB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D8F6F96D719B41F4B3D93B79 /* GhostMarker.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CB315F3B1C124BA0B822A032 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3CE693E55D2548DCB5DB39EB /* LoadingCoordinator+Squabble.swift */,
+				61FF1CF826C64177AC8A9899 /* AppDelegate+Squabble.swift */,
+				D7CA717CC4D24DD3A012C990 /* PlayerManager+Squabble.swift */,
+				403A7500DB644543B08C92FA /* PlayerViewController+Squabble.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+
 		3F7B64332E0F713200299D97 /* Hardcover */ = {
 			isa = PBXGroup;
 			children = (
@@ -3558,8 +3623,16 @@
 				C3A479152094CA3800D92122 /* UIImage+BookPlayer.swift in Sources */,
 				63E1FF8D2E6C835400F2E003 /* ItemDetailsFooterSectionView.swift in Sources */,
 				B7239E0F0750453FAD15DC4C /* SquabbleAuthService.swift in Sources */,
+				ADECA1C0C4944D7BB6049479 /* SquabbleGhostOverlayView.swift in Sources */,
+				41A63FE3CA5044E890103456 /* PlayerViewController+Squabble.swift in Sources */,
 				A4ACCE871B1D427593C82CAB /* SquabbleSyncService.swift in Sources */,
 				7374520C5E1F444D98CB00AE /* SquabbleLoginView.swift in Sources */,
+				639954A45FB645B4AF35C534 /* SquabbleConfig.swift in Sources */,
+				1E14CBB59E95412D84326BC2 /* SquabbleManager.swift in Sources */,
+				6F91AEF2C20B4BB29B2B3F69 /* GhostMarker.swift in Sources */,
+				BD6585FBDA4D4B0298BCDCEB /* LoadingCoordinator+Squabble.swift in Sources */,
+				7F195CFB4AFB4ECABE88D2FA /* PlayerManager+Squabble.swift in Sources */,
+				B63D683A0F5E41E3BA3E0A80 /* AppDelegate+Squabble.swift in Sources */,
 				418B6CFC1D2707F800F974FB /* AppDelegate.swift in Sources */,
 				9FF710BD2A215686006490E0 /* QueuedSyncTaskType.swift in Sources */,
 				41188D2426ED2BA30017124E /* LoadingCoordinator.swift in Sources */,

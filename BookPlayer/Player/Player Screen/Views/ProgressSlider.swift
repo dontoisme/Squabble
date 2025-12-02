@@ -8,21 +8,7 @@
 
 import UIKit
 
-// SQUABBLE: Ghost marker struct
-struct GhostMarker {
-    let percent: Double  // 0-100
-    let color: UIColor
-    let name: String
-}
-
 class ProgressSlider: UISlider {
-
-  // SQUABBLE: Ghost markers for guild members
-  var ghostMarkers: [GhostMarker] = [] {
-    didSet {
-      setNeedsDisplay()
-    }
-  }
 
   override var accessibilityLabel: String? {
     get {
@@ -106,37 +92,6 @@ class ProgressSlider: UISlider {
     // Progress
     minColor.set()
     UIBezierPath(rect: progressRect).fill()
-
-    // SQUABBLE: Draw ghost markers
-    drawGhostMarkers(in: sliderRect, trackHeight: height)
-  }
-
-  // SQUABBLE: Draw ghost position markers
-  private func drawGhostMarkers(in sliderRect: CGRect, trackHeight: CGFloat) {
-    let ghostRadius: CGFloat = 5.0
-    let yCenter = sliderRect.origin.y + trackHeight / 2
-
-    for ghost in ghostMarkers {
-      // Calculate x position based on percentage (0-100)
-      let normalizedPercent = CGFloat(ghost.percent / 100.0)
-      let xPosition = sliderRect.origin.x + (sliderRect.width * normalizedPercent)
-
-      // Draw ghost circle
-      ghost.color.set()
-      let ghostRect = CGRect(
-        x: xPosition - ghostRadius,
-        y: yCenter - ghostRadius,
-        width: ghostRadius * 2,
-        height: ghostRadius * 2
-      )
-      let ghostPath = UIBezierPath(ovalIn: ghostRect)
-      ghostPath.fill()
-
-      // Draw border
-      UIColor.white.withAlphaComponent(0.8).set()
-      ghostPath.lineWidth = 1.0
-      ghostPath.stroke()
-    }
   }
 
   override func thumbRect(forBounds bounds: CGRect, trackRect rect: CGRect, value: Float) -> CGRect {

@@ -64,8 +64,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BPLogger {
   ) -> Bool {
     Self.shared = self
 
-    // Setup Firebase (Squabble)
+    // Setup Firebase and Squabble - see AppDelegate+Squabble.swift
     FirebaseApp.configure()
+    setupSquabble()
 
     NotificationCenter.default.addObserver(
       self,
