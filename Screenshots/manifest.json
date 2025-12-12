@@ -1,0 +1,164 @@
+{
+  "version": 1,
+  "screens": {
+    "01-library-empty": {
+      "name": "Library (Empty)",
+      "test": "test01_LibraryEmpty",
+      "sources": [
+        "BookPlayer/Library/ItemList/ItemListView.swift",
+        "BookPlayer/Library/LibraryRootView.swift"
+      ]
+    },
+    "02-library-with-books": {
+      "name": "Library (With Books)",
+      "test": "test02_LibraryWithBooks",
+      "sources": [
+        "BookPlayer/Library/ItemList/ItemListView.swift",
+        "BookPlayer/Library/ItemList/ItemListRowView.swift"
+      ]
+    },
+    "03-library-folder": {
+      "name": "Library (Folder)",
+      "test": "test03_LibraryFolder",
+      "sources": [
+        "BookPlayer/Library/ItemList/ItemListView.swift"
+      ]
+    },
+    "04-library-search": {
+      "name": "Library (Search)",
+      "test": "test04_LibrarySearch",
+      "sources": [
+        "BookPlayer/Search/SearchView.swift"
+      ]
+    },
+    "05-library-miniplayer": {
+      "name": "Library (Mini Player)",
+      "test": "test05_LibraryMiniPlayer",
+      "sources": [
+        "BookPlayer/Player/MiniPlayer/MiniPlayerView.swift"
+      ]
+    },
+    "09-player-main": {
+      "name": "Player Main",
+      "test": "test09_PlayerMain",
+      "sources": [
+        "BookPlayer/Player/PlayerView.swift",
+        "BookPlayer/Player/PlayerViewModel.swift"
+      ]
+    },
+    "10-player-chapters": {
+      "name": "Player Chapters",
+      "test": "test10_PlayerChapters",
+      "sources": [
+        "BookPlayer/Player/Chapters/ChaptersView.swift"
+      ]
+    },
+    "11-player-bookmarks": {
+      "name": "Player Bookmarks",
+      "test": "test11_PlayerBookmarks",
+      "sources": [
+        "BookPlayer/Player/Bookmarks/BookmarksView.swift"
+      ]
+    },
+    "14-profile-not-logged-in": {
+      "name": "Profile (Not Logged In)",
+      "test": "test14_ProfileNotLoggedIn",
+      "sources": [
+        "BookPlayer/Squabble/Views/SquabbleProfileView.swift"
+      ]
+    },
+    "15-profile-login-sheet": {
+      "name": "Profile Login Sheet",
+      "test": "test15_ProfileLoginSheet",
+      "sources": [
+        "BookPlayer/Squabble/Views/SquabbleLoginView.swift"
+      ]
+    },
+    "16-profile-no-guild": {
+      "name": "Profile (No Guild)",
+      "test": "test16_ProfileNoGuild",
+      "sources": [
+        "BookPlayer/Squabble/Views/SquabbleProfileView.swift"
+      ]
+    },
+    "17-guild-create-sheet": {
+      "name": "Guild Create Sheet",
+      "test": "test17_GuildCreateSheet",
+      "sources": [
+        "BookPlayer/Squabble/Views/CreateGuildView.swift"
+      ]
+    },
+    "18-guild-join-sheet": {
+      "name": "Guild Join Sheet",
+      "test": "test18_GuildJoinSheet",
+      "sources": [
+        "BookPlayer/Squabble/Views/JoinGuildView.swift"
+      ]
+    },
+    "19-guild-view": {
+      "name": "Guild View",
+      "test": "test19_GuildView",
+      "sources": [
+        "BookPlayer/Squabble/Views/SquabbleProfileView.swift",
+        "BookPlayer/Squabble/Views/GuildView.swift"
+      ]
+    },
+    "20-guild-invite-code": {
+      "name": "Guild Invite Code",
+      "test": "test20_GuildInviteCode",
+      "sources": [
+        "BookPlayer/Squabble/Views/InviteCodeView.swift"
+      ]
+    },
+    "21-settings-main": {
+      "name": "Settings Main",
+      "test": "test21_SettingsMain",
+      "sources": [
+        "BookPlayer/Settings/SettingsView.swift",
+        "BookPlayer/Settings/SettingsScreen.swift"
+      ]
+    },
+    "22-settings-themes": {
+      "name": "Settings Themes",
+      "test": "test22_SettingsThemes",
+      "sources": [
+        "BookPlayer/Settings/Themes/ThemesView.swift"
+      ]
+    },
+    "23-settings-icons": {
+      "name": "Settings Icons",
+      "test": "test23_SettingsIcons",
+      "sources": [
+        "BookPlayer/Settings/Icons/IconsView.swift"
+      ]
+    },
+    "24-settings-controls": {
+      "name": "Settings Controls",
+      "test": "test24_SettingsControls",
+      "sources": [
+        "BookPlayer/Settings/Controls/ControlsSettingsView.swift"
+      ]
+    },
+    "25-settings-storage": {
+      "name": "Settings Storage",
+      "test": "test25_SettingsStorage",
+      "sources": [
+        "BookPlayer/Settings/Storage/StorageView.swift"
+      ]
+    },
+    "27-settings-hardcover": {
+      "name": "Settings Hardcover",
+      "test": "test27_SettingsHardcover",
+      "sources": [
+        "BookPlayer/Hardcover/HardcoverSettingsView.swift"
+      ]
+    },
+    "28-settings-debug": {
+      "name": "Settings Debug (Squabble)",
+      "test": "test28_SettingsDebug",
+      "sources": [
+        "BookPlayer/Squabble/Debug/SquabbleTestHelper.swift"
+      ]
+    }
+  }
+}

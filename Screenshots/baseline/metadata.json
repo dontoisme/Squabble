@@ -1,0 +1,18 @@
+{
+  "commit": "e81fbdc7",
+  "commit_full": "e81fbdc7dab16b0fb2ab8252548dcea048ce6a61",
+  "timestamp": "2025-12-12T18:01:06Z",
+  "mode": "baseline",
+  "parent_commit": "null",
+  "captured_screens": [
+  "01-library-empty",
+  "21-settings-main",
+  "22-settings-themes",
+  "23-settings-icons",
+  "24-settings-controls",
+  "25-settings-storage",
+  "27-settings-hardcover",
+  "28-settings-debug"
+],
+  "screenshot_count": 8
+}

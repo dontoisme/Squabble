@@ -20,6 +20,7 @@ final class SquabbleManager {
 
     let authService = SquabbleAuthService.shared
     let syncService = SquabbleSyncService.shared
+    let guildService = GuildService.shared
 
     // MARK: - State
 
@@ -43,6 +44,33 @@ final class SquabbleManager {
         SquabbleConfig.log("Setting up Squabble features")
 
         setupPlaybackObserver()
+        loadCurrentGuild()
+    }
+
+    /// Load user's current guild after authentication
+    private func loadCurrentGuild() {
+        // Check if already authenticated (Firebase may have restored session)
+        if authService.isAuthenticated {
+            SquabbleConfig.log("User already authenticated, loading guild...")
+            Task {
+                await guildService.loadCurrentGuild()
+            }
+        }
+
+        // Also listen for future auth state changes (sign in/out)
+        authService.$isAuthenticated
+            .dropFirst()
+            .sink { [weak self] isAuthenticated in
+                if isAuthenticated {
+                    SquabbleConfig.log("User signed in, loading guild...")
+                    Task {
+                        await self?.guildService.loadCurrentGuild()
+                    }
+                } else {
+                    SquabbleConfig.log("User signed out")
+                }
+            }
+            .store(in: &disposeBag)
     }
 
     // MARK: - Setup

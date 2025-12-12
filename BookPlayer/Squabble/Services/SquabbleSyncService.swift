@@ -21,8 +21,10 @@ final class SquabbleSyncService {
     /// Last sync timestamps per book
     private var lastSyncTimes: [String: Date] = [:]
 
-    /// Current guild ID (hardcoded for spike - will be dynamic later)
-    private var guildId: String? = "spike-guild"
+    /// Current guild ID (dynamically fetched from GuildService)
+    private var guildId: String? {
+        GuildService.shared.currentGuildId
+    }
 
     /// Current book ID being tracked
     private var currentBookId: String?
@@ -43,13 +45,17 @@ final class SquabbleSyncService {
         duration: Double,
         percentCompleted: Double
     ) {
+        guard SquabbleConfig.isEnabled && SquabbleConfig.progressSyncEnabled else {
+            return
+        }
+
         guard let userId = SquabbleAuthService.shared.userId else {
-            print("[Squabble] Not syncing - user not authenticated")
+            // User not signed in to Squabble - this is fine with lazy auth
             return
         }
 
         guard let guildId = guildId else {
-            print("[Squabble] Not syncing - no guild ID")
+            SquabbleConfig.log("Not syncing - no guild (user may not have joined one yet)")
             return
         }
 

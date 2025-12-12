@@ -3,21 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A4ACCE871B1D427593C82CAB /* SquabbleSyncService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A825136D314596995B95A0 /* SquabbleSyncService.swift */; };
-		B7239E0F0750453FAD15DC4C /* SquabbleAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9E5CD8B0D4938B597FD5A /* SquabbleAuthService.swift */; };
-		7374520C5E1F444D98CB00AE /* SquabbleLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0837180426A349F987DA5C1F /* SquabbleLoginView.swift */; };
-		639954A45FB645B4AF35C534 /* SquabbleConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8952BCDDE4EF48A7BE92BFC1 /* SquabbleConfig.swift */; };
 		1E14CBB59E95412D84326BC2 /* SquabbleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5744BCDD4C3240C291926124 /* SquabbleManager.swift */; };
-		BD6585FBDA4D4B0298BCDCEB /* LoadingCoordinator+Squabble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE693E55D2548DCB5DB39EB /* LoadingCoordinator+Squabble.swift */; };
-		7F195CFB4AFB4ECABE88D2FA /* PlayerManager+Squabble.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CA717CC4D24DD3A012C990 /* PlayerManager+Squabble.swift */; };
-		B63D683A0F5E41E3BA3E0A80 /* AppDelegate+Squabble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FF1CF826C64177AC8A9899 /* AppDelegate+Squabble.swift */; };
-		6F91AEF2C20B4BB29B2B3F69 /* GhostMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F6F96D719B41F4B3D93B79 /* GhostMarker.swift */; };
-		41A63FE3CA5044E890103456 /* PlayerViewController+Squabble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403A7500DB644543B08C92FA /* PlayerViewController+Squabble.swift */; };
-		ADECA1C0C4944D7BB6049479 /* SquabbleGhostOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADECA1C0C4944D7BB6049478 /* SquabbleGhostOverlayView.swift */; };
 		3F66408A2E162ABF00356522 /* AudioMetadataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6640892E162ABF00356522 /* AudioMetadataService.swift */; };
 		3F66408D2E172DF500356522 /* MappingModel_v9_to_v10.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3F66408C2E172DF500356522 /* MappingModel_v9_to_v10.xcmappingmodel */; };
 		3F66408E2E172DF500356522 /* MappingModel_v9_to_v10.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3F66408C2E172DF500356522 /* MappingModel_v9_to_v10.xcmappingmodel */; };
@@ -145,6 +135,7 @@
 		41A359C3276232E00020D5F5 /* MappingModel_v7_to_v8.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 41A359C2276232E00020D5F5 /* MappingModel_v7_to_v8.xcmappingmodel */; };
 		41A359C5276232E00020D5F5 /* MappingModel_v7_to_v8.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 41A359C2276232E00020D5F5 /* MappingModel_v7_to_v8.xcmappingmodel */; };
 		41A359C7276232E00020D5F5 /* MappingModel_v7_to_v8.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 41A359C2276232E00020D5F5 /* MappingModel_v7_to_v8.xcmappingmodel */; };
+		41A63FE3CA5044E890103456 /* PlayerViewController+Squabble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403A7500DB644543B08C92FA /* PlayerViewController+Squabble.swift */; };
 		41A894202652A5DE0032E972 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A8941F2652A5DE0032E972 /* Configuration.swift */; };
 		41A8942A2652A7DF0032E972 /* Bundle+BookPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A894292652A7DF0032E972 /* Bundle+BookPlayer.swift */; };
 		41A90C4527563F5A00C30394 /* ItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A90C4427563F5A00C30394 /* ItemType.swift */; };
@@ -408,6 +399,7 @@
 		639720722CAAF8290045A4DB /* LastPlayedProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639720712CAAF8290045A4DB /* LastPlayedProvider.swift */; };
 		639720832CAB0C380045A4DB /* LastPlayedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639720822CAB0C380045A4DB /* LastPlayedView.swift */; };
 		6397208A2CAC5C870045A4DB /* LastPlayedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639720892CAC5C870045A4DB /* LastPlayedModel.swift */; };
+		639954A45FB645B4AF35C534 /* SquabbleConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8952BCDDE4EF48A7BE92BFC1 /* SquabbleConfig.swift */; };
 		6399F94D2AA03C6C00A5C8EA /* BPSKANManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6399F94C2AA03C6C00A5C8EA /* BPSKANManager.swift */; };
 		639AC9892AD9F1D50053AFC6 /* BPDownloadURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639AC9882AD9F1D50053AFC6 /* BPDownloadURLSession.swift */; };
 		639AC98C2AD9F2840053AFC6 /* BPTaskDownloadDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB20EA229A1BB750021663B /* BPTaskDownloadDelegate.swift */; };
@@ -499,6 +491,9 @@
 		6906A553217211C600A9E0B2 /* StubFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6906A552217211C600A9E0B2 /* StubFactory.swift */; };
 		69343D332133844D000C425E /* VoiceOverService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69343D322133844D000C425E /* VoiceOverService.swift */; };
 		69343D36213A07B4000C425E /* VoiceOverServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69343D35213A07B4000C425E /* VoiceOverServiceTest.swift */; };
+		6F91AEF2C20B4BB29B2B3F69 /* GhostMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F6F96D719B41F4B3D93B79 /* GhostMarker.swift */; };
+		7374520C5E1F444D98CB00AE /* SquabbleLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0837180426A349F987DA5C1F /* SquabbleLoginView.swift */; };
+		7F195CFB4AFB4ECABE88D2FA /* PlayerManager+Squabble.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CA717CC4D24DD3A012C990 /* PlayerManager+Squabble.swift */; };
 		8A2A22392CEFEB8E00E73A2D /* AdaptiveVGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2A22382CEFEB8800E73A2D /* AdaptiveVGrid.swift */; };
 		8A495CC62CC85D27001B4244 /* JellyfinAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 8A495CC52CC85D27001B4244 /* JellyfinAPI */; };
 		8A9D0D172CCBBF00007A924D /* JellyfinConnectionFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9D0D162CCBBF00007A924D /* JellyfinConnectionFormViewModel.swift */; };
@@ -615,6 +610,12 @@
 		9FF710B92A213084006490E0 /* QueuedSyncTaskRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF710B82A213084006490E0 /* QueuedSyncTaskRowView.swift */; };
 		9FF710BD2A215686006490E0 /* QueuedSyncTaskType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF710BC2A215686006490E0 /* QueuedSyncTaskType.swift */; };
 		9FFCC08F289418CA00F4952E /* SimpleChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFCC08E289418CA00F4952E /* SimpleChapter.swift */; };
+		A4ACCE871B1D427593C82CAB /* SquabbleSyncService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A825136D314596995B95A0 /* SquabbleSyncService.swift */; };
+		ADECA1C0C4944D7BB6049479 /* SquabbleGhostOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADECA1C0C4944D7BB6049478 /* SquabbleGhostOverlayView.swift */; };
+		B63D683A0F5E41E3BA3E0A80 /* AppDelegate+Squabble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FF1CF826C64177AC8A9899 /* AppDelegate+Squabble.swift */; };
+		B7239E0F0750453FAD15DC4C /* SquabbleAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9E5CD8B0D4938B597FD5A /* SquabbleAuthService.swift */; };
+		B8C9D0E1F2A347008901BC23 /* SettingsSquabbleSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B8C9D0E1F247007890AB12 /* SettingsSquabbleSectionView.swift */; };
+		BD6585FBDA4D4B0298BCDCEB /* LoadingCoordinator+Squabble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE693E55D2548DCB5DB39EB /* LoadingCoordinator+Squabble.swift */; };
 		C30B66AE20E2D8CF00FC0030 /* ArtworkControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = C30B66AD20E2D8CF00FC0030 /* ArtworkControl.xib */; };
 		C318D3AD208CF624000666F8 /* PlayerJumpIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C318D3AC208CF624000666F8 /* PlayerJumpIcon.swift */; };
 		C318DDBC20A48D4700C3A17B /* BPMarqueeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C318DDBB20A48D4700C3A17B /* BPMarqueeLabel.swift */; };
@@ -625,18 +626,23 @@
 		C3A479132094C8C300D92122 /* rubberBandDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A479122094C8C300D92122 /* rubberBandDistance.swift */; };
 		C3A479152094CA3800D92122 /* UIImage+BookPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A479142094CA3800D92122 /* UIImage+BookPlayer.swift */; };
 		C3A479192094CAF300D92122 /* UIViewController+BookPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A479182094CAF300D92122 /* UIViewController+BookPlayer.swift */; };
+		C3D4E5F6A7B847003456CDEF /* Guild.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F647001234ABCD /* Guild.swift */; };
 		C3EA7176218DEC870005D488 /* .swiftformat in Resources */ = {isa = PBXBuildFile; fileRef = C3EA7175218DEC870005D488 /* .swiftformat */; };
 		C3EC372E206EE0650094B4E8 /* SleepTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EC372D206EE0650094B4E8 /* SleepTimer.swift */; };
 		C3FA301E20E0024900393DDA /* BPArtworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FA301D20E0024900393DDA /* BPArtworkView.swift */; };
 		C3FE3F8220A090880055B9C6 /* limitPanAngle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FE3F8120A090880055B9C6 /* limitPanAngle.swift */; };
+		D0E1F2A3B4C547000123DE45 /* SquabbleProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D0E1F2A3B447009012CD34 /* SquabbleProfileView.swift */; };
+		D4E5F6A7B8C947004567DEF0 /* GuildService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3D4E5F6A747002345BCDE /* GuildService.swift */; };
 		D6BA8F162A4CA94800C2BD9A /* StorageRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BA8F152A4CA94800C2BD9A /* StorageRowView.swift */; };
 		D6BA8F182A4D66CD00C2BD9A /* StorageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BA8F172A4D66CD00C2BD9A /* StorageView.swift */; };
+		E1F2A3B4C5D6E7F809011234 /* SquabbleTestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3F4A5B6C7D8E901234567 /* SquabbleTestHelper.swift */; };
 		F130EADC2ED80AF000B15777 /* BP+ErrorAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F130EADB2ED80AF000B15777 /* BP+ErrorAlerts.swift */; };
 		F14AD4B12ED7FA9000A82ECE /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F14AD4B02ED7FA9000A82ECE /* FirebaseAnalytics */; };
 		F14AD4B32ED7FA9000A82ECE /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F14AD4B22ED7FA9000A82ECE /* FirebaseAuth */; };
 		F14AD4B52ED7FA9000A82ECE /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = F14AD4B42ED7FA9000A82ECE /* FirebaseFirestore */; };
 		F14AD4B72ED7FA9000A82ECE /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = F14AD4B62ED7FA9000A82ECE /* FirebaseMessaging */; };
 		F14AD4B92ED7FBB900A82ECE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F14AD4B82ED7FBB900A82ECE /* GoogleService-Info.plist */; };
+		F6A7B8C9D0E147006789F012 /* GuildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F6A7B8C9D047005678EF01 /* GuildView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -689,6 +695,13 @@
 			remoteGlobalIDString = 41A1B0D1226E9BC400EA0400;
 			remoteInfo = BookPlayerKit;
 		};
+		F1C007312EEB8E9C00DDBCDF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 418B6CF01D2707F700F974FB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 418B6CF71D2707F800F974FB;
+			remoteInfo = BookPlayer;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -728,17 +741,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		F4A825136D314596995B95A0 /* SquabbleSyncService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquabbleSyncService.swift; sourceTree = "<group>"; };
-		8AA9E5CD8B0D4938B597FD5A /* SquabbleAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquabbleAuthService.swift; sourceTree = "<group>"; };
 		0837180426A349F987DA5C1F /* SquabbleLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquabbleLoginView.swift; sourceTree = "<group>"; };
-		8952BCDDE4EF48A7BE92BFC1 /* SquabbleConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquabbleConfig.swift; sourceTree = "<group>"; };
-		5744BCDD4C3240C291926124 /* SquabbleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquabbleManager.swift; sourceTree = "<group>"; };
-		D8F6F96D719B41F4B3D93B79 /* GhostMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GhostMarker.swift; sourceTree = "<group>"; };
 		3CE693E55D2548DCB5DB39EB /* LoadingCoordinator+Squabble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoadingCoordinator+Squabble.swift"; sourceTree = "<group>"; };
-		D7CA717CC4D24DD3A012C990 /* PlayerManager+Squabble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerManager+Squabble.swift"; sourceTree = "<group>"; };
-		ADECA1C0C4944D7BB6049478 /* SquabbleGhostOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquabbleGhostOverlayView.swift; sourceTree = "<group>"; };
-		403A7500DB644543B08C92FA /* PlayerViewController+Squabble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerViewController+Squabble.swift"; sourceTree = "<group>"; };
-		61FF1CF826C64177AC8A9899 /* AppDelegate+Squabble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Squabble.swift"; sourceTree = "<group>"; };
 		3F6640892E162ABF00356522 /* AudioMetadataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioMetadataService.swift; sourceTree = "<group>"; };
 		3F66408C2E172DF500356522 /* MappingModel_v9_to_v10.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = MappingModel_v9_to_v10.xcmappingmodel; sourceTree = "<group>"; };
 		3F6640932E17386400356522 /* DeleteUserBookData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteUserBookData.swift; sourceTree = "<group>"; };
@@ -759,6 +763,7 @@
 		3FF8EA472E11E2110054CD2C /* HardcoverBookRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardcoverBookRow.swift; sourceTree = "<group>"; };
 		3FF8EA492E11E2110054CD2C /* ItemDetailsHardcoverSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsHardcoverSectionView.swift; sourceTree = "<group>"; };
 		3FF8EA4A2E11E2110054CD2C /* ItemDetailsHardcoverSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsHardcoverSectionViewModel.swift; sourceTree = "<group>"; };
+		403A7500DB644543B08C92FA /* PlayerViewController+Squabble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerViewController+Squabble.swift"; sourceTree = "<group>"; };
 		410641272579AA2F008EB8D0 /* TimeListenedWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeListenedWidgetView.swift; sourceTree = "<group>"; };
 		4106413F25872614008EB8D0 /* BarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarView.swift; sourceTree = "<group>"; };
 		4106414825872699008EB8D0 /* TimeListenedSmallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeListenedSmallView.swift; sourceTree = "<group>"; };
@@ -864,7 +869,7 @@
 		418445C2258AE11E0072DD13 /* WidgetUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetUtils.swift; sourceTree = "<group>"; };
 		418A2B692419E5BD0001AEDB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		418A2B6A2419EBA70001AEDB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = ru; path = ru.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
-		418B6CF81D2707F800F974FB /* BookPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		418B6CF81D2707F800F974FB /* Squabble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Squabble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		418B6CFB1D2707F800F974FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		418B6D021D2707F800F974FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		418B6D041D2707F800F974FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -977,7 +982,9 @@
 		41F898AE2402080C00F58B8A /* ZipArchive.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZipArchive.framework; path = Carthage/Build/iOS/ZipArchive.framework; sourceTree = "<group>"; };
 		41FCA32625E87EC600BFB9E6 /* Audiobook Player 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Audiobook Player 4.xcdatamodel"; sourceTree = "<group>"; };
 		5126F120258E9F18009965DC /* URL+BookPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+BookPlayer.swift"; sourceTree = "<group>"; };
+		5744BCDD4C3240C291926124 /* SquabbleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquabbleManager.swift; sourceTree = "<group>"; };
 		5CBB29522163A17F00E3A9FF /* ZIPFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZIPFoundation.framework; path = Carthage/Build/iOS/ZIPFoundation.framework; sourceTree = "<group>"; };
+		61FF1CF826C64177AC8A9899 /* AppDelegate+Squabble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Squabble.swift"; sourceTree = "<group>"; };
 		620C73C7275DA00300D495AA /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = ar; path = ar.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		620C73C8275DA00400D495AA /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		624AB20A2724808600F6A486 /* AVAudioAssetImageDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVAudioAssetImageDataProvider.swift; sourceTree = "<group>"; };
@@ -1265,6 +1272,7 @@
 		6906A552217211C600A9E0B2 /* StubFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubFactory.swift; sourceTree = "<group>"; };
 		69343D322133844D000C425E /* VoiceOverService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOverService.swift; sourceTree = "<group>"; };
 		69343D35213A07B4000C425E /* VoiceOverServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOverServiceTest.swift; sourceTree = "<group>"; };
+		8952BCDDE4EF48A7BE92BFC1 /* SquabbleConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquabbleConfig.swift; sourceTree = "<group>"; };
 		8A2A22382CEFEB8800E73A2D /* AdaptiveVGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveVGrid.swift; sourceTree = "<group>"; };
 		8A9D0D162CCBBF00007A924D /* JellyfinConnectionFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JellyfinConnectionFormViewModel.swift; sourceTree = "<group>"; };
 		8A9D0D232CCED53C007A924D /* JellyfinLibraryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JellyfinLibraryViewModel.swift; sourceTree = "<group>"; };
@@ -1274,6 +1282,7 @@
 		8A9D0D2B2CCFBEEE007A924D /* JellyfinLibraryItemImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JellyfinLibraryItemImageView.swift; sourceTree = "<group>"; };
 		8A9D0D2D2CCFD968007A924D /* BlurHashDecode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurHashDecode.swift; sourceTree = "<group>"; };
 		8A9D0D2F2CD0E06F007A924D /* SingleFileDownloadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleFileDownloadService.swift; sourceTree = "<group>"; };
+		8AA9E5CD8B0D4938B597FD5A /* SquabbleAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquabbleAuthService.swift; sourceTree = "<group>"; };
 		8AAA4F4B2CF1FF77009D0777 /* MockCoordinatorPresentationFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoordinatorPresentationFlow.swift; sourceTree = "<group>"; };
 		8AAD8A4E2CEE3650000A4B4B /* View+BookPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+BookPlayer.swift"; sourceTree = "<group>"; };
 		8AAD8A542CEE8849000A4B4B /* JellyfinConnectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JellyfinConnectionService.swift; sourceTree = "<group>"; };
@@ -1388,6 +1397,10 @@
 		9FF710B82A213084006490E0 /* QueuedSyncTaskRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueuedSyncTaskRowView.swift; sourceTree = "<group>"; };
 		9FF710BC2A215686006490E0 /* QueuedSyncTaskType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueuedSyncTaskType.swift; sourceTree = "<group>"; };
 		9FFCC08E289418CA00F4952E /* SimpleChapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleChapter.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F647001234ABCD /* Guild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guild.swift; sourceTree = "<group>"; };
+		A7B8C9D0E1F247007890AB12 /* SettingsSquabbleSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSquabbleSectionView.swift; sourceTree = "<group>"; };
+		ADECA1C0C4944D7BB6049478 /* SquabbleGhostOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquabbleGhostOverlayView.swift; sourceTree = "<group>"; };
+		B2C3D4E5F6A747002345BCDE /* GuildService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildService.swift; sourceTree = "<group>"; };
 		C30B085E209654E3003F325B /* UIColor+BookPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+BookPlayer.swift"; sourceTree = "<group>"; };
 		C30B66AD20E2D8CF00FC0030 /* ArtworkControl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtworkControl.xib; sourceTree = "<group>"; };
 		C30CD2A0209791FA00258B09 /* UIColor+Sweetercolor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Sweetercolor.swift"; sourceTree = "<group>"; };
@@ -1409,12 +1422,33 @@
 		C3EC372D206EE0650094B4E8 /* SleepTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepTimer.swift; sourceTree = "<group>"; };
 		C3FA301D20E0024900393DDA /* BPArtworkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPArtworkView.swift; sourceTree = "<group>"; };
 		C3FE3F8120A090880055B9C6 /* limitPanAngle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = limitPanAngle.swift; sourceTree = "<group>"; };
+		C9D0E1F2A3B447009012CD34 /* SquabbleProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquabbleProfileView.swift; sourceTree = "<group>"; };
+		D2E3F4A5B6C7D8E901234567 /* SquabbleTestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquabbleTestHelper.swift; sourceTree = "<group>"; };
 		D367F7671FA2A6F000FEDB37 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D6BA8F152A4CA94800C2BD9A /* StorageRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageRowView.swift; sourceTree = "<group>"; };
 		D6BA8F172A4D66CD00C2BD9A /* StorageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageView.swift; sourceTree = "<group>"; };
+		D7CA717CC4D24DD3A012C990 /* PlayerManager+Squabble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerManager+Squabble.swift"; sourceTree = "<group>"; };
+		D8F6F96D719B41F4B3D93B79 /* GhostMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GhostMarker.swift; sourceTree = "<group>"; };
+		E5F6A7B8C9D047005678EF01 /* GuildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildView.swift; sourceTree = "<group>"; };
 		F130EADB2ED80AF000B15777 /* BP+ErrorAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BP+ErrorAlerts.swift"; sourceTree = "<group>"; };
 		F14AD4B82ED7FBB900A82ECE /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "BookPlayer/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F1C0072B2EEB8E9C00DDBCDF /* BookPlayerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookPlayerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4A825136D314596995B95A0 /* SquabbleSyncService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquabbleSyncService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		F1C007462EEC7B7A00DDBCDF /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = F1C0072A2EEB8E9C00DDBCDF /* BookPlayerUITests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		F1C0072C2EEB8E9C00DDBCDF /* BookPlayerUITests */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (F1C007462EEC7B7A00DDBCDF /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = BookPlayerUITests; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		41342CFB24435D9900F0905B /* Frameworks */ = {
@@ -1488,6 +1522,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F1C007282EEB8E9C00DDBCDF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -1495,6 +1536,7 @@
 			isa = PBXGroup;
 			children = (
 				6F076D1FE5DF4200819A6D2F /* Core */,
+				A3B4C5D6E7F8091023456789 /* Debug */,
 				CB315F3B1C124BA0B822A032 /* Extensions */,
 				53C91531D1694CE4ABD50BAB /* Models */,
 				376B28D9575A441E8B1AFD67 /* Services */,
@@ -1503,20 +1545,12 @@
 			path = Squabble;
 			sourceTree = "<group>";
 		};
-		6F076D1FE5DF4200819A6D2F /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				8952BCDDE4EF48A7BE92BFC1 /* SquabbleConfig.swift */,
-				5744BCDD4C3240C291926124 /* SquabbleManager.swift */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
 		376B28D9575A441E8B1AFD67 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				8AA9E5CD8B0D4938B597FD5A /* SquabbleAuthService.swift */,
 				F4A825136D314596995B95A0 /* SquabbleSyncService.swift */,
+				B2C3D4E5F6A747002345BCDE /* GuildService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1526,30 +1560,13 @@
 			children = (
 				0837180426A349F987DA5C1F /* SquabbleLoginView.swift */,
 				ADECA1C0C4944D7BB6049478 /* SquabbleGhostOverlayView.swift */,
+				E5F6A7B8C9D047005678EF01 /* GuildView.swift */,
+				A7B8C9D0E1F247007890AB12 /* SettingsSquabbleSectionView.swift */,
+				C9D0E1F2A3B447009012CD34 /* SquabbleProfileView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		53C91531D1694CE4ABD50BAB /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				D8F6F96D719B41F4B3D93B79 /* GhostMarker.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		CB315F3B1C124BA0B822A032 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				3CE693E55D2548DCB5DB39EB /* LoadingCoordinator+Squabble.swift */,
-				61FF1CF826C64177AC8A9899 /* AppDelegate+Squabble.swift */,
-				D7CA717CC4D24DD3A012C990 /* PlayerManager+Squabble.swift */,
-				403A7500DB644543B08C92FA /* PlayerViewController+Squabble.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-
 		3F7B64332E0F713200299D97 /* Hardcover */ = {
 			isa = PBXGroup;
 			children = (
@@ -1774,6 +1791,7 @@
 				41342CFF24435D9900F0905B /* BookPlayerIntents */,
 				416A29A82569658100605395 /* BookPlayerWidgets */,
 				9F4A33DE292B0C710034CD4C /* BookPlayerShareExtension */,
+				F1C0072C2EEB8E9C00DDBCDF /* BookPlayerUITests */,
 				418B6CF91D2707F800F974FB /* Products */,
 				41AABFFA1E705D18006BD2E0 /* Frameworks */,
 				F1F6EDE52ED7FF8E00C0A3BD /* Recovered References */,
@@ -1787,13 +1805,14 @@
 		418B6CF91D2707F800F974FB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				418B6CF81D2707F800F974FB /* BookPlayer.app */,
+				418B6CF81D2707F800F974FB /* Squabble.app */,
 				418B6D0E1D2707F800F974FB /* BookPlayerTests.xctest */,
 				41A1B0D2226E9BC400EA0400 /* BookPlayerKit.framework */,
 				41342CFE24435D9900F0905B /* BookPlayerIntents.appex */,
 				416A29A32569658100605395 /* BookPlayerWidgetsPhone.appex */,
 				9F4A33DD292B0C700034CD4C /* BookPlayerShareExtension.appex */,
 				63005A432AE7FD8000A4CA2C /* BookPlayerWidgetsWatch.appex */,
+				F1C0072B2EEB8E9C00DDBCDF /* BookPlayerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2065,6 +2084,15 @@
 				41E562E82239531E00C06BC9 /* songs-ipad@3x.png */,
 			);
 			path = iPad;
+			sourceTree = "<group>";
+		};
+		53C91531D1694CE4ABD50BAB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D8F6F96D719B41F4B3D93B79 /* GhostMarker.swift */,
+				A1B2C3D4E5F647001234ABCD /* Guild.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		62793612272CC19E0097837D /* Models */ = {
@@ -2593,6 +2621,15 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		6F076D1FE5DF4200819A6D2F /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				8952BCDDE4EF48A7BE92BFC1 /* SquabbleConfig.swift */,
+				5744BCDD4C3240C291926124 /* SquabbleManager.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 		8A9D0D1A2CCCF36D007A924D /* Library Screen */ = {
 			isa = PBXGroup;
 			children = (
@@ -2823,6 +2860,14 @@
 			path = Sync;
 			sourceTree = "<group>";
 		};
+		A3B4C5D6E7F8091023456789 /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				D2E3F4A5B6C7D8E901234567 /* SquabbleTestHelper.swift */,
+			);
+			path = Debug;
+			sourceTree = "<group>";
+		};
 		C35E04F1207E8D0F007D3370 /* Library */ = {
 			isa = PBXGroup;
 			children = (
@@ -3003,6 +3048,17 @@
 			name = Meta;
 			sourceTree = "<group>";
 		};
+		CB315F3B1C124BA0B822A032 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3CE693E55D2548DCB5DB39EB /* LoadingCoordinator+Squabble.swift */,
+				61FF1CF826C64177AC8A9899 /* AppDelegate+Squabble.swift */,
+				D7CA717CC4D24DD3A012C990 /* PlayerManager+Squabble.swift */,
+				403A7500DB644543B08C92FA /* PlayerViewController+Squabble.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		F1F6EDE52ED7FF8E00C0A3BD /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
@@ -3097,7 +3153,7 @@
 				F14AD4B62ED7FA9000A82ECE /* FirebaseMessaging */,
 			);
 			productName = "Audiobook Player";
-			productReference = 418B6CF81D2707F800F974FB /* BookPlayer.app */;
+			productReference = 418B6CF81D2707F800F974FB /* Squabble.app */;
 			productType = "com.apple.product-type.application";
 		};
 		418B6D0D1D2707F800F974FB /* BookPlayerTests */ = {
@@ -3177,6 +3233,29 @@
 			productReference = 9F4A33DD292B0C700034CD4C /* BookPlayerShareExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		F1C0072A2EEB8E9C00DDBCDF /* BookPlayerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F1C007362EEB8E9C00DDBCDF /* Build configuration list for PBXNativeTarget "BookPlayerUITests" */;
+			buildPhases = (
+				F1C007272EEB8E9C00DDBCDF /* Sources */,
+				F1C007282EEB8E9C00DDBCDF /* Frameworks */,
+				F1C007292EEB8E9C00DDBCDF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F1C007322EEB8E9C00DDBCDF /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				F1C0072C2EEB8E9C00DDBCDF /* BookPlayerUITests */,
+			);
+			name = BookPlayerUITests;
+			packageProductDependencies = (
+			);
+			productName = BookPlayerUITests;
+			productReference = F1C0072B2EEB8E9C00DDBCDF /* BookPlayerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -3184,7 +3263,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastSwiftUpdateCheck = 1400;
+				LastSwiftUpdateCheck = 2610;
 				LastUpgradeCheck = 1500;
 				ORGANIZATIONNAME = "BookPlayer LLC";
 				TargetAttributes = {
@@ -3227,6 +3306,10 @@
 					};
 					9F4A33DC292B0C700034CD4C = {
 						CreatedOnToolsVersion = 14.0;
+					};
+					F1C0072A2EEB8E9C00DDBCDF = {
+						CreatedOnToolsVersion = 26.1.1;
+						TestTargetID = 418B6CF71D2707F800F974FB;
 					};
 				};
 			};
@@ -3287,6 +3370,7 @@
 				41342CFD24435D9900F0905B /* BookPlayerIntents */,
 				416A29A22569658100605395 /* BookPlayerWidgetsPhone */,
 				9F4A33DC292B0C700034CD4C /* BookPlayerShareExtension */,
+				F1C0072A2EEB8E9C00DDBCDF /* BookPlayerUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -3428,6 +3512,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F4A33E3292B0C710034CD4C /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1C007292EEB8E9C00DDBCDF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3624,12 +3715,18 @@
 				63E1FF8D2E6C835400F2E003 /* ItemDetailsFooterSectionView.swift in Sources */,
 				B7239E0F0750453FAD15DC4C /* SquabbleAuthService.swift in Sources */,
 				ADECA1C0C4944D7BB6049479 /* SquabbleGhostOverlayView.swift in Sources */,
+				F6A7B8C9D0E147006789F012 /* GuildView.swift in Sources */,
+				B8C9D0E1F2A347008901BC23 /* SettingsSquabbleSectionView.swift in Sources */,
+				D0E1F2A3B4C547000123DE45 /* SquabbleProfileView.swift in Sources */,
 				41A63FE3CA5044E890103456 /* PlayerViewController+Squabble.swift in Sources */,
 				A4ACCE871B1D427593C82CAB /* SquabbleSyncService.swift in Sources */,
 				7374520C5E1F444D98CB00AE /* SquabbleLoginView.swift in Sources */,
 				639954A45FB645B4AF35C534 /* SquabbleConfig.swift in Sources */,
+				E1F2A3B4C5D6E7F809011234 /* SquabbleTestHelper.swift in Sources */,
 				1E14CBB59E95412D84326BC2 /* SquabbleManager.swift in Sources */,
 				6F91AEF2C20B4BB29B2B3F69 /* GhostMarker.swift in Sources */,
+				C3D4E5F6A7B847003456CDEF /* Guild.swift in Sources */,
+				D4E5F6A7B8C947004567DEF0 /* GuildService.swift in Sources */,
 				BD6585FBDA4D4B0298BCDCEB /* LoadingCoordinator+Squabble.swift in Sources */,
 				7F195CFB4AFB4ECABE88D2FA /* PlayerManager+Squabble.swift in Sources */,
 				B63D683A0F5E41E3BA3E0A80 /* AppDelegate+Squabble.swift in Sources */,
@@ -4016,6 +4113,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F1C007272EEB8E9C00DDBCDF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -4054,6 +4158,11 @@
 			isa = PBXTargetDependency;
 			target = 41A1B0D1226E9BC400EA0400 /* BookPlayerKit */;
 			targetProxy = 9FA0B0592955E87A00E73D03 /* PBXContainerItemProxy */;
+		};
+		F1C007322EEB8E9C00DDBCDF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 418B6CF71D2707F800F974FB /* BookPlayer */;
+			targetProxy = F1C007312EEB8E9C00DDBCDF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -5126,6 +5235,98 @@
 			};
 			name = Beta;
 		};
+		F1C007332EEB8E9C00DDBCDF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.squabble.BookPlayerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_TARGET_NAME = BookPlayer;
+			};
+			name = Debug;
+		};
+		F1C007342EEB8E9C00DDBCDF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.squabble.BookPlayerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_TARGET_NAME = BookPlayer;
+			};
+			name = Release;
+		};
+		F1C007352EEB8E9C00DDBCDF /* Beta */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.squabble.BookPlayerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_TARGET_NAME = BookPlayer;
+			};
+			name = Beta;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -5205,6 +5406,16 @@
 				9F4A33E8292B0C720034CD4C /* Debug */,
 				9F4A33E9292B0C720034CD4C /* Release */,
 				9F4A33EA292B0C720034CD4C /* Beta */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F1C007362EEB8E9C00DDBCDF /* Build configuration list for PBXNativeTarget "BookPlayerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1C007332EEB8E9C00DDBCDF /* Debug */,
+				F1C007342EEB8E9C00DDBCDF /* Release */,
+				F1C007352EEB8E9C00DDBCDF /* Beta */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

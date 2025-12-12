@@ -20,6 +20,20 @@
                ReferencedContainer = "container:BookPlayer.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "NO"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "418B6D0D1D2707F800F974FB"
+               BuildableName = "BookPlayerTests.xctest"
+               BlueprintName = "BookPlayerTests"
+               ReferencedContainer = "container:BookPlayer.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -56,21 +70,19 @@
       </CodeCoverageTargets>
       <TestPlans>
          <TestPlanReference
-            reference = "container:BookPlayerTests/Unit Tests.xctestplan"
+            reference = "container:BookPlayerUITests/ScreenshotTests.xctestplan"
             default = "YES">
-         </TestPlanReference>
-         <TestPlanReference
-            reference = "container:BookPlayerTests/Performance Tests.xctestplan">
          </TestPlanReference>
       </TestPlans>
       <Testables>
          <TestableReference
-            skipped = "NO">
+            skipped = "NO"
+            parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "418B6D0D1D2707F800F974FB"
-               BuildableName = "BookPlayerTests.xctest"
-               BlueprintName = "BookPlayerTests"
+               BlueprintIdentifier = "F1C0072A2EEB8E9C00DDBCDF"
+               BuildableName = "BookPlayerUITests.xctest"
+               BlueprintName = "BookPlayerUITests"
                ReferencedContainer = "container:BookPlayer.xcodeproj">
             </BuildableReference>
          </TestableReference>

@@ -44,12 +44,20 @@ struct MainView: View {
           return true
         }
       }
+      .accessibilityIdentifier("mainview_tab_library")
       Tab("profile_title", systemImage: "person.crop.circle") {
-        ProfileView()
+        // SQUABBLE: Replace Profile tab with Guild view when enabled
+        if SquabbleConfig.isEnabled {
+          SquabbleProfileView()
+        } else {
+          ProfileView()
+        }
       }
+      .accessibilityIdentifier("mainview_tab_profile")
       Tab("settings_title", systemImage: "gearshape") {
         SettingsView()
       }
+      .accessibilityIdentifier("mainview_tab_settings")
       if #available(iOS 26.0, *), UIDevice.current.userInterfaceIdiom == .phone {
         Tab("search_title", systemImage: "magnifyingglass", role: .search) {
           SearchView {

@@ -14,6 +14,8 @@ enum SettingsScreen: String, Hashable {
   case storage, syncbackup
   case shortcuts
   case jellyfin, audiobookshelf, hardcover
+  case squabbleGuild  // SQUABBLE: Guild management screen
+  case squabbleDebug  // SQUABBLE: Debug tools (DEBUG builds only)
   case tipjar
   case credits
 }

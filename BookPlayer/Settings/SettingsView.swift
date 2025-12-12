@@ -35,17 +35,23 @@ struct SettingsView: View {
   var body: some View {
     NavigationStack(path: $path) {
       Form {
-        if accountService.accessLevel == .free {
+        // SQUABBLE: Hide BookPlayer Pro upsell when Squabble is enabled
+        if !SquabbleConfig.isEnabled && accountService.accessLevel == .free {
           SettingsProBannerSectionView(showPro: showPro)
         }
         SettingsAppearanceSectionView()
         SettingsPlaybackSectionView()
-        SettingsStorageSectionView(accessLevel: accountService.accessLevel)
-        if accountService.accessLevel == .pro {
+        // SQUABBLE: Simplify storage section (no Pro features)
+        SettingsStorageSectionView(accessLevel: SquabbleConfig.isEnabled ? .pro : accountService.accessLevel)
+        // SQUABBLE: Hide Pro-only data usage section
+        if !SquabbleConfig.isEnabled && accountService.accessLevel == .pro {
           SettingsDataUsageSectionView()
         }
         SettingsShortcutsSectionView()
-        SettingsiCloudSectionView()
+        // SQUABBLE: Hide iCloud sync section (BookPlayer backend)
+        if !SquabbleConfig.isEnabled {
+          SettingsiCloudSectionView()
+        }
         SettingsIntegrationsSectionView()
         SettingsPrivacySectionView()
         SettingsSupportSectionView(accessLevel: accountService.accessLevel) {
@@ -56,6 +62,12 @@ struct SettingsView: View {
           }
         }
         SettingsCreditsSectionView()
+        // SQUABBLE: Debug section (DEBUG builds only)
+        #if DEBUG
+        if SquabbleConfig.isEnabled {
+          SettingsSquabbleDebugSectionView()
+        }
+        #endif
       }
       .environment(\.loadingState, loadingState)
       .navigationTitle("settings_title")
@@ -138,6 +150,15 @@ struct SettingsView: View {
               viewModel: HardcoverSettingsViewModel(hardcoverService: hardcoverService)
             )
           )
+        case .squabbleGuild:
+          // SQUABBLE: Guild is now in Profile tab, this case is unused
+          view = AnyView(EmptyView())
+        case .squabbleDebug:
+          #if DEBUG
+          view = AnyView(SquabbleDebugView())
+          #else
+          view = AnyView(EmptyView())
+          #endif
         case .tipjar:
           view = AnyView(SettingsTipJarView())
         case .credits:

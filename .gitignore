@@ -80,3 +80,10 @@ fastlane/test_output
 
 # Firebase config (contains API keys)
 GoogleService-Info.plist
+
+# UI Test results (binary files)
+TestResults/
+*.xcresult
+
+# Archives (generated)
+Archives/

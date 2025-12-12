@@ -51,6 +51,17 @@
          </BuildableReference>
       </MacroExpansion>
       <Testables>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F1C0072A2EEB8E9C00DDBCDF"
+               BuildableName = "BookPlayerUITests.xctest"
+               BlueprintName = "BookPlayerUITests"
+               ReferencedContainer = "container:BookPlayer.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -92,6 +103,15 @@
             ReferencedContainer = "container:BookPlayer.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "4140EA2E227288ED0009F794"
+            BuildableName = "BookPlayerWatch.app"
+            BlueprintName = "BookPlayerWatch"
+            ReferencedContainer = "container:BookPlayer.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

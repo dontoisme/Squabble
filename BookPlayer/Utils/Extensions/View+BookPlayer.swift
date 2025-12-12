@@ -140,17 +140,9 @@ struct MiniPlayerModifier<Regular: View, Accessory: View>: ViewModifier {
   @ViewBuilder let accessory: () -> Accessory
 
   func body(content: Content) -> some View {
-    if #available(iOS 26.1, *) {
-      content
-        .safeAreaInset(edge: .bottom, spacing: 0, content: regular)
-    } else if #available(iOS 26.0, *) {
-      content
-        .tabBarMinimizeBehavior(.onScrollDown)
-        .tabViewBottomAccessory(content: accessory)
-    } else {
-      content
-        .safeAreaInset(edge: .bottom, spacing: 0, content: regular)
-    }
+    // iOS 26 APIs not yet available - use fallback
+    content
+      .safeAreaInset(edge: .bottom, spacing: 0, content: regular)
   }
 }
 extension View {
@@ -171,10 +163,7 @@ extension View {
 extension View {
   @ViewBuilder
   func liquidGlassBackground() -> some View {
-    if #available(iOS 26.0, *) {
-      glassEffect()
-    } else {
-      background(.ultraThinMaterial)
-    }
+    // iOS 26 glassEffect() not yet available - use fallback
+    background(.ultraThinMaterial)
   }
 }
