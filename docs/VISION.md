@@ -55,7 +55,7 @@ It's a trail of reactions. A breadcrumb path of emotions. Completely spoiler-fre
 4. Experience your friends' reactions as you go
 5. Discuss after everyone finishes
 
-Everything else - themes, achievements, races, progression - enhances this core experience.
+Everything else - themes, achievements, progression - enhances this core experience.
 
 ---
 
@@ -67,7 +67,7 @@ Squabble Inn is not just an audiobook app - it's a *place*. When you open the ap
 
 ### Why "Squabble"?
 
-A squabble is a small, noisy argument - the kind that happens between adventuring party members about which way to go, who gets the loot, or whether to rest or push on. It's friendly conflict. It's banter. It's what happens when you and your friends are 60% through the same book and someone races ahead.
+A squabble is a small, noisy argument - the kind that happens between adventuring party members about which way to go, who gets the loot, or whether to rest or push on. It's friendly conflict. It's banter. It's what happens when you and your friends are reading the same book and someone pulls ahead.
 
 ### Why "Inn"?
 
@@ -159,7 +159,7 @@ Progress is tracked at two levels, creating interplay between personal and socia
 **Guild Progression:**
 - Collective book completion (all 5 members finished)
 - Series milestones
-- Race victories
+- Shared book completions
 - Raid boss completions
 - Shared theme unlocks
 
@@ -173,7 +173,7 @@ A central hub for quests, challenges, and goals - framed as a literal bounty boa
 
 **Quest Types:**
 - **Personal Bounties**: Finish this book, hit 50 hours this month
-- **Guild Bounties**: Everyone finish this series, complete a race
+- **Guild Bounties**: Everyone finish this series, complete a book together
 - **Raid Bosses**: Guild-recommended challenge based on class composition
 - **Seasonal Events**: Community-wide reading challenges
 - **Royal Road Serials**: Ongoing quests that update with new chapters
@@ -211,7 +211,7 @@ A central hub for quests, challenges, and goals - framed as a literal bounty boa
 
 | Tier | Cost | Access |
 |------|------|--------|
-| **Traveler** (Free) | $0 | Full playback, join guilds, ghost markers, races, basic themes |
+| **Traveler** (Free) | $0 | Full playback, join guilds, ghost markers, comments, basic themes |
 | **Guild Founder** | One-time ~$5-10? | Create a guild, invite up to 4 members |
 | **Resident Adventurer** | Subscription | Achievements, premium themes, trinkets, progression UI, class identity |
 | **Pro** | Subscription | Libation integration, Royal Road sync, power features |
@@ -238,7 +238,6 @@ A central hub for quests, challenges, and goals - framed as a literal bounty boa
 - Join existing guilds (up to 5 members total)
 - Ghost markers (see guild members' progress on timeline)
 - **Timestamp comments** - leave reactions that appear after guildmates pass that point
-- Reading races
 - Basic guild profile
 
 **Theming:**
@@ -338,7 +337,7 @@ Features prioritize connection over isolation:
 - Ghost markers make reading social
 - Guild progression creates shared goals
 - In-progress comments enable async discussion
-- Races add friendly competition
+- Shared completion creates celebration moments
 
 ### 5. Respect the Source Material
 
@@ -437,8 +436,8 @@ See [The Core Feature](#the-core-feature) section. This is no longer a wild idea
 **Concept:** Short audio clips for key moments:
 - Achievement unlock sound
 - Theme-specific notification sounds
-- Race win fanfare
 - Guild completion celebration
+- Comment notification chime
 
 Could license from games or commission original.
 

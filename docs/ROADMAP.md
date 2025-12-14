@@ -5,7 +5,7 @@
 
 ## Table of Contents
 - [Completed Work](#completed-work)
-- [Epic 2: Competitions & Races](#epic-2-competitions--races)
+- [Epic 2: Timestamp Comments](#epic-2-timestamp-comments-dark-souls-style)
 - [Guild Library](#guild-library)
 - [Quality of Life](#quality-of-life-improvements)
 - [Future Ideas](#future-ideas)
@@ -87,194 +87,142 @@ As a [user], I want to [action] so that [benefit]
 
 ---
 
-# Epic 2: Competitions & Races
+# Epic 2: Timestamp Comments (Dark Souls Style)
 
-## 2.1 Create Reading Race
+## 2.1 Leave Comment at Timestamp
 **Status:** Not Started
 **Priority:** P1 (High)
 **Dependencies:** Guild system complete
 
 **User Story:**
-As a guild owner/member, I want to create a reading race so that my guild can compete to finish a book together.
+As a guild member, I want to leave a comment at a specific moment in an audiobook so that my guildmates can see my reaction when they reach that point.
 
 **Acceptance Criteria:**
-- [ ] "Create Race" button available in guild view
-- [ ] Form to configure race:
-  - [ ] Select book from personal library
-  - [ ] Set race name (optional, defaults to book title)
-  - [ ] Set start date (default: now)
-  - [ ] Set end date (required)
-  - [ ] Set goal: finish book OR reach X% progress
-- [ ] Race created in Firestore with unique ID
-- [ ] Creator auto-joined as participant
-- [ ] Race visible to all guild members
+- [ ] Comment button available in player UI
+- [ ] Tapping opens comment input with current timestamp shown
+- [ ] Can type reaction/comment (character limit TBD, ~280?)
+- [ ] Post saves comment to Firestore with:
+  - [ ] Timestamp (seconds into audiobook)
+  - [ ] Book ID
+  - [ ] User ID
+  - [ ] Comment text
+  - [ ] Created date
+- [ ] Confirmation that comment was posted
+- [ ] Can cancel without posting
 
 **Technical Notes:**
-- New Firestore collection: `guilds/{guildId}/races/{raceId}`
-- Race document schema:
+- New Firestore collection: `guilds/{guildId}/comments/{commentId}`
+- Comment document schema:
   ```
   {
     id: string,
     bookId: string,
     bookTitle: string,
-    name: string,
-    createdBy: string,
-    createdAt: timestamp,
-    startDate: timestamp,
-    endDate: timestamp,
-    goalType: "finish" | "percentage",
-    goalValue: number (100 for finish, or target %),
-    status: "upcoming" | "active" | "completed"
-  }
-  ```
-- New view: `CreateRaceView.swift`
-- Book selection from local library only (v1)
-
----
-
-## 2.2 Join Race
-**Status:** Not Started
-**Priority:** P1 (High)
-**Dependencies:** Create Race (2.1)
-
-**User Story:**
-As a guild member, I want to join an active race so that I can compete with my friends.
-
-**Acceptance Criteria:**
-- [ ] Guild view shows active races section
-- [ ] Each race card shows:
-  - [ ] Book title and cover
-  - [ ] Time remaining
-  - [ ] Participant count
-  - [ ] "Join" button (if not joined)
-- [ ] Tap "Join" → Add user to participants
-- [ ] Must have book in local library to join (or prompt to add)
-- [ ] Cannot join races that have ended
-- [ ] Cannot join race already participating in
-
-**Technical Notes:**
-- Race participants subcollection: `races/{raceId}/participants/{userId}`
-- Participant document:
-  ```
-  {
     userId: string,
-    joinedAt: timestamp,
-    currentProgress: number,
-    lastUpdated: timestamp,
-    finished: boolean,
-    finishedAt: timestamp?
+    userDisplayName: string,
+    timestamp: number (seconds),
+    text: string,
+    createdAt: timestamp
   }
   ```
-- Book matching by title (same as ghost markers)
-- Show "Get Book" option if not in library
+- New view: `CommentInputView.swift`
+- Index on (bookId, timestamp) for efficient queries
 
 ---
 
-## 2.3 Live Leaderboard
+## 2.2 Display Comments (Spoiler-Free)
 **Status:** Not Started
 **Priority:** P1 (High)
-**Dependencies:** Join Race (2.2)
+**Dependencies:** Leave Comment (2.1)
 
 **User Story:**
-As a race participant, I want to see a live leaderboard so that I know how I rank against other readers.
+As a guild member, I want to see my guildmates' comments only AFTER I pass that timestamp so that I don't get spoilers.
 
 **Acceptance Criteria:**
-- [ ] Race detail view shows leaderboard
-- [ ] Leaderboard sorted by progress (highest first)
-- [ ] Each entry shows:
-  - [ ] Rank (#1, #2, etc.)
-  - [ ] Member name/avatar
-  - [ ] Current progress %
-  - [ ] Time since last update
-- [ ] Current user highlighted
-- [ ] Updates in real-time via listeners
-- [ ] Shows "Finished!" badge for completers
+- [ ] Comments only appear after user's progress passes the timestamp
+- [ ] When crossing a comment timestamp:
+  - [ ] Subtle notification/chime
+  - [ ] Comment appears briefly on screen
+  - [ ] Comment indicator added to timeline
+- [ ] Can tap timeline indicator to re-read comment
+- [ ] Multiple comments at same timestamp shown in order
+- [ ] Comments from all guild members shown (not just active readers)
 
 **Technical Notes:**
-- Real-time Firestore listener on participants collection
-- Sort client-side by `currentProgress` descending
-- Progress synced via existing `SquabbleSyncService`
-- Detect "finished" when progress >= goalValue
-- New view: `RaceLeaderboardView.swift`
+- Query comments where `timestamp <= currentProgress`
+- Track "last seen timestamp" to detect newly-passed comments
+- Local cache of already-seen comments
+- UI overlay for comment display (non-blocking)
+- Consider: batch fetch comments for entire book on load
 
 ---
 
-## 2.4 Race Progress Sync
-**Status:** Not Started
-**Priority:** P1 (High)
-**Dependencies:** Live Leaderboard (2.3)
-
-**User Story:**
-As a race participant, I want my progress to automatically update in the race so that the leaderboard reflects my reading.
-
-**Acceptance Criteria:**
-- [ ] When playing race book, progress syncs to race participants doc
-- [ ] Sync uses same throttle as guild progress (5 min)
-- [ ] Force sync on pause/background
-- [ ] Progress shows on leaderboard within seconds
-- [ ] Finishing book marks participant as "finished"
-- [ ] First to finish gets special indicator
-
-**Technical Notes:**
-- Extend `SquabbleSyncService` to check active races
-- On progress update:
-  1. Sync to guild progress (existing)
-  2. Check if book matches any active race
-  3. If match, update participant document
-- Winner detection: First `finishedAt` timestamp
-- Consider: batch writes for efficiency
-
----
-
-## 2.5 Race Completion & Results
+## 2.3 Comment Indicators on Timeline
 **Status:** Not Started
 **Priority:** P2 (Medium)
-**Dependencies:** Race Progress Sync (2.4)
+**Dependencies:** Display Comments (2.2)
 
 **User Story:**
-As a race participant, I want to see final results when a race ends so that I know who won.
+As a guild member, I want to see indicators on the timeline showing where comments exist (that I've passed) so that I can revisit reactions.
 
 **Acceptance Criteria:**
-- [ ] Race auto-completes when end date reached
-- [ ] Final leaderboard frozen at end time
-- [ ] Winner announced (highest progress or first to finish)
-- [ ] Results view shows:
-  - [ ] Winner with celebration UI
-  - [ ] Final rankings for all participants
-  - [ ] Personal stats (your rank, progress, reading time)
-- [ ] Past races accessible from guild view
+- [ ] Small markers on progress slider for passed comments
+- [ ] Markers only visible for timestamps user has passed
+- [ ] Tap marker → Show comment in popup
+- [ ] Different marker for own comments vs others
+- [ ] Markers don't clutter (cluster if too close together)
 
 **Technical Notes:**
-- Cloud Function or client-side check for race end
-- Status transitions: `active` → `completed`
-- Preserve final state in race document
-- New view: `RaceResultsView.swift`
-- Consider: Push notification when race ends
+- Similar implementation to ghost markers
+- Filter to only show `timestamp <= currentProgress`
+- Cluster markers within X seconds of each other
+- Color-code by commenter or use unified style
 
 ---
 
-## 2.6 Race History
+## 2.4 Comment History View
 **Status:** Not Started
-**Priority:** P3 (Low)
-**Dependencies:** Race Completion (2.5)
+**Priority:** P2 (Medium)
+**Dependencies:** Display Comments (2.2)
 
 **User Story:**
-As a guild member, I want to see past races so that I can view our competition history.
+As a guild member, I want to see all comments for a book in one place so that I can catch up on the discussion.
 
 **Acceptance Criteria:**
-- [ ] "Past Races" section in guild view
-- [ ] List of completed races with:
-  - [ ] Book title
-  - [ ] Winner name
-  - [ ] End date
-  - [ ] Your final rank
-- [ ] Tap race → View full results
-- [ ] Sorted by most recent first
+- [ ] "Comments" button/tab in player or book details
+- [ ] List of all comments for current book
+- [ ] Only shows comments at timestamps user has passed
+- [ ] Shows: commenter name, timestamp, comment text
+- [ ] Tap comment → Jump to that timestamp
+- [ ] Sorted by timestamp (ascending)
 
 **Technical Notes:**
-- Query races where `status == "completed"`
-- Paginate if many races (unlikely early on)
-- Cache results for performance
+- New view: `BookCommentsView.swift`
+- Filter: `timestamp <= userCurrentProgress`
+- Pagination for books with many comments
+- Real-time updates as user progresses
+
+---
+
+## 2.5 Delete Own Comment
+**Status:** Not Started
+**Priority:** P3 (Low)
+**Dependencies:** Leave Comment (2.1)
+
+**User Story:**
+As a guild member, I want to delete a comment I made so that I can remove something I regret posting.
+
+**Acceptance Criteria:**
+- [ ] Can only delete own comments
+- [ ] Swipe or long-press to reveal delete option
+- [ ] Confirmation before deletion
+- [ ] Comment removed from Firestore
+- [ ] Comment removed from all guildmates' views
+
+**Technical Notes:**
+- Simple Firestore document deletion
+- Security rules: only author can delete
+- No soft delete (v1)
 
 ---
 
@@ -478,9 +426,9 @@ These are potential features not yet scoped:
 | Priority | Features |
 |----------|----------|
 | **P0 (Critical)** | - |
-| **P1 (High)** | Create Race, Join Race, Live Leaderboard, Race Progress Sync |
-| **P2 (Medium)** | Race Results, Guild Library, Error Handling, Loading States |
-| **P3 (Low)** | Race History, Recommendations, Offline Support, Push Notifications |
+| **P1 (High)** | Leave Comment, Display Comments (spoiler-free) |
+| **P2 (Medium)** | Comment Indicators, Comment History, Guild Library, Error Handling, Loading States |
+| **P3 (Low)** | Delete Comment, Recommendations, Offline Support, Push Notifications |
 
 ---
 

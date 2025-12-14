@@ -428,26 +428,30 @@
 └─────────────────────────────────────┘
 ```
 
-## Race Leaderboard (Concept)
+## Comment History View (Concept)
 ```
 ┌─────────────────────────────────────┐
-│  ◀ Guild              Race: DCC 6   │
+│  ◀ Player         Comments: DCC 6   │
 ├─────────────────────────────────────┤
 │                                     │
-│   🏁 RACE TO FINISH                 │
-│   Ends: Dec 31, 2025                │
+│   💬 REACTIONS FROM YOUR GUILD      │
+│   (Showing comments you've passed)  │
 │                                     │
 │   ┌─────────────────────────────┐   │
-│   │  🥇 Sam        ▓▓▓▓▓▓▓▓░ 89% │   │
-│   │  🥈 Don        ▓▓▓▓▓▓▓░░ 78% │   │  ← You
-│   │  🥉 Alex       ▓▓▓▓▓░░░░ 56% │   │
-│   │  4. Jess       ▓▓▓▓░░░░░ 45% │   │
-│   │  5. Morgan     ▓▓░░░░░░░ 23% │   │
+│   │  Sam @ 1:23:45              │   │
+│   │  "This is where it gets     │   │
+│   │   GOOD"                     │   │
+│   └─────────────────────────────┘   │
+│   ┌─────────────────────────────┐   │
+│   │  You @ 2:34:17              │   │
+│   │  "WHAT. NO. WHAT."          │   │
+│   └─────────────────────────────┘   │
+│   ┌─────────────────────────────┐   │
+│   │  Jess @ 2:34:22             │   │
+│   │  "I KNOW RIGHT"             │   │
 │   └─────────────────────────────┘   │
 │                                     │
-│   ⏱️ Time remaining: 17 days        │
-│                                     │
-│   Last update: Sam • 2 min ago      │
+│   Tap any comment to jump there     │
 │                                     │
 └─────────────────────────────────────┘
 ```
