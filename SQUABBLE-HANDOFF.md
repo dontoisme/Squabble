@@ -1,6 +1,12 @@
 # Squabble Session Handoff
 
-**Last Updated:** December 12, 2025
+**Last Updated:** December 14, 2025
+
+> **Quick Start Guide** - For detailed documentation, see the `/docs/` folder:
+> - [ARCHITECTURE.md](./docs/ARCHITECTURE.md) - Technical architecture with Mermaid diagrams
+> - [USER-JOURNEYS.md](./docs/USER-JOURNEYS.md) - All 26 user flows documented
+> - [ROADMAP.md](./docs/ROADMAP.md) - Feature roadmap with acceptance criteria
+> - [SCREEN-INVENTORY.md](./docs/SCREEN-INVENTORY.md) - All 45 screens with file paths
 
 ## Project Overview
 
