@@ -92,6 +92,7 @@ struct MiniPlayerView: View {
         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
         showPlayer()
       }
+      .accessibilityIdentifier("library_miniplayer")
     }
     .padding(.horizontal, 12)
     .padding(.bottom, 49 + 8)

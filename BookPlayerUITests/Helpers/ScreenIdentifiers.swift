@@ -25,8 +25,13 @@ enum ScreenIdentifiers {
         static let viewEmpty = "library_view_empty"
         static let listItems = "library_list_items"
         static let buttonAdd = "library_button_add"
+        static let menuMore = "library_menu_more"
         static let miniPlayer = "library_miniplayer"
         static let searchField = "library_search_field"
+    }
+
+    enum ItemDetails {
+        static let viewMain = "item_details_view"
     }
 
     // MARK: - Profile Tab (Squabble)
@@ -85,6 +90,10 @@ enum ScreenIdentifiers {
         static let listItems = "settings_storage_list"
     }
 
+    enum SettingsIntegrations {
+        static let viewMain = "settings_integrations_view"
+    }
+
     // MARK: - Player
 
     enum Player {
@@ -92,6 +101,8 @@ enum ScreenIdentifiers {
         static let buttonPlayPause = "player_button_playpause"
         static let buttonChapters = "player_button_chapters"
         static let buttonBookmarks = "player_button_bookmarks"
+        static let buttonSpeed = "player_button_speed"
+        static let buttonSleep = "player_button_sleep"
         static let sliderProgress = "player_slider_progress"
         static let viewArtwork = "player_view_artwork"
         static let viewGhostOverlay = "player_view_ghost"
@@ -109,6 +120,7 @@ enum ScreenIdentifiers {
 
     enum PlayerControls {
         static let viewMain = "player_controls_view"
+        static let sheetMain = "player_controls_sheet"
         static let sliderSpeed = "player_controls_speed"
         static let sliderBoost = "player_controls_boost"
     }

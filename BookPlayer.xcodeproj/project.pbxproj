@@ -642,6 +642,7 @@
 		F14AD4B52ED7FA9000A82ECE /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = F14AD4B42ED7FA9000A82ECE /* FirebaseFirestore */; };
 		F14AD4B72ED7FA9000A82ECE /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = F14AD4B62ED7FA9000A82ECE /* FirebaseMessaging */; };
 		F14AD4B92ED7FBB900A82ECE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F14AD4B82ED7FBB900A82ECE /* GoogleService-Info.plist */; };
+		F1C007482EECA05100DDBCDF /* test_audiobook.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F1C007472EECA05100DDBCDF /* test_audiobook.mp3 */; };
 		F6A7B8C9D0E147006789F012 /* GuildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F6A7B8C9D047005678EF01 /* GuildView.swift */; };
 /* End PBXBuildFile section */
 
@@ -1433,6 +1434,7 @@
 		F130EADB2ED80AF000B15777 /* BP+ErrorAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BP+ErrorAlerts.swift"; sourceTree = "<group>"; };
 		F14AD4B82ED7FBB900A82ECE /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "BookPlayer/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F1C0072B2EEB8E9C00DDBCDF /* BookPlayerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookPlayerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1C007472EECA05100DDBCDF /* test_audiobook.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = test_audiobook.mp3; sourceTree = "<group>"; };
 		F4A825136D314596995B95A0 /* SquabbleSyncService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquabbleSyncService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1778,6 +1780,7 @@
 		418B6CEF1D2707F700F974FB = {
 			isa = PBXGroup;
 			children = (
+				F1C007472EECA05100DDBCDF /* test_audiobook.mp3 */,
 				F14AD4B82ED7FBB900A82ECE /* GoogleService-Info.plist */,
 				630494802E6C928E00C72387 /* AppIcon.icon */,
 				9F00F6EF28084C8800996BBB /* IAP-Configuration.storekit */,
@@ -3429,6 +3432,7 @@
 				634E16212E6EA00500ED9589 /* music-26@3x.png in Resources */,
 				9F665EE02A4898F6004BFE27 /* heart-of-glass-forest@2x.png in Resources */,
 				9F665EDF2A4898F6004BFE27 /* heart-of-glass-ayu@3x.png in Resources */,
+				F1C007482EECA05100DDBCDF /* test_audiobook.mp3 in Resources */,
 				9F665EE72A48991C004BFE27 /* heart-of-glass-ayu-ipad@2x.png in Resources */,
 				419B375623B8D5A500128A8F /* Localizable.strings in Resources */,
 				9F665EE62A48991C004BFE27 /* heart-of-glass-forest-ipad@2x.png in Resources */,

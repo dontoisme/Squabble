@@ -505,10 +505,14 @@ extension PlayerViewController {
       [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18.0, weight: .semibold)],
       for: .normal
     )
+    self.speedButton.accessibilityIdentifier = "player_button_speed"
     self.previousChapterButton.accessibilityLabel = "chapters_previous_title".localized
     self.nextChapterButton.accessibilityLabel = "chapters_next_title".localized
     self.bookmarkButton.accessibilityLabel = "bookmark_create_title".localized
     self.sleepButton.accessibilityLabel = "settings_siri_sleeptimer_title".localized
+    self.sleepButton.accessibilityIdentifier = "player_button_sleep"
+    self.bookmarkButton.accessibilityIdentifier = "player_button_bookmarks"
+    self.listButton.accessibilityIdentifier = "player_button_chapters"
     self.listButton.accessibilityLabel =
       UserDefaults.standard.bool(forKey: Constants.UserDefaults.playerListPrefersBookmarks)
       ? "bookmarks_title".localized : "chapters_title".localized

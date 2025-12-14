@@ -140,6 +140,7 @@ struct ItemListView: View {
             }
           }
           .accessibilityElement(children: .contain)
+          .accessibilityIdentifier("library_list_items")
           .accessibilityRotor("books_title") {
             customBookRotor(with: scrollView)
           }
@@ -447,6 +448,7 @@ struct ItemListView: View {
     } label: {
       Label("more_title".localized, systemImage: "ellipsis.circle")
     }
+    .accessibilityIdentifier("library_menu_more")
   }
 
   @ViewBuilder

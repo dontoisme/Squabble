@@ -12,12 +12,14 @@ enum AppTab: String {
     case library = "mainview_tab_library"
     case profile = "mainview_tab_profile"
     case settings = "mainview_tab_settings"
+    case search = "mainview_tab_search"  // iOS 26+ only
 
     var tabBarButtonLabel: String {
         switch self {
         case .library: return "Library"
         case .profile: return "Profile"
         case .settings: return "Settings"
+        case .search: return "Search"
         }
     }
 }
@@ -36,12 +38,69 @@ extension XCUIApplication {
 
     // MARK: - Settings Navigation
 
-    /// Navigate to a settings sub-screen
+    /// Navigate to a settings sub-screen by accessibility identifier
     func navigateToSettingsScreen(_ identifier: String) {
         navigateToTab(.settings)
+
+        // Try finding by accessibility identifier first
         let row = cells[identifier]
-        if row.waitForExistence(timeout: 3) {
+        if row.waitForExistence(timeout: 2) {
             row.tap()
+            return
+        }
+
+        // Fall back to finding by button/staticText within the form
+        let button = buttons[identifier]
+        if button.waitForExistence(timeout: 2) {
+            button.tap()
+            return
+        }
+    }
+
+    /// Navigate to a settings sub-screen by label text
+    func navigateToSettingsScreenByLabel(_ label: String) {
+        navigateToTab(.settings)
+        Thread.sleep(forTimeInterval: 0.5)
+
+        // Find the button/cell containing this label text
+        let button = buttons[label]
+        if button.waitForExistence(timeout: 2) {
+            button.tap()
+            return
+        }
+
+        // Try static texts (for NavigationLink labels)
+        let text = staticTexts[label]
+        if text.waitForExistence(timeout: 1) {
+            text.tap()
+            return
+        }
+
+        // Scroll down and try again (for items below the fold)
+        swipeUp()
+        Thread.sleep(forTimeInterval: 0.3)
+
+        if button.waitForExistence(timeout: 2) {
+            button.tap()
+            return
+        }
+
+        if text.waitForExistence(timeout: 1) {
+            text.tap()
+            return
+        }
+
+        // Try one more scroll for items near the bottom
+        swipeUp()
+        Thread.sleep(forTimeInterval: 0.3)
+
+        if button.waitForExistence(timeout: 2) {
+            button.tap()
+            return
+        }
+
+        if text.waitForExistence(timeout: 1) {
+            text.tap()
         }
     }
 
