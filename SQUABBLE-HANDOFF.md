@@ -3,14 +3,19 @@
 **Last Updated:** December 14, 2025
 
 > **Quick Start Guide** - For detailed documentation, see the `/docs/` folder:
+> - [VISION.md](./docs/VISION.md) - Product vision and philosophy (start here!)
+> - [ROADMAP.md](./docs/ROADMAP.md) - Feature roadmap with MVP scope and acceptance criteria
 > - [ARCHITECTURE.md](./docs/ARCHITECTURE.md) - Technical architecture with Mermaid diagrams
 > - [USER-JOURNEYS.md](./docs/USER-JOURNEYS.md) - All 26 user flows documented
-> - [ROADMAP.md](./docs/ROADMAP.md) - Feature roadmap with acceptance criteria
 > - [SCREEN-INVENTORY.md](./docs/SCREEN-INVENTORY.md) - All 45 screens with file paths
+> - [SCREEN-MOCKUPS.md](./docs/SCREEN-MOCKUPS.md) - ASCII art screen mockups
 
 ## Project Overview
 
-Squabble is a social audiobook app built as a fork of [BookPlayer](https://github.com/TortugaPower/BookPlayer). It adds guild-based social features where friends can see each other's audiobook progress ("ghost markers") on the playback timeline.
+Squabble Inn is a social audiobook app built for LitRPG fans, forked from [BookPlayer](https://github.com/TortugaPower/BookPlayer). Core features:
+- **Guilds** - Form a group of up to 6 readers (creator + 5 friends)
+- **Ghost Markers** - See where guildmates are on the timeline in real-time
+- **Timestamp Comments** - Leave Dark Souls-style reactions that only appear after guildmates pass that point (spoiler-free)
 
 ## Current Status
 
@@ -62,7 +67,7 @@ XCUITest infrastructure for automated screenshot capture.
 - `--disable-animations` - Speed up tests
 - `--fresh-install` - Fresh state, not logged in
 - `--logged-in` - Mock logged-in user, no guild
-- `--with-guild` - Mock user with guild and 5 members
+- `--with-guild` - Mock user with guild and 6 members
 - `--with-books` - Copy test audiobook to library
 
 **Key Test Files:**
@@ -89,19 +94,18 @@ If you see "Not syncing - no guild", the guild hasn't loaded yet.
 
 **Note:** 5-minute throttle on syncs. Use pause (forceSyncProgress) to test faster.
 
-### Not Started
+### Not Started (MVP)
 
-#### Epic 2: Competitions/Races
-- Create reading race for a book
-- Set race parameters (start date, end date, goal)
-- Join races
-- Live leaderboard
-- Race completion/results
+#### Epic 2: Timestamp Comments (Dark Souls Style)
+- **2.1 Leave Comment** - Comment button in player, post at current timestamp
+- **2.2 Display Comments** - Spoiler-free: only show after user passes timestamp
 
-#### Guild Library
-- Display books being read by guild members
-- Shared reading lists
-- Book recommendations within guild
+#### Epic 3: Progress Sync & Ghost Markers (Partial)
+- **3.1 Progress Sync** - Mostly done, some reliability issues with new guilds
+- **3.2 Ghost Markers** - Complete
+- **3.3 Active Book Tracking** - Not started
+
+See [ROADMAP.md](./docs/ROADMAP.md) for full epic breakdown including Phase 2 (Delight) and Phase 3 (Monetization).
 
 ## File Structure
 
@@ -316,10 +320,16 @@ All screenshot gaps have been closed:
 - `BookPlayerUITests/Helpers/ScreenIdentifiers.swift` - Added new identifiers
 - `Screenshots/manifest.json` - Added all new screen entries
 
-### Future
-1. **Guild Library** - Implement shared book list in profile
-2. **Epic 2: Races** - Competition feature
-3. **Error handling** - Better user feedback for network errors
+### MVP Next Steps
+1. **Epic 2.1** - Leave Comment at Timestamp (new view: `CommentInputView.swift`)
+2. **Epic 2.2** - Display Comments (spoiler-free reveal as user progresses)
+3. **Epic 3.1** - Fix progress sync reliability with new guilds
+
+### Future Phases
+- **Phase 2 (Delight):** Achievements, themes, guild library, comment history
+- **Phase 3 (Monetization):** Tier system (Traveler, Resident Adventurer, Guild Master, Ascendant Adventurer)
+
+See [ROADMAP.md](./docs/ROADMAP.md) for complete breakdown.
 
 ### Progress Sync Debug (2025-12-13)
 

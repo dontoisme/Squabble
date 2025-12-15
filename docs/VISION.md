@@ -31,7 +31,7 @@
 
 **This is what Squabble IS:**
 
-You and up to 4 friends form a guild. You pick a book to read together. As you listen, you can see exactly where everyone else is - ghost markers on the timeline showing their progress in real-time.
+You and up to 5 friends form a guild (6 total). You pick a book to read together. As you listen, you can see exactly where everyone else is - ghost markers on the timeline showing their progress in real-time.
 
 And you can leave comments.
 
@@ -141,7 +141,7 @@ Nothing is just bought - it's *earned* through reading. Your app looks the way i
 - Player skin
 
 **Example:**
-> You've finished Dungeon Crawler Carl. Your inn can now be themed as the "Pineapple Cabaret" or "Carl & Donut's Safe Room." Clicking on the taxidermied cat on your shelf plays a Donut quip.
+> You've finished Dungeon Crawler Carl. Your inn can now be themed as the "Pineapple Cabaret" or "Carl & Donut's Safe Room." Clicking on the robot-cat-toy on your shelf plays a Donut-like quip.
 
 ---
 
@@ -157,7 +157,7 @@ Progress is tracked at two levels, creating interplay between personal and socia
 - Class identity (see Wild Ideas)
 
 **Guild Progression:**
-- Collective book completion (all 5 members finished)
+- Collective book completion (all 6 members finished)
 - Series milestones
 - Shared book completions
 - Raid boss completions
@@ -186,7 +186,7 @@ A central hub for quests, challenges, and goals - framed as a literal bounty boa
 
 ### Elevator Pitch (30 seconds)
 
-> Squabble Inn is an audiobook app built for LitRPG fans. You form a guild with up to 4 friends, and you can see exactly where everyone is in the books you're reading together - like ghost markers on the timeline. Complete books and series to unlock themes from your favorite worlds. Your app can look like Dungeon Crawler Carl's safe room or the Wandering Inn's common room. It's an audiobook club with progression mechanics, achievements, and tons of easter eggs.
+> Squabble Inn is an audiobook app built for LitRPG fans. You form a guild with up to 5 friends (6 total), and you can see exactly where everyone is in the books you're reading together - like ghost markers on the timeline. Complete books and series to unlock themes from your favorite worlds. Your app can look like Dungeon Crawler Carl's safe room or the Wandering Inn's common room. It's an audiobook club with progression mechanics, achievements, and tons of easter eggs.
 
 ### Why Now?
 
@@ -203,25 +203,25 @@ A central hub for quests, challenges, and goals - framed as a literal bounty boa
 ### Principles
 
 1. **Core experience is free** - Playback, library, joining guilds, basic features
-2. **Creation has value** - Starting a guild is a one-time investment
-3. **Delight is optional** - Cosmetic progression for those who want it
-4. **Power features pay their way** - Infrastructure-heavy integrations require support
+2. **Delight is optional** - Cosmetic progression for those who want it
+3. **Creation has value** - Starting a guild is a one-time investment (includes delight features)
+4. **Aspirational tier** - Future social features for the most dedicated adventurers
 
 ### Tier Structure
 
 | Tier | Cost | Access |
 |------|------|--------|
 | **Traveler** (Free) | $0 | Full playback, join guilds, ghost markers, comments, basic themes |
-| **Guild Founder** | One-time ~$5-10? | Create a guild, invite up to 4 members |
-| **Resident Adventurer** | Subscription | Achievements, premium themes, trinkets, progression UI, class identity |
-| **Pro** | Subscription | Libation integration, Royal Road sync, power features |
+| **Resident Adventurer** | One-time ~$5-7 | Achievements, premium themes, trinkets, bounty board, class identity |
+| **Guild Master** | One-time ~$10-15 | Everything in Resident Adventurer + create/manage guilds |
+| **Ascendant Adventurer** | TBD | Global social features, cross-guild connections ("the multiverse") |
 
 ### Why This Works
 
-- **Low barrier**: Anyone can use the app and join friends
-- **Guild investment**: Creator is committed, prevents spam guilds
-- **Cosmetic middle**: Delight features fund development without gating core experience
-- **Pro for power users**: Heavy infrastructure features (external integrations) need support
+- **Low barrier**: Anyone can use the app and join friends for free
+- **One-time purchases**: No subscription fatigue - pay once, own forever
+- **Guild investment**: Creator is committed (and gets all delight features), prevents spam guilds
+- **Aspirational tier**: Future expansion for power users who want broader social connections
 
 ---
 
@@ -235,7 +235,7 @@ A central hub for quests, challenges, and goals - framed as a literal bounty boa
 - Basic library organization
 
 **Social (THE CORE):**
-- Join existing guilds (up to 5 members total)
+- Join existing guilds (up to 6 members total)
 - Ghost markers (see guild members' progress on timeline)
 - **Timestamp comments** - leave reactions that appear after guildmates pass that point
 - Basic guild profile
@@ -246,21 +246,9 @@ A central hub for quests, challenges, and goals - framed as a literal bounty boa
 
 ---
 
-### Guild Founder (One-Time)
+### Resident Adventurer (One-Time ~$5-7)
 
 Everything in Traveler, plus:
-
-**Guild Creation:**
-- Create your own guild
-- Generate invite codes
-- Manage members
-- Guild naming and basic customization
-
----
-
-### Resident Adventurer (Subscription)
-
-Everything in Guild Founder, plus:
 
 **Achievements:**
 - DCC-style achievement system
@@ -287,19 +275,28 @@ Everything in Guild Founder, plus:
 
 ---
 
-### Pro (Subscription)
+### Guild Master (One-Time ~$10-15)
 
 Everything in Resident Adventurer, plus:
 
-**Integrations:**
-- Libation (Audible book liberation)
-- Royal Road sync
-- Future power integrations
+**Guild Creation:**
+- Create your own guild
+- Generate invite codes
+- Manage members (up to 6 total)
+- Guild naming and basic customization
 
-**Power Features:**
-- Advanced stats and analytics
-- Export capabilities
-- Priority support
+---
+
+### Ascendant Adventurer (TBD)
+
+Everything in Guild Master, plus:
+
+**Global Social Features ("The Multiverse"):**
+- Connect with adventurers beyond your guild
+- Cross-guild book clubs and events
+- Public profile and reading history
+- Community challenges and leaderboards
+- *More features TBD - this tier is for future expansion*
 
 ---
 
@@ -326,7 +323,7 @@ Achievements and system messages should feel like the Dungeon's AI from Dungeon 
 ### 3. Easter Eggs Everywhere
 
 Hidden interactions reward curiosity:
-- Click the cat trinket → Donut quote
+- Click the robot cat trinket → Donut-like quip
 - Tap the inn sign 5 times → Secret sound
 - Complete a specific combo → Hidden achievement
 - Theme elements have interactive moments
@@ -394,31 +391,6 @@ See [The Core Feature](#the-core-feature) section. This is no longer a wild idea
 
 ---
 
-### Libation Integration
-
-**Concept:** Integrate with the open-source Libation software to help users import their Audible library.
-
-**Considerations:**
-- Legal gray area - research carefully
-- Position as "your books, your choice"
-- Pro-tier feature due to complexity
-- Don't store or host any content
-
----
-
-### Royal Road Sync
-
-**Concept:** Connect with Royal Road to track progress on web serials within the app.
-
-**Framing:** Ongoing serials are "living quests" on the bounty board. New chapters = new quest progress.
-
-**Challenges:**
-- RR API access (if available)
-- TTS for text content?
-- Tracking progress across formats
-
----
-
 ### Guild Hall Visualization
 
 **Concept:** A visual representation of your guild's shared space - a table at the inn with each member's presence.
@@ -447,7 +419,7 @@ Could license from games or commission original.
 
 ### Product Questions
 
-1. **Guild size**: Should Resident Adventurer or Pro unlock larger guilds (6-8)?
+1. **Guild size**: Base is 6 members. Should Ascendant Adventurer unlock larger guilds (8-10)?
 
 2. **Re-reads**: How do we make re-reading feel rewarding? Enhanced trinkets? Tracking counts? Special achievements?
 
@@ -459,13 +431,11 @@ Could license from games or commission original.
 
 ### Technical Questions
 
-1. **Libation legality**: What are the actual legal risks? Research needed.
+1. **Theme asset pipeline**: How do we scale theme creation? Templates? User-generated?
 
-2. **Royal Road API**: Does RR have an API? What's possible?
+2. **Audio clips licensing**: Can we get permissions for book-specific sounds?
 
-3. **Theme asset pipeline**: How do we scale theme creation? Templates? User-generated?
-
-4. **Audio clips licensing**: Can we get permissions for book-specific sounds?
+3. **Ascendant Adventurer features**: What global social features make sense? Public guilds? Cross-guild events?
 
 ### Business Questions
 
@@ -483,7 +453,7 @@ Could license from games or commission original.
 2. **Prioritize MVP features**: What's the minimum to test the core value prop?
 3. **Create Epic PRDs**: Break down features into implementable chunks
 4. **Design exploration**: Mock up themed UI, test with users
-5. **Legal research**: Libation integration viability
+5. **Define Ascendant tier**: What "multiverse" features would justify this tier?
 
 ---
 
@@ -492,7 +462,7 @@ Could license from games or commission original.
 | Term | Meaning |
 |------|---------|
 | **The Inn** | The app itself, framed as a gathering place |
-| **Guild** | A group of up to 5 readers (your party) |
+| **Guild** | A group of up to 6 readers (creator + 5 friends) |
 | **Ghost Markers** | Visual indicators of guild members' progress on the timeline |
 | **Bounty Board** | Quest/challenge hub within the app |
 | **Raid Boss** | A significant reading challenge, often guild-level |
@@ -500,8 +470,9 @@ Could license from games or commission original.
 | **Theme** | Full visual customization unlocked by completing a series |
 | **Class** | Personal identity generated from reading history |
 | **Traveler** | Free tier user |
-| **Resident Adventurer** | Subscriber with cosmetic progression features |
-| **Pro** | Subscriber with power features and integrations |
+| **Resident Adventurer** | One-time purchase (~$5-7) - achievements, themes, bounty board |
+| **Guild Master** | One-time purchase (~$10-15) - everything + guild creation |
+| **Ascendant Adventurer** | Future tier for global social features ("the multiverse") |
 
 ---
 

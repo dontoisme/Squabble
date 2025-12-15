@@ -1,14 +1,17 @@
 # Squabble Feature Roadmap
 
 > Planned features with acceptance criteria for implementation.
-> Last updated: December 2025
+> Aligned with [VISION.md](./VISION.md) | Last updated: December 2025
 
 ## Table of Contents
+- [MVP Scope](#mvp-scope-v10)
 - [Completed Work](#completed-work)
-- [Epic 2: Timestamp Comments](#epic-2-timestamp-comments-dark-souls-style)
-- [Guild Library](#guild-library)
+- [MVP: Active Development](#mvp-active-development)
+- [Phase 2: Delight Layer](#phase-2-delight-layer)
+- [Phase 3: Monetization & Growth](#phase-3-monetization--growth)
 - [Quality of Life](#quality-of-life-improvements)
 - [Future Ideas](#future-ideas)
+- [Terminology](#terminology)
 
 ---
 
@@ -34,6 +37,40 @@ As a [user], I want to [action] so that [benefit]
 
 ---
 
+# MVP Scope (v1.0)
+
+> **Goal:** Validate the core value proposition - guilds + ghost markers + spoiler-free comments.
+
+## What's In MVP
+
+| Epic | Features | Status |
+|------|----------|--------|
+| **Epic 0** | Architecture refactor (extension pattern) | Complete |
+| **Epic 1** | Guild system (create, join, leave, invite) | Complete |
+| **Epic 1B** | Screenshot automation | Complete |
+| **Epic 2** | Timestamp comments (2.1 Leave, 2.2 Display only) | Not Started |
+| **Epic 3** | Progress sync & ghost markers | Partial |
+
+## What's NOT in MVP (Deferred)
+
+- Epic 2.3-2.5 (Comment indicators, history, delete)
+- Epic 4 (Monetization tiers - free only for MVP)
+- Epic 5 (Achievements & themes)
+- Epic 6 (Bounty board)
+- Epic 7 (Inn experience)
+- Guild Library features
+- QoL improvements (error polish, loading states, offline)
+
+## MVP Success Criteria
+
+- [ ] User can create/join a guild with up to 6 members
+- [ ] User can see guildmates' progress on timeline (ghost markers)
+- [ ] User can leave comments at timestamps
+- [ ] Comments appear to guildmates only after they pass that point (spoiler-free)
+- [ ] Core loop is functional and testable with real users
+
+---
+
 # Completed Work
 
 ## Epic 0: Architecture Refactor
@@ -55,7 +92,7 @@ As a [user], I want to [action] so that [benefit]
 **Status:** Complete (Dec 2025)
 **Commit:** `c5efa18c`
 
-**Summary:** Full guild management system with create, join, leave, and invite functionality.
+**Summary:** Full guild management system with create, join, leave, and invite functionality. Guilds support up to 6 members (creator + 5 friends).
 
 **Deliverables:**
 - [x] Firebase Auth integration (email/password)
@@ -87,11 +124,13 @@ As a [user], I want to [action] so that [benefit]
 
 ---
 
-# Epic 2: Timestamp Comments (Dark Souls Style)
+# MVP: Active Development
 
-## 2.1 Leave Comment at Timestamp
+## Epic 2: Timestamp Comments (Dark Souls Style)
+
+### 2.1 Leave Comment at Timestamp
 **Status:** Not Started
-**Priority:** P1 (High)
+**Priority:** P1 (High) - MVP
 **Dependencies:** Guild system complete
 
 **User Story:**
@@ -130,9 +169,9 @@ As a guild member, I want to leave a comment at a specific moment in an audioboo
 
 ---
 
-## 2.2 Display Comments (Spoiler-Free)
+### 2.2 Display Comments (Spoiler-Free)
 **Status:** Not Started
-**Priority:** P1 (High)
+**Priority:** P1 (High) - MVP
 **Dependencies:** Leave Comment (2.1)
 
 **User Story:**
@@ -157,7 +196,86 @@ As a guild member, I want to see my guildmates' comments only AFTER I pass that 
 
 ---
 
-## 2.3 Comment Indicators on Timeline
+## Epic 3: Progress Sync & Ghost Markers
+
+### 3.1 Real-Time Progress Sync
+**Status:** Partial (existing implementation)
+**Priority:** P1 (High) - MVP
+**Dependencies:** Guild system complete
+
+**User Story:**
+As a guild member, I want my reading progress to sync to my guild so that my guildmates can see where I am.
+
+**Acceptance Criteria:**
+- [x] Progress syncs to Firestore automatically during playback
+- [x] Sync includes: book ID, book title, progress %, timestamp, total duration
+- [x] Throttled to prevent excessive writes (5-minute interval)
+- [ ] Force sync on pause/stop
+- [ ] Sync works reliably with newly created guilds
+- [ ] Handle offline → online sync queue
+
+**Technical Notes:**
+- Existing: `SquabbleSyncService.swift`
+- Collection: `guilds/{guildId}/progress/{bookId_userId}`
+- Debug logging for sync issues
+- Thread-safe guild ID access
+
+---
+
+### 3.2 Ghost Marker Display
+**Status:** Complete
+**Priority:** P1 (High) - MVP
+**Dependencies:** Progress Sync (3.1)
+
+**User Story:**
+As a guild member, I want to see ghost markers on the timeline showing where my guildmates are in the same book.
+
+**Acceptance Criteria:**
+- [x] Markers appear on progress slider for each guildmate reading same book
+- [x] Markers show member initials inside
+- [x] Markers use gradient fill with member color
+- [x] Markers have colored shadow and white border
+- [x] Real-time updates via Firestore listeners
+- [ ] Markers only show for "active" books (recent activity)
+- [ ] Handle overlapping markers gracefully
+
+**Technical Notes:**
+- Existing: `SquabbleGhostOverlayView.swift`
+- 22px diameter markers
+- Colors assigned per member
+- UIKit overlay on UISlider
+
+---
+
+### 3.3 Active Book Tracking
+**Status:** Not Started
+**Priority:** P2 (Medium)
+**Dependencies:** Progress Sync (3.1)
+
+**User Story:**
+As a user, I want control over which books show my progress to my guild.
+
+**Acceptance Criteria:**
+- [ ] "Active" flag per book in progress collection
+- [ ] Books auto-deactivate after X days of no progress
+- [ ] User can manually toggle book visibility
+- [ ] Only active books show ghost markers
+- [ ] Guild library shows only active books
+
+**Technical Notes:**
+- Add `isActive` boolean to progress documents
+- Auto-deactivate threshold: 14 days?
+- UI in book detail or player menu
+
+---
+
+# Phase 2: Delight Layer
+
+> **Goal:** Add engagement features that make the app delightful and sticky.
+
+## Epic 2: Timestamp Comments (Completion)
+
+### 2.3 Comment Indicators on Timeline
 **Status:** Not Started
 **Priority:** P2 (Medium)
 **Dependencies:** Display Comments (2.2)
@@ -180,7 +298,7 @@ As a guild member, I want to see indicators on the timeline showing where commen
 
 ---
 
-## 2.4 Comment History View
+### 2.4 Comment History View
 **Status:** Not Started
 **Priority:** P2 (Medium)
 **Dependencies:** Display Comments (2.2)
@@ -204,7 +322,7 @@ As a guild member, I want to see all comments for a book in one place so that I 
 
 ---
 
-## 2.5 Delete Own Comment
+### 2.5 Delete Own Comment
 **Status:** Not Started
 **Priority:** P3 (Low)
 **Dependencies:** Leave Comment (2.1)
@@ -226,9 +344,93 @@ As a guild member, I want to delete a comment I made so that I can remove someth
 
 ---
 
-# Guild Library
+## Epic 5: Achievements & Themes
 
-## GL1: View Guild Members' Books
+> From VISION "Earned Aesthetic" pillar - nothing is bought, it's earned through reading.
+
+### 5.1 Achievement System
+**Status:** Not Started
+**Priority:** P2 (Medium)
+**Dependencies:** Guild system complete, book completion tracking
+**Tier:** Resident Adventurer
+
+**User Story:**
+As a reader, I want to earn achievements for reading milestones so that I feel recognized for my progress.
+
+**Acceptance Criteria:**
+- [ ] Achievement notifications appear on unlock
+- [ ] DCC-style sardonic, clever voice for messages
+- [ ] Achievement types:
+  - [ ] Book completion (first book, 10th book, etc.)
+  - [ ] Series completion
+  - [ ] Speed achievements (finished quickly)
+  - [ ] Re-read achievements
+  - [ ] Guild achievements (everyone finished)
+- [ ] Achievement history viewable in profile
+- [ ] Achievements shareable
+
+**Technical Notes:**
+- New collection: `users/{userId}/achievements/{achievementId}`
+- Achievement definitions in app bundle (JSON)
+- Trigger logic in completion handlers
+- Examples from VISION:
+  - "Speed Reader or Liar?" - finished 40hr book in 6hrs at 3x
+  - "The Wandering Listener" - started 15 books, finished 2
+  - "Completionist" - finished entire series
+
+---
+
+### 5.2 Theme Unlocks
+**Status:** Not Started
+**Priority:** P2 (Medium)
+**Dependencies:** Achievement system (5.1)
+**Tier:** Resident Adventurer
+
+**User Story:**
+As a reader, I want to unlock themes by completing books and series so that my app reflects my reading history.
+
+**Acceptance Criteria:**
+- [ ] Complete book → Unlock book-specific trinket
+- [ ] Complete series → Unlock series theme
+- [ ] Guild completes together → Unlock guild-wide theme option
+- [ ] Re-read → Enhanced trinket variant
+- [ ] Theme picker in settings shows locked/unlocked status
+- [ ] Preview themes before selecting
+
+**Technical Notes:**
+- Theme assets bundled in app
+- Unlock state stored in: `users/{userId}/unlockedThemes`
+- Theme scope (v1): color palette, background
+- Future: app icon, sound effects, UI chrome
+
+---
+
+### 5.3 Trinket Display
+**Status:** Not Started
+**Priority:** P3 (Low)
+**Dependencies:** Theme unlocks (5.2)
+**Tier:** Resident Adventurer
+
+**User Story:**
+As a reader, I want to see trinkets from completed books displayed in my profile so that I have a visual collection of my reading.
+
+**Acceptance Criteria:**
+- [ ] Trinkets displayed as small icons in profile/inn
+- [ ] Tap trinket → Book info popup
+- [ ] Trinkets organized by series or chronologically
+- [ ] Some trinkets have easter egg interactions
+- [ ] Guild profile shows collective trinkets
+
+**Technical Notes:**
+- Trinket assets: small PNG/SVG icons
+- From VISION: "Click the cat trinket → Donut quote"
+- Layout: shelf/grid metaphor
+
+---
+
+## Guild Library
+
+### GL1: View Guild Members' Books
 **Status:** Not Started
 **Priority:** P2 (Medium)
 **Dependencies:** Guild system complete
@@ -255,7 +457,7 @@ As a guild member, I want to see what books my friends are reading so that I can
 
 ---
 
-## GL2: Book Recommendations
+### GL2: Book Recommendations
 **Status:** Not Started
 **Priority:** P3 (Low)
 **Dependencies:** View Guild Books (GL1)
@@ -283,6 +485,235 @@ As a guild member, I want to recommend books to my guild so that we can share di
   }
   ```
 - Merge with active books in guild library view
+
+---
+
+# Phase 3: Monetization & Growth
+
+> **Goal:** Introduce paid tiers and advanced features for sustainability.
+
+## Epic 4: Monetization Tiers
+
+> From VISION Monetization Philosophy - core is free, creation has value, delight is optional.
+
+### 4.1 Tier System Implementation
+**Status:** Not Started
+**Priority:** P2 (Medium)
+**Dependencies:** MVP complete
+
+**User Story:**
+As the app developer, I want to implement monetization tiers so that the app is sustainable while keeping the core experience free.
+
+**Acceptance Criteria:**
+- [ ] Traveler (Free) tier:
+  - [ ] Full playback, library, chapters, bookmarks
+  - [ ] Join existing guilds (up to 6 members)
+  - [ ] Ghost markers on timeline
+  - [ ] Timestamp comments (leave and view)
+  - [ ] Default "Squabble Inn" theme
+- [ ] Resident Adventurer (One-time ~$5-7):
+  - [ ] Everything in Traveler
+  - [ ] Achievement system (DCC-style)
+  - [ ] Theme unlocks by completing books/series
+  - [ ] Trinkets and trophies
+  - [ ] Class identity
+  - [ ] Bounty board access
+- [ ] Guild Master (One-time ~$10-15):
+  - [ ] Everything in Resident Adventurer
+  - [ ] Create your own guild
+  - [ ] Generate and share invite codes
+  - [ ] Manage guild members (up to 6 total)
+- [ ] Ascendant Adventurer (TBD):
+  - [ ] Everything in Guild Master
+  - [ ] Global social features ("the multiverse")
+  - [ ] Cross-guild connections and events
+  - [ ] Public profile and reading history
+  - [ ] *Features TBD - future expansion tier*
+
+**Technical Notes:**
+- StoreKit 2 for purchases (one-time non-consumable)
+- Store tier in: `users/{userId}/purchasedTier`
+- Feature gating logic in `SquabbleConfig.swift`
+- Receipt validation
+
+---
+
+### 4.2 Purchase Flow
+**Status:** Not Started
+**Priority:** P2 (Medium)
+**Dependencies:** Tier system (4.1)
+
+**User Story:**
+As a user, I want to upgrade my tier so that I can access premium features.
+
+**Acceptance Criteria:**
+- [ ] Clear upgrade prompts when accessing gated features
+- [ ] Purchase sheet shows tier benefits
+- [ ] One-time purchase flow for Resident Adventurer
+- [ ] One-time purchase flow for Guild Master
+- [ ] Restore purchases functionality
+- [ ] Graceful handling of purchase failures
+
+**Technical Notes:**
+- Use SwiftUI `.subscriptionStoreView()`
+- Handle subscription status changes
+- Offline grace period for subscribers
+
+---
+
+## Epic 6: Bounty Board
+
+> From VISION "Bounty Board" pillar - quests and challenges framed as bounties.
+
+### 6.1 Personal Bounties
+**Status:** Not Started
+**Priority:** P3 (Low)
+**Dependencies:** Achievement system (5.1)
+**Tier:** Resident Adventurer
+
+**User Story:**
+As a reader, I want to see personal reading challenges so that I have goals to work toward.
+
+**Acceptance Criteria:**
+- [ ] Bounty board accessible from profile/inn
+- [ ] Personal bounty types:
+  - [ ] Finish current book
+  - [ ] Listen for X hours this week/month
+  - [ ] Complete a book in a series
+  - [ ] Re-read a favorite
+- [ ] Bounties show progress toward completion
+- [ ] Completing bounty grants achievement
+
+**Technical Notes:**
+- Bounty definitions in app bundle
+- Progress tracked locally and in Firestore
+- Refresh bounties weekly/monthly
+
+---
+
+### 6.2 Guild Bounties
+**Status:** Not Started
+**Priority:** P3 (Low)
+**Dependencies:** Personal bounties (6.1)
+**Tier:** Resident Adventurer
+
+**User Story:**
+As a guild member, I want to see shared guild challenges so that we can work together toward reading goals.
+
+**Acceptance Criteria:**
+- [ ] Guild bounties visible to all members
+- [ ] Guild bounty types:
+  - [ ] Everyone finish this book
+  - [ ] Guild listens X total hours
+  - [ ] Complete a series together
+- [ ] Progress shows each member's contribution
+- [ ] Completing guild bounty unlocks shared reward
+
+**Technical Notes:**
+- Aggregate progress across guild members
+- Collection: `guilds/{guildId}/bounties`
+- Real-time updates
+
+---
+
+### 6.3 Raid Boss Recommendations
+**Status:** Not Started
+**Priority:** P3 (Low)
+**Dependencies:** Class identity (from 5.1), Guild bounties (6.2)
+**Tier:** Resident Adventurer
+
+**User Story:**
+As a guild, we want book recommendations based on our collective reading taste so that we can find our next adventure together.
+
+**Acceptance Criteria:**
+- [ ] "Raid Boss" section in bounty board
+- [ ] Recommendations based on:
+  - [ ] Guild members' reading history
+  - [ ] Class composition (if implemented)
+  - [ ] Genre preferences
+- [ ] Raid boss = challenging book/series to tackle together
+- [ ] Completing raid boss grants special achievement
+
+**Technical Notes:**
+- Recommendation logic (simple v1: genre matching)
+- Future: ML-based recommendations
+- Partner with Hardcover for metadata?
+
+---
+
+## Epic 7: The Inn Experience
+
+> From VISION "The Inn" pillar - the app is a place, not just a tool.
+
+### 7.1 Inn Visualization
+**Status:** Not Started
+**Priority:** P3 (Low)
+**Dependencies:** Theme unlocks (5.2), Trinkets (5.3)
+**Tier:** Resident Adventurer
+
+**User Story:**
+As a reader, I want the app to feel like my personal corner of an inn so that opening the app feels like coming home.
+
+**Acceptance Criteria:**
+- [ ] Profile/home transformed into "inn" metaphor
+- [ ] Visual elements:
+  - [ ] Your library as bookshelves
+  - [ ] Trinkets displayed on shelves
+  - [ ] Theme applied to background/atmosphere
+  - [ ] Guild table visible in corner
+- [ ] Interactive elements reward exploration
+
+**Technical Notes:**
+- Custom SwiftUI views
+- Animation and parallax effects
+- Theme-specific assets
+
+---
+
+### 7.2 Guild Table Visualization
+**Status:** Not Started
+**Priority:** P3 (Low)
+**Dependencies:** Inn visualization (7.1)
+**Tier:** Resident Adventurer
+
+**User Story:**
+As a guild member, I want to see a visual representation of my guild as a table at the inn.
+
+**Acceptance Criteria:**
+- [ ] Guild table shows member avatars/icons
+- [ ] Currently reading indicators per member
+- [ ] Collective trophy case
+- [ ] Guild theme applied to table area
+- [ ] Tap member → View their profile
+
+**Technical Notes:**
+- From VISION "Guild Hall Visualization"
+- Positioned in inn view
+- Real-time presence indicators
+
+---
+
+### 7.3 Audio Stingers
+**Status:** Not Started
+**Priority:** P3 (Low)
+**Dependencies:** Achievement system (5.1)
+**Tier:** Resident Adventurer
+
+**User Story:**
+As a reader, I want satisfying audio feedback for achievements and events so that the app feels alive.
+
+**Acceptance Criteria:**
+- [ ] Achievement unlock sound
+- [ ] Theme-specific notification sounds
+- [ ] Guild completion celebration
+- [ ] Comment notification chime
+- [ ] Sounds respect device mute/volume
+
+**Technical Notes:**
+- From VISION "Audio Stingers"
+- Short audio clips (< 2 seconds)
+- Could license from games or commission original
+- Store in app bundle
 
 ---
 
@@ -377,8 +808,8 @@ As a guild member, I want notifications so that I know about guild activity.
 - [ ] Notification types:
   - [ ] New member joined guild
   - [ ] Member finished a book
-  - [ ] Race started/ended
-  - [ ] Someone passed you in race
+  - [ ] New comment on book you're reading
+  - [ ] Guild bounty completed
 - [ ] Notifications configurable in settings
 - [ ] Deep link to relevant screen
 - [ ] Badge count on app icon
@@ -393,7 +824,7 @@ As a guild member, I want notifications so that I know about guild activity.
 
 # Future Ideas
 
-These are potential features not yet scoped:
+These are potential features not yet scoped (from VISION Wild Ideas):
 
 ## Social Features
 - **Guild Chat** - Real-time messaging within guild
@@ -401,39 +832,58 @@ These are potential features not yet scoped:
 - **Member Profiles** - View member stats and history
 - **Friend System** - Add friends across guilds
 
-## Gamification
-- **Achievements** - Badges for reading milestones
-- **Streaks** - Daily listening streaks
-- **XP System** - Points for progress
-- **Guild Levels** - Level up guild with activity
-
 ## Discovery
 - **Public Guilds** - Join open guilds
 - **Guild Search** - Find guilds by interest
 - **Book Clubs** - Structured reading schedules
-- **Cross-Guild Races** - Compete between guilds
 
 ## Integration
 - **Apple Watch** - Guild progress on watch
-- **Widgets** - Race progress widget
+- **Widgets** - Progress widget for home screen
 - **Shortcuts** - Siri shortcuts for common actions
 - **Share Extensions** - Share books to guild
 
+## Wild Ideas
+- **Class System** - Identity generated from reading history (Chronoshifter, Delver, Ascendant, Hearth Keeper)
+- **Royal Road Novel** - Companion LitRPG story with in-app unlocks
+- **Artist Collaboration** - Official themes from LitRPG cover artists
+
 ---
 
-## Priority Matrix
+# Priority Matrix
 
 | Priority | Features |
 |----------|----------|
 | **P0 (Critical)** | - |
-| **P1 (High)** | Leave Comment, Display Comments (spoiler-free) |
-| **P2 (Medium)** | Comment Indicators, Comment History, Guild Library, Error Handling, Loading States |
-| **P3 (Low)** | Delete Comment, Recommendations, Offline Support, Push Notifications |
+| **P1 (High) - MVP** | Leave Comment (2.1), Display Comments (2.2), Progress Sync (3.1), Ghost Markers (3.2) |
+| **P2 (Medium) - Phase 2** | Comment Indicators (2.3), Comment History (2.4), Achievements (5.1), Themes (5.2), Guild Library (GL1), Error Handling, Loading States, Monetization (4.1) |
+| **P3 (Low) - Phase 3** | Delete Comment (2.5), Trinkets (5.3), Recommendations (GL2), Bounty Board (6.x), Inn Experience (7.x), Offline Support, Push Notifications |
+
+---
+
+# Terminology
+
+| Term | Meaning |
+|------|---------|
+| **The Inn** | The app itself, framed as a gathering place |
+| **Guild** | A group of up to 6 readers (creator + 5 friends) |
+| **Ghost Markers** | Visual indicators of guild members' progress on the timeline |
+| **Bounty Board** | Quest/challenge hub within the app |
+| **Raid Boss** | A significant reading challenge, often guild-level |
+| **Trinket** | Small decorative item earned by completing a book |
+| **Theme** | Full visual customization unlocked by completing a series |
+| **Class** | Personal identity generated from reading history |
+| **Traveler** | Free tier user |
+| **Resident Adventurer** | One-time purchase (~$5-7) - achievements, themes, bounty board |
+| **Guild Master** | One-time purchase (~$10-15) - everything + guild creation |
+| **Ascendant Adventurer** | Future tier for global social features ("the multiverse") |
 
 ---
 
 ## See Also
 
+- [VISION.md](./VISION.md) - Product vision and philosophy
 - [ARCHITECTURE.md](./ARCHITECTURE.md) - Technical architecture
 - [USER-JOURNEYS.md](./USER-JOURNEYS.md) - User flows
 - [SCREEN-INVENTORY.md](./SCREEN-INVENTORY.md) - Screen reference
+- [SCREEN-MOCKUPS.md](./SCREEN-MOCKUPS.md) - ASCII mockups

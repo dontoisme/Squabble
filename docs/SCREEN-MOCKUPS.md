@@ -259,7 +259,7 @@
 │                                     │
 │   ┌─────────────────────────────┐   │
 │   │  🏰  The Goobers            │   │
-│   │      5/5 members            │   │
+│   │      6/6 members            │   │
 │   └─────────────────────────────┘   │
 │                                     │
 │   INVITE CODE           View >      │
@@ -273,7 +273,8 @@
 │   👤 Sam          Reading: DCC 6    │
 │   👤 Alex         Reading: HWFM 3   │
 │   👤 Jess         Reading: DCC 5    │
-│   👤 Morgan       Idle              │
+│   👤 Morgan       Reading: Cradle   │
+│   👤 Taylor       Idle              │
 │                                     │
 │   GUILD LIBRARY        Coming Soon  │
 │                                     │
@@ -294,8 +295,8 @@
 │   │ The Goobers                 │   │
 │   └─────────────────────────────┘   │
 │                                     │
-│   Your guild can have up to 5       │
-│   members (including you).          │
+│   Your guild can have up to 6       │
+│   members (you + 5 friends).        │
 │                                     │
 │   ┌─────────────────────────────┐   │
 │   │         Create              │   │
