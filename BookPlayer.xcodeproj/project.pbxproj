@@ -434,7 +434,6 @@
 		63B760F72C32734000AA98C7 /* SecondOnboardingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B760F62C32734000AA98C7 /* SecondOnboardingResponse.swift */; };
 		63B760F92C32738E00AA98C7 /* StoryAccountSubscriptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B760F82C32738E00AA98C7 /* StoryAccountSubscriptionService.swift */; };
 		63B760FC2C33B77F00AA98C7 /* SupportProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B760FB2C33B77F00AA98C7 /* SupportProfileView.swift */; };
-		63B9149E2EE47951000918D8 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B9149C2EE47951000918D8 /* AppEnvironment.swift */; };
 		63B9149F2EE47951000918D8 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B9149C2EE47951000918D8 /* AppEnvironment.swift */; };
 		63B914A12EE49079000918D8 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B914A02EE49079000918D8 /* NetworkMonitor.swift */; };
 		63B9EFA82E9A4230002361A0 /* PlayerControlsBoostVolumeSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B9EFA72E9A4230002361A0 /* PlayerControlsBoostVolumeSectionView.swift */; };
@@ -634,14 +633,13 @@
 		C3EC372E206EE0650094B4E8 /* SleepTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EC372D206EE0650094B4E8 /* SleepTimer.swift */; };
 		C3FA301E20E0024900393DDA /* BPArtworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FA301D20E0024900393DDA /* BPArtworkView.swift */; };
 		C3FE3F8220A090880055B9C6 /* limitPanAngle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FE3F8120A090880055B9C6 /* limitPanAngle.swift */; };
+		COMMENT00001B00000000001 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = COMMENT00001F00000000001 /* Comment.swift */; };
+		COMMENTINP01B0000000001 /* CommentInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = COMMENTINP01F0000000001 /* CommentInputView.swift */; };
+		COMMENTMKR01B0000000001 /* CommentMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = COMMENTMKR01F0000000001 /* CommentMarkerView.swift */; };
+		COMMENTOVR01B0000000001 /* CommentOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = COMMENTOVR01F0000000001 /* CommentOverlayView.swift */; };
+		COMMENTSVC01B0000000001 /* CommentsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = COMMENTSVC01F0000000001 /* CommentsService.swift */; };
 		D0E1F2A3B4C547000123DE45 /* SquabbleProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D0E1F2A3B447009012CD34 /* SquabbleProfileView.swift */; };
 		D4E5F6A7B8C947004567DEF0 /* GuildService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3D4E5F6A747002345BCDE /* GuildService.swift */; };
-		COMMENT00001B00000000001 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = COMMENT00001F00000000001 /* Comment.swift */; };
-		COMMENTSVC01B0000000001 /* CommentsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = COMMENTSVC01F0000000001 /* CommentsService.swift */; };
-		COMMENTINP01B0000000001 /* CommentInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = COMMENTINP01F0000000001 /* CommentInputView.swift */; };
-		COMMENTOVR01B0000000001 /* CommentOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = COMMENTOVR01F0000000001 /* CommentOverlayView.swift */; };
-		COMMENTMKR01B0000000001 /* CommentMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = COMMENTMKR01F0000000001 /* CommentMarkerView.swift */; };
-		PLAYCOORD01B00000000001 /* PlayerCoordinator+Squabble.swift in Sources */ = {isa = PBXBuildFile; fileRef = PLAYCOORD01F00000000001 /* PlayerCoordinator+Squabble.swift */; };
 		D6BA8F162A4CA94800C2BD9A /* StorageRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BA8F152A4CA94800C2BD9A /* StorageRowView.swift */; };
 		D6BA8F182A4D66CD00C2BD9A /* StorageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BA8F172A4D66CD00C2BD9A /* StorageView.swift */; };
 		E1F2A3B4C5D6E7F809011234 /* SquabbleTestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3F4A5B6C7D8E901234567 /* SquabbleTestHelper.swift */; };
@@ -653,6 +651,7 @@
 		F14AD4B92ED7FBB900A82ECE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F14AD4B82ED7FBB900A82ECE /* GoogleService-Info.plist */; };
 		F1C007482EECA05100DDBCDF /* test_audiobook.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F1C007472EECA05100DDBCDF /* test_audiobook.mp3 */; };
 		F6A7B8C9D0E147006789F012 /* GuildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F6A7B8C9D047005678EF01 /* GuildView.swift */; };
+		PLAYCOORD01B00000000001 /* PlayerCoordinator+Squabble.swift in Sources */ = {isa = PBXBuildFile; fileRef = PLAYCOORD01F00000000001 /* PlayerCoordinator+Squabble.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1413,12 +1412,6 @@
 		A7B8C9D0E1F247007890AB12 /* SettingsSquabbleSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSquabbleSectionView.swift; sourceTree = "<group>"; };
 		ADECA1C0C4944D7BB6049478 /* SquabbleGhostOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquabbleGhostOverlayView.swift; sourceTree = "<group>"; };
 		B2C3D4E5F6A747002345BCDE /* GuildService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildService.swift; sourceTree = "<group>"; };
-		COMMENT00001F00000000001 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
-		COMMENTSVC01F0000000001 /* CommentsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsService.swift; sourceTree = "<group>"; };
-		COMMENTINP01F0000000001 /* CommentInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentInputView.swift; sourceTree = "<group>"; };
-		COMMENTOVR01F0000000001 /* CommentOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentOverlayView.swift; sourceTree = "<group>"; };
-		COMMENTMKR01F0000000001 /* CommentMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentMarkerView.swift; sourceTree = "<group>"; };
-		PLAYCOORD01F00000000001 /* PlayerCoordinator+Squabble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerCoordinator+Squabble.swift"; sourceTree = "<group>"; };
 		C30B085E209654E3003F325B /* UIColor+BookPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+BookPlayer.swift"; sourceTree = "<group>"; };
 		C30B66AD20E2D8CF00FC0030 /* ArtworkControl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtworkControl.xib; sourceTree = "<group>"; };
 		C30CD2A0209791FA00258B09 /* UIColor+Sweetercolor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Sweetercolor.swift"; sourceTree = "<group>"; };
@@ -1441,6 +1434,11 @@
 		C3FA301D20E0024900393DDA /* BPArtworkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPArtworkView.swift; sourceTree = "<group>"; };
 		C3FE3F8120A090880055B9C6 /* limitPanAngle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = limitPanAngle.swift; sourceTree = "<group>"; };
 		C9D0E1F2A3B447009012CD34 /* SquabbleProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquabbleProfileView.swift; sourceTree = "<group>"; };
+		COMMENT00001F00000000001 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		COMMENTINP01F0000000001 /* CommentInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentInputView.swift; sourceTree = "<group>"; };
+		COMMENTMKR01F0000000001 /* CommentMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentMarkerView.swift; sourceTree = "<group>"; };
+		COMMENTOVR01F0000000001 /* CommentOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentOverlayView.swift; sourceTree = "<group>"; };
+		COMMENTSVC01F0000000001 /* CommentsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsService.swift; sourceTree = "<group>"; };
 		D2E3F4A5B6C7D8E901234567 /* SquabbleTestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquabbleTestHelper.swift; sourceTree = "<group>"; };
 		D367F7671FA2A6F000FEDB37 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D6BA8F152A4CA94800C2BD9A /* StorageRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageRowView.swift; sourceTree = "<group>"; };
@@ -1453,6 +1451,7 @@
 		F1C0072B2EEB8E9C00DDBCDF /* BookPlayerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookPlayerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1C007472EECA05100DDBCDF /* test_audiobook.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = test_audiobook.mp3; sourceTree = "<group>"; };
 		F4A825136D314596995B95A0 /* SquabbleSyncService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquabbleSyncService.swift; sourceTree = "<group>"; };
+		PLAYCOORD01F00000000001 /* PlayerCoordinator+Squabble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerCoordinator+Squabble.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -2586,19 +2585,6 @@
 			path = RecentBooks;
 			sourceTree = "<group>";
 		};
-		6399D06E2CEBA1F900A2E278 /* RemoteItemList */ = {
-			isa = PBXGroup;
-			children = (
-				4645F9FC2D1E46AC00A04257 /* SwipeInlineTip.swift */,
-				6334CF202CFE330300F1FA17 /* RefreshableListView.swift */,
-				6399D06F2CEBA35D00A2E278 /* RemoteItemListView.swift */,
-				63E54C312D494E110040355D /* RemoteItemListViewModel.swift */,
-				6399D0712CEBA37C00A2E278 /* RemoteItemListCellView.swift */,
-				6334CF1E2CFAD1B700F1FA17 /* RemoteItemCellViewModel.swift */,
-			);
-			path = RemoteItemList;
-			sourceTree = "<group>";
-		};
 		63B9149D2EE47951000918D8 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -3606,189 +3592,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4140EA37227288EF0009F794 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				465D87542D31965100A4AA47 /* BookmarksViewModel.swift in Sources */,
-				9F82DF6927DE93A2001B0EA8 /* SkipIntervalView.swift in Sources */,
-				6399D0722CEBA37C00A2E278 /* RemoteItemListCellView.swift in Sources */,
-				6334CF212CFE330300F1FA17 /* RefreshableListView.swift in Sources */,
-				63E54C322D494E110040355D /* RemoteItemListViewModel.swift in Sources */,
-				63E15D9A2D8F1461005B42E5 /* SleepTimerView.swift in Sources */,
-				9FA334B627C15DE30064E8EA /* VolumeView.swift in Sources */,
-				46EEDDC92D23154C0063811F /* VoiceOverService.swift in Sources */,
-				6350E46D2CF4315B0077CDC1 /* PlayerLoaderService.swift in Sources */,
-				6350E46B2CF42B500077CDC1 /* UserActivityManager.swift in Sources */,
-				63E7DCC02D076185005B5E1F /* View+BookPlayer.swift in Sources */,
-				6334CF1F2CFAD1B700F1FA17 /* RemoteItemCellViewModel.swift in Sources */,
-				9FA334B927C1B8450064E8EA /* NowPlayingTitleView.swift in Sources */,
-				4645F9FD2D1E46AC00A04257 /* SwipeInlineTip.swift in Sources */,
-				6350E4692CF425500077CDC1 /* WidgetReloadService.swift in Sources */,
-				9FA334B327C156CB0064E8EA /* NowPlayingView.swift in Sources */,
-				9FA334C527C285650064E8EA /* ChapterListView.swift in Sources */,
-				6399D0762CECFFA900A2E278 /* CoreServices.swift in Sources */,
-				4140EA47227288EF0009F794 /* ComplicationController.swift in Sources */,
-				6350E4672CF423E80077CDC1 /* PlayerManagerProtocol.swift in Sources */,
-				9FA334B127C1499A0064E8EA /* ItemCellView.swift in Sources */,
-				4140EA43227288EF0009F794 /* ExtensionDelegate.swift in Sources */,
-				41A359C4276232E00020D5F5 /* MappingModel_v7_to_v8.xcmappingmodel in Sources */,
-				418CABB325EF28FC00D8C878 /* MappingModel_v3_to_v4.xcmappingmodel in Sources */,
-				9F82DF7127DF8203001B0EA8 /* WatchConnectivityService.swift in Sources */,
-				6350E4742CF4D2660077CDC1 /* PlayerToolbarView.swift in Sources */,
-				465D87522D3195D600A4AA47 /* BookmarksView.swift in Sources */,
-				41A8BAFE227E6C88003C9895 /* Notification+BookPlayerWatchApp.swift in Sources */,
-				6350E4762CF4F6E90077CDC1 /* PlaybackFullControlsView.swift in Sources */,
-				63E15D972D8F10D7005B42E5 /* PlaybackFullControlsViewModel.swift in Sources */,
-				6350E46A2CF429760077CDC1 /* SleepTimer.swift in Sources */,
-				630EC82F2CEF9F0700C19411 /* ForcedEnvironment.swift in Sources */,
-				6350E4642CF004160077CDC1 /* LoadingView.swift in Sources */,
-				41D20DB125D5F5A100AAEE30 /* MappingModel_v1_to_v2.xcmappingmodel in Sources */,
-				9F82DF6D27DE985A001B0EA8 /* NowPlayingPlaybackControlsView.swift in Sources */,
-				6334CF1B2CF8D87500F1FA17 /* SkipDurationListView.swift in Sources */,
-				9FF383D22A40F97000BBAC11 /* MappingModel_v8_to_v9.xcmappingmodel in Sources */,
-				6334CF1D2CF90AF900F1FA17 /* PlayerMoreListView.swift in Sources */,
-				3F6640922E172DF500356522 /* MappingModel_v9_to_v10.xcmappingmodel in Sources */,
-				63E15DA22D91C934005B42E5 /* CountDownPickerView.swift in Sources */,
-				6350E46E2CF4316E0077CDC1 /* BPPlayerError.swift in Sources */,
-				9FA334C327C2833B0064E8EA /* ResizeableImageView.swift in Sources */,
-				9F82DF6F27DEE83E001B0EA8 /* SkipDirection.swift in Sources */,
-				9FA334AB27C058210064E8EA /* ItemListView.swift in Sources */,
-				63CD85432CE3105300EDBEA8 /* ProfileView.swift in Sources */,
-				6350E4702CF498160077CDC1 /* RemotePlayerView.swift in Sources */,
-				9FA334AF27C05EBB0064E8EA /* ContextManager.swift in Sources */,
-				9FE07E1B27C522DE007591F7 /* RootView.swift in Sources */,
-				9F82DF6B27DE9792001B0EA8 /* NowPlayingMediaControlsView.swift in Sources */,
-				9FA334A927C0577E0064E8EA /* BookPlayerApp.swift in Sources */,
-				6350E4662CF423030077CDC1 /* PlayerManager.swift in Sources */,
-				63CD85272CE3064600EDBEA8 /* BP+ErrorAlerts.swift in Sources */,
-				6350E46C2CF42FE10077CDC1 /* AVPlayer+BookPlayer.swift in Sources */,
-				63E15DA42D932695005B42E5 /* SleepTimerCommandsView.swift in Sources */,
-				6350E4682CF4248A0077CDC1 /* SpeedService.swift in Sources */,
-				63CD85232CE302D200EDBEA8 /* LoginView.swift in Sources */,
-				6399D0702CEBA35D00A2E278 /* RemoteItemListView.swift in Sources */,
-				41C3396225E04103003ED2B0 /* MappingModel_v2_to_v3.xcmappingmodel in Sources */,
-				6350E4722CF4D0220077CDC1 /* PlayerControlsView.swift in Sources */,
-				9FA334C727C28D650064E8EA /* PlaybackControlsView.swift in Sources */,
-				4140EA8522728A160009F794 /* BookPlayer.xcdatamodeld in Sources */,
-				63CD851D2CE2964900EDBEA8 /* SettingsView.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4140EA5A227289720009F794 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9FC1E46D2815A8CA00522FA8 /* LibraryAPI.swift in Sources */,
-				4140EA6C2272898F0009F794 /* DataManager.swift in Sources */,
-				4140EA71227289A20009F794 /* UIColor+BookPlayer.swift in Sources */,
-				9F0872DC2A19867C00B7FD4A /* ArtworkResponse.swift in Sources */,
-				9FF383D42A40F97000BBAC11 /* MappingModel_v8_to_v9.xcmappingmodel in Sources */,
-				3F66408B2E162ABF00356522 /* AudioMetadataService.swift in Sources */,
-				4138CE1726E584B60014F11E /* BookmarkType.swift in Sources */,
-				9F9C7B5429F9672700E257B0 /* SyncableBookmark.swift in Sources */,
-				5126F123258E9F18009965DC /* URL+BookPlayer.swift in Sources */,
-				9FFCC090289418CA00F4952E /* SimpleChapter.swift in Sources */,
-				419BD5992443FD04001E50A0 /* Intents.intentdefinition in Sources */,
-				62AAE22D274AA6DE001EB9FF /* LibraryService.swift in Sources */,
-				62CADBAF2725FE2C00A4A98F /* ArtworkService.swift in Sources */,
-				4140EA80227289D50009F794 /* Folder+CoreDataClass.swift in Sources */,
-				63AD93D22E3C1BA70077E73A /* SimpleAccount.swift in Sources */,
-				9F7B64782803B0B000895ECC /* AccountService.swift in Sources */,
-				4140EA78227289BC0009F794 /* PlaybackRecord+CoreDataClass.swift in Sources */,
-				4140EA79227289BF0009F794 /* PlaybackRecord+CoreDataProperties.swift in Sources */,
-				639AC98A2AD9F1D50053AFC6 /* BPDownloadURLSession.swift in Sources */,
-				63CD851F2CE2EEE200EDBEA8 /* Fonts.swift in Sources */,
-				41A90C4927564DAA00C30394 /* BookPlayerError.swift in Sources */,
-				3FF5BA6A2E10EA8000B82BCC /* HardcoverBook+CoreDataClass.swift in Sources */,
-				63344C022EA7097D00B90DF7 /* DatabaseBackupService.swift in Sources */,
-				41C23402272E1960006BC7B8 /* SimpleTheme.swift in Sources */,
-				638E64CF2B8E1CFD00DCFA3B /* SyncTasksCountService.swift in Sources */,
-				63125D132C36D97400D35533 /* EventsService.swift in Sources */,
-				3F6640902E172DF500356522 /* MappingModel_v9_to_v10.xcmappingmodel in Sources */,
-				3FF5BA672E10EA6F00B82BCC /* HardcoverBook+CoreDataProperties.swift in Sources */,
-				4140EA7D227289CB0009F794 /* LibraryItem+CoreDataProperties.swift in Sources */,
-				4140EA73227289A80009F794 /* Notification+BookPlayerKit.swift in Sources */,
-				41A894212652A5DE0032E972 /* Configuration.swift in Sources */,
-				9FACAC6A2970F2F500D01EB7 /* SyncableItem.swift in Sources */,
-				4140EA702272899D0009F794 /* CommandParser.swift in Sources */,
-				9FDDD2DF289BEE590020C428 /* SyncJobScheduler.swift in Sources */,
-				4140EA76227289B50009F794 /* Chapter+CoreDataClass.swift in Sources */,
-				41A359C6276232E00020D5F5 /* MappingModel_v7_to_v8.xcmappingmodel in Sources */,
-				63CD851E2CE2EEBC00EDBEA8 /* UIFont+BookPlayer.swift in Sources */,
-				62CADBAE2725FE2900A4A98F /* AVAudioAssetImageDataProvider.swift in Sources */,
-				412AB71627017ABE00969618 /* DBVersion.swift in Sources */,
-				9FC1E45A2814E0B000522FA8 /* NetworkUtils.swift in Sources */,
-				9F2DC9E62A014BB5006CDF1F /* PricingModel.swift in Sources */,
-				630826082AF54BB1002ACE0D /* Spacing.swift in Sources */,
-				41C23404272E1966006BC7B8 /* PlaybackState.swift in Sources */,
-				4138CE1426E554320014F11E /* Bookmark+CoreDataProperties.swift in Sources */,
-				6356F9CD2AC8A1CE00B7A027 /* DatabaseInitializer.swift in Sources */,
-				41C23400272E195B006BC7B8 /* SimpleItemType.swift in Sources */,
-				4140EA6D227289930009F794 /* Constants.swift in Sources */,
-				41EB071C2752FA6B00EFEE13 /* PlaybackService.swift in Sources */,
-				9FDDD2D9289B64440020C428 /* SyncStatus.swift in Sources */,
-				9F9C7B5129F9670100E257B0 /* BookmarksResponse.swift in Sources */,
-				9FDDD2E2289BFCE20020C428 /* LibraryService+Sync.swift in Sources */,
-				4140EA72227289A50009F794 /* UIColor+Sweetercolor.swift in Sources */,
-				63E1FF912E6C8C2000F2E003 /* SyncJobType.swift in Sources */,
-				9FC1E45D2814E6A500522FA8 /* NetworkProvider.swift in Sources */,
-				9FC1E4602814F66F00522FA8 /* AccountAPI.swift in Sources */,
-				9FC1E4792816001400522FA8 /* KeychainService.swift in Sources */,
-				4140EA7F227289D20009F794 /* Library+CoreDataProperties.swift in Sources */,
-				63C6C30E2B538D8600FFE0D8 /* SyncTasksStorage.swift in Sources */,
-				4140EA7A227289C20009F794 /* Book+CoreDataClass.swift in Sources */,
-				9F49072D2903663800054AD6 /* SortType.swift in Sources */,
-				6357F11A2A8BA084007947FC /* BPURLSession.swift in Sources */,
-				63125D0F2C36D84E00D35533 /* EventsAPI.swift in Sources */,
-				9FBDBC7E287940D900D315A2 /* ContentsResponse.swift in Sources */,
-				4140EA7C227289C70009F794 /* LibraryItem+CoreDataClass.swift in Sources */,
-				63C6C3122B54F16800FFE0D8 /* LibraryItemSyncOperation.swift in Sources */,
-				638352CE2E67F327009EE79E /* TasksDataManager.swift in Sources */,
-				638352D02E67F327009EE79E /* SyncTasksModels.swift in Sources */,
-				638352D12E67F327009EE79E /* SwiftDataModels+Extensions.swift in Sources */,
-				4140EA74227289AE0009F794 /* Theme+CoreDataClass.swift in Sources */,
-				4140EA6E227289960009F794 /* DeleteMode.swift in Sources */,
-				9F6BC86727E6D03E002CF2A6 /* WatchApplicationContext.swift in Sources */,
-				9FAFC9F52995BB5C00FD531E /* RemoteFileURLResponse.swift in Sources */,
-				4140EA77227289B90009F794 /* Chapter+CoreDataProperties.swift in Sources */,
-				4140EA7B227289C40009F794 /* Book+CoreDataProperties.swift in Sources */,
-				4140EA81227289D80009F794 /* Folder+CoreDataProperties.swift in Sources */,
-				41EB07192752F1BA00EFEE13 /* PlayableChapter.swift in Sources */,
-				9FC1E44B2814C4DE00522FA8 /* NetworkClient.swift in Sources */,
-				3FA43BF92E110B4900DF9B1F /* SimpleHardcoverBook.swift in Sources */,
-				41D20DB325D5F5A100AAEE30 /* MappingModel_v1_to_v2.xcmappingmodel in Sources */,
-				63C6C31A2B5E102200FFE0D8 /* SyncTask.swift in Sources */,
-				9F07B79929B770B7005A939D /* BPTaskUploadDelegate.swift in Sources */,
-				4124AB1825DFE07E0007C839 /* DataMigrationManager.swift in Sources */,
-				41C3394A25E04091003ED2B0 /* MappingModel_v2_to_v3.xcmappingmodel in Sources */,
-				9F56C84E287B734C00EA9751 /* BPLogger.swift in Sources */,
-				6327E0C72ADB9914004780DC /* DownloadState.swift in Sources */,
-				418CABB525EF28FC00D8C878 /* MappingModel_v3_to_v4.xcmappingmodel in Sources */,
-				9F9F3B71280E4E4B004359DA /* SyncService.swift in Sources */,
-				4124AB2225DFE1A60007C839 /* CoreDataStack.swift in Sources */,
-				9F7B64722803216100895ECC /* Account+CoreDataProperties.swift in Sources */,
-				9F7B64752803217400895ECC /* Account+CoreDataClass.swift in Sources */,
-				9FBF33ED29F6293C00501639 /* SimpleBookmark.swift in Sources */,
-				639AC98B2AD9F2840053AFC6 /* BPTaskDownloadDelegate.swift in Sources */,
-				4140EA75227289B20009F794 /* Theme+CoreDataProperties.swift in Sources */,
-				9FBDBC812879C6C900D315A2 /* UploadItemResponse.swift in Sources */,
-				41A90C4627563F5A00C30394 /* ItemType.swift in Sources */,
-				9F2E00932A568F800001FE20 /* IdentifiersResponse.swift in Sources */,
-				4140EA7E227289CE0009F794 /* Library+CoreDataClass.swift in Sources */,
-				41C233FE272E1958006BC7B8 /* SimpleLibraryItem.swift in Sources */,
-				416AAC3523F515B0005AD04F /* String+BookPlayer.swift in Sources */,
-				6308260B2AF5B66D002ACE0D /* UserDefaults+BookPlayer.swift in Sources */,
-				63398E3D2D68254000A6934E /* SimplePlaybackRecord.swift in Sources */,
-				41A8942B2652A7DF0032E972 /* Bundle+BookPlayer.swift in Sources */,
-				4138CE1226E5542D0014F11E /* Bookmark+CoreDataClass.swift in Sources */,
-				41EB07162752F17B00EFEE13 /* PlayableItem.swift in Sources */,
-				4140EA84227289E60009F794 /* BookPlayer.xcdatamodeld in Sources */,
-				412AB70A2701421600969618 /* ManualOrderMigrationUtils.swift in Sources */,
-				63B9149E2EE47951000918D8 /* AppEnvironment.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		416A299F2569658100605395 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -4635,257 +4438,6 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Beta;
-		};
-		4140EA4F227288EF0009F794 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 415A9976264CCD3F002BFD35 /* Debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = BookPlayerWatch/BookPlayerWatch.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "$(inherited)";
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = BookPlayerWatch/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 5.15.2;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "$(BP_BUNDLE_IDENTIFIER).watchkitapp";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "$(BP_PROVISIONING_WATCH)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 10.0;
-			};
-			name = Debug;
-		};
-		4140EA50227288EF0009F794 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 415A9977264CCD3F002BFD35 /* Release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = BookPlayerWatch/BookPlayerWatch.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Distribution";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "$(inherited)";
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = BookPlayerWatch/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 5.15.2;
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "$(BP_BUNDLE_IDENTIFIER).watchkitapp";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "$(BP_PROVISIONING_WATCH)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 10.0;
-			};
-			name = Release;
-		};
-		4140EA51227288EF0009F794 /* Beta */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 415A9977264CCD3F002BFD35 /* Release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = BookPlayerWatch/BookPlayerWatch.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Distribution";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "$(inherited)";
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = BookPlayerWatch/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 5.15.2;
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "$(BP_BUNDLE_IDENTIFIER).watchkitapp";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "$(BP_PROVISIONING_WATCH)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 10.0;
-			};
-			name = Beta;
-		};
-		4140EA68227289720009F794 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 415A9976264CCD3F002BFD35 /* Debug.xcconfig */;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "$(inherited)";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_MODULE_VERIFIER = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = BookPlayerWatchKit/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
-				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++14";
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tortugapower.BookPlayerWatchKit;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-				WATCHOS_DEPLOYMENT_TARGET = 10.0;
-			};
-			name = Debug;
-		};
-		4140EA69227289720009F794 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 415A9977264CCD3F002BFD35 /* Release.xcconfig */;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "$(inherited)";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_MODULE_VERIFIER = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = BookPlayerWatchKit/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
-				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++14";
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tortugapower.BookPlayerWatchKit;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-				WATCHOS_DEPLOYMENT_TARGET = 10.0;
-			};
-			name = Release;
-		};
-		4140EA6A227289720009F794 /* Beta */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 415A9977264CCD3F002BFD35 /* Release.xcconfig */;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "$(inherited)";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_MODULE_VERIFIER = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = BookPlayerWatchKit/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
-				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++14";
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tortugapower.BookPlayerWatchKit;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-				WATCHOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Beta;
 		};
