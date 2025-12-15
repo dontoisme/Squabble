@@ -121,8 +121,10 @@ final class GuildService: ObservableObject {
         // Start listening to this guild
         await MainActor.run {
             self.currentGuild = guild
+            SquabbleConfig.log("currentGuild set to: \(guild.name), id=\(guild.id)")
         }
         startListening(to: guildId)
+        SquabbleConfig.log("Guild listeners started for: \(guildId)")
 
         return guild
     }
@@ -270,6 +272,12 @@ final class GuildService: ObservableObject {
 
     /// Load the user's current guild on app launch
     func loadCurrentGuild() async {
+        // Skip Firestore calls in UI test mode - we already have mock state
+        if CommandLine.arguments.contains("--uitesting") {
+            NSLog("[GuildService] loadCurrentGuild skipped in UI test mode")
+            return
+        }
+
         guard let userId = SquabbleAuthService.shared.userId else { return }
 
         await MainActor.run { self.isLoading = true }
@@ -362,5 +370,46 @@ final class GuildService: ObservableObject {
     /// Get the current guild ID (for sync service)
     var currentGuildId: String? {
         currentGuild?.id
+    }
+
+    // MARK: - UI Test Support
+
+    /// Configure mock guild state for UI tests.
+    /// This bypasses Firestore and sets the guild state directly.
+    func setUITestState(
+        guildId: String,
+        guildName: String,
+        inviteCode: String,
+        members: [GuildMember]
+    ) {
+        guard CommandLine.arguments.contains("--uitesting") else {
+            NSLog("[GuildService] setUITestState called outside of UI test mode - ignoring")
+            return
+        }
+
+        let guild = Guild(
+            id: guildId,
+            name: guildName,
+            createdBy: members.first(where: { $0.role == .owner })?.id ?? "",
+            createdAt: Date(),
+            inviteCode: inviteCode,
+            memberCount: members.count
+        )
+
+        self.currentGuild = guild
+        self.currentGuildMembers = members
+        self.isLoading = false
+
+        NSLog("[GuildService] UI test state configured: %@ with %d members", guildName, members.count)
+        NSLog("[GuildService] currentGuild is now: %@", self.currentGuild?.name ?? "nil")
+    }
+
+    /// Clear UI test state
+    func clearUITestState() {
+        guard CommandLine.arguments.contains("--uitesting") else { return }
+
+        currentGuild = nil
+        currentGuildMembers = []
+        isLoading = false
     }
 }

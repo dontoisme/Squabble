@@ -88,6 +88,7 @@ struct PlayerControlsView: View {
         }
       }
     }
+    .accessibilityIdentifier("player_controls_sheet")
   }
 }
 

@@ -126,5 +126,6 @@ struct ItemDetailsView: View {
     .navigationBarTitleDisplayMode(.inline)
     .listSectionSpacing(Spacing.S2)
     .applyListStyle(with: theme, background: theme.systemGroupedBackgroundColor)
+    .accessibilityIdentifier("item_details_view")
   }
 }

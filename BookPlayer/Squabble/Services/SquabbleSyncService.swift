@@ -22,8 +22,18 @@ final class SquabbleSyncService {
     private var lastSyncTimes: [String: Date] = [:]
 
     /// Current guild ID (dynamically fetched from GuildService)
+    /// Note: This should be read from the main thread for thread safety
     private var guildId: String? {
-        GuildService.shared.currentGuildId
+        if Thread.isMainThread {
+            return GuildService.shared.currentGuildId
+        } else {
+            // If called from background thread, dispatch sync to main to get accurate value
+            var result: String?
+            DispatchQueue.main.sync {
+                result = GuildService.shared.currentGuildId
+            }
+            return result
+        }
     }
 
     /// Current book ID being tracked
@@ -55,7 +65,10 @@ final class SquabbleSyncService {
         }
 
         guard let guildId = guildId else {
-            SquabbleConfig.log("Not syncing - no guild (user may not have joined one yet)")
+            // Debug: Log more details about why guildId is nil
+            let authUserId = SquabbleAuthService.shared.userId ?? "nil"
+            let guildServiceGuild = GuildService.shared.currentGuild?.name ?? "nil"
+            SquabbleConfig.log("Not syncing - no guild. userId=\(authUserId), guildName=\(guildServiceGuild), isMainThread=\(Thread.isMainThread)")
             return
         }
 
