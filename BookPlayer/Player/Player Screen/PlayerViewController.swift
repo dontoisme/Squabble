@@ -93,6 +93,13 @@ class PlayerViewController: UIViewController, MVVMControllerProtocol, Storyboard
 
   }
 
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+
+    // SQUABBLE: Clean up comment listeners and overlays
+    tearDownSquabbleCommentDisplay()
+  }
+
   override func willTransition(
     to newCollection: UITraitCollection,
     with coordinator: UIViewControllerTransitionCoordinator
@@ -180,6 +187,13 @@ class PlayerViewController: UIViewController, MVVMControllerProtocol, Storyboard
     setupSquabbleGhostOverlay(for: progressSlider)
     setupSquabbleCommentButton()
     fetchAndDisplayGhosts(for: currentItem.title)
+
+    // SQUABBLE: Setup comment display (toast overlays and timeline markers)
+    setupSquabbleCommentDisplay(
+      for: progressSlider,
+      bookId: currentItem.relativePath,
+      bookDuration: currentItem.duration
+    )
   }
 
   func updateView(with progressObject: ProgressObject, shouldSetSliderValue: Bool = true) {
@@ -238,6 +252,9 @@ class PlayerViewController: UIViewController, MVVMControllerProtocol, Storyboard
 
     self.previousChapterButton.setImage(leftChevron, for: .normal)
     self.nextChapterButton.setImage(rightChevron, for: .normal)
+
+    // SQUABBLE: Check for newly visible comments (spoiler-free reveal)
+    checkForNewlyVisibleComments(at: progressObject.currentTime)
   }
 }
 

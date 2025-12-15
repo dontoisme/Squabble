@@ -639,6 +639,8 @@
 		COMMENT00001B00000000001 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = COMMENT00001F00000000001 /* Comment.swift */; };
 		COMMENTSVC01B0000000001 /* CommentsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = COMMENTSVC01F0000000001 /* CommentsService.swift */; };
 		COMMENTINP01B0000000001 /* CommentInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = COMMENTINP01F0000000001 /* CommentInputView.swift */; };
+		COMMENTOVR01B0000000001 /* CommentOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = COMMENTOVR01F0000000001 /* CommentOverlayView.swift */; };
+		COMMENTMKR01B0000000001 /* CommentMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = COMMENTMKR01F0000000001 /* CommentMarkerView.swift */; };
 		PLAYCOORD01B00000000001 /* PlayerCoordinator+Squabble.swift in Sources */ = {isa = PBXBuildFile; fileRef = PLAYCOORD01F00000000001 /* PlayerCoordinator+Squabble.swift */; };
 		D6BA8F162A4CA94800C2BD9A /* StorageRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BA8F152A4CA94800C2BD9A /* StorageRowView.swift */; };
 		D6BA8F182A4D66CD00C2BD9A /* StorageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BA8F172A4D66CD00C2BD9A /* StorageView.swift */; };
@@ -1414,6 +1416,8 @@
 		COMMENT00001F00000000001 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		COMMENTSVC01F0000000001 /* CommentsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsService.swift; sourceTree = "<group>"; };
 		COMMENTINP01F0000000001 /* CommentInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentInputView.swift; sourceTree = "<group>"; };
+		COMMENTOVR01F0000000001 /* CommentOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentOverlayView.swift; sourceTree = "<group>"; };
+		COMMENTMKR01F0000000001 /* CommentMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentMarkerView.swift; sourceTree = "<group>"; };
 		PLAYCOORD01F00000000001 /* PlayerCoordinator+Squabble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerCoordinator+Squabble.swift"; sourceTree = "<group>"; };
 		C30B085E209654E3003F325B /* UIColor+BookPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+BookPlayer.swift"; sourceTree = "<group>"; };
 		C30B66AD20E2D8CF00FC0030 /* ArtworkControl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtworkControl.xib; sourceTree = "<group>"; };
@@ -1575,6 +1579,8 @@
 			isa = PBXGroup;
 			children = (
 				COMMENTINP01F0000000001 /* CommentInputView.swift */,
+				COMMENTOVR01F0000000001 /* CommentOverlayView.swift */,
+				COMMENTMKR01F0000000001 /* CommentMarkerView.swift */,
 				0837180426A349F987DA5C1F /* SquabbleLoginView.swift */,
 				ADECA1C0C4944D7BB6049478 /* SquabbleGhostOverlayView.swift */,
 				E5F6A7B8C9D047005678EF01 /* GuildView.swift */,
@@ -3958,6 +3964,8 @@
 				COMMENT00001B00000000001 /* Comment.swift in Sources */,
 				COMMENTSVC01B0000000001 /* CommentsService.swift in Sources */,
 				COMMENTINP01B0000000001 /* CommentInputView.swift in Sources */,
+				COMMENTOVR01B0000000001 /* CommentOverlayView.swift in Sources */,
+				COMMENTMKR01B0000000001 /* CommentMarkerView.swift in Sources */,
 				PLAYCOORD01B00000000001 /* PlayerCoordinator+Squabble.swift in Sources */,
 				BD6585FBDA4D4B0298BCDCEB /* LoadingCoordinator+Squabble.swift in Sources */,
 				7F195CFB4AFB4ECABE88D2FA /* PlayerManager+Squabble.swift in Sources */,
