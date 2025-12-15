@@ -2,6 +2,25 @@
 
 **Last Updated:** December 14, 2025
 
+---
+
+## Latest Session Summary (Dec 14, 2025)
+
+**What was done:**
+- Created comprehensive documentation suite in `/docs/`
+- Aligned ROADMAP.md with VISION.md - now covers 100% of vision features
+- Defined MVP scope (Epics 0-3) vs Phase 2 (Delight) vs Phase 3 (Monetization)
+- Finalized monetization tiers (all one-time purchases, no subscriptions):
+  - Traveler (Free) → Resident Adventurer (~$5-7) → Guild Master (~$10-15) → Ascendant Adventurer (TBD)
+- Standardized guild size to 6 members throughout all docs
+- Removed races/leaderboards - app is collaborative, not competitive
+
+**Uncommitted Swift changes:** There are uncommitted changes to GuildService, SquabbleAuthService, SquabbleSyncService, SquabbleGhostOverlayView from earlier work. Review with `git diff` before committing.
+
+**Ready to implement:** Epic 2 (Timestamp Comments) - see ROADMAP.md for acceptance criteria
+
+---
+
 > **Quick Start Guide** - For detailed documentation, see the `/docs/` folder:
 > - [VISION.md](./docs/VISION.md) - Product vision and philosophy (start here!)
 > - [ROADMAP.md](./docs/ROADMAP.md) - Feature roadmap with MVP scope and acceptance criteria
