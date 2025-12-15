@@ -24,6 +24,7 @@
 > **Quick Start Guide** - For detailed documentation, see the `/docs/` folder:
 > - [VISION.md](./docs/VISION.md) - Product vision and philosophy (start here!)
 > - [ROADMAP.md](./docs/ROADMAP.md) - Feature roadmap with MVP scope and acceptance criteria
+> - [IMPLEMENTATION-PLANS.md](./docs/IMPLEMENTATION-PLANS.md) - Technical implementation plans for MVP epics
 > - [ARCHITECTURE.md](./docs/ARCHITECTURE.md) - Technical architecture with Mermaid diagrams
 > - [USER-JOURNEYS.md](./docs/USER-JOURNEYS.md) - All 26 user flows documented
 > - [SCREEN-INVENTORY.md](./docs/SCREEN-INVENTORY.md) - All 45 screens with file paths
