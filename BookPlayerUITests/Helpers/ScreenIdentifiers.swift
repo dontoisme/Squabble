@@ -103,9 +103,18 @@ enum ScreenIdentifiers {
         static let buttonBookmarks = "player_button_bookmarks"
         static let buttonSpeed = "player_button_speed"
         static let buttonSleep = "player_button_sleep"
+        static let buttonAddComment = "player_button_add_comment"
         static let sliderProgress = "player_slider_progress"
         static let viewArtwork = "player_view_artwork"
         static let viewGhostOverlay = "player_view_ghost"
+    }
+
+    enum PlayerComment {
+        static let sheetInput = "comment_input_sheet"
+        static let textField = "comment_text_field"
+        static let buttonSubmit = "comment_submit_button"
+        static let overlayToast = "comment_overlay_toast"
+        static let marker = "comment_marker"
     }
 
     enum PlayerChapters {

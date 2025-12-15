@@ -596,4 +596,40 @@ final class ScreenshotTests: BookPlayerUITests {
         takeScreenshot("28-settings-debug")
         app.navigateBack()
     }
+
+    // MARK: - Player Comment Screenshots (Squabble)
+
+    func test30_PlayerCommentInput() throws {
+        // Launch with guild state (includes mock auth + guild)
+        relaunchWithState(.withGuild)
+        confirmImportDialogIfPresent(timeout: 5)
+        app.navigateToTab(.library)
+
+        guard waitForBooksInLibrary(timeout: 10) else {
+            throw XCTSkip("No books in library - withGuild state should include books")
+        }
+
+        // Start playing to open player
+        startPlayback()
+        Thread.sleep(forTimeInterval: 1.0)
+
+        // Find and tap the "Add Comment" button
+        let addCommentButton = app.buttons[ScreenIdentifiers.Player.buttonAddComment]
+        guard addCommentButton.waitForExistence(timeout: 3) else {
+            // Button may not appear if auth/guild not properly mocked
+            throw XCTSkip("Add Comment button not found - need guild membership")
+        }
+
+        addCommentButton.tap()
+        Thread.sleep(forTimeInterval: 0.5)
+
+        // Wait for comment input sheet to appear
+        let commentSheet = app.otherElements[ScreenIdentifiers.PlayerComment.sheetInput]
+        _ = commentSheet.waitForExistence(timeout: 2)
+
+        takeScreenshot("30-player-comment-input")
+
+        // Dismiss the sheet
+        app.dismissSheet()
+    }
 }
