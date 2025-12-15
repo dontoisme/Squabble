@@ -627,3 +627,28 @@ extension PlayerViewModel {
     self.coordinator.showButtonFree()
   }
 }
+
+// MARK: - Squabble Comments
+
+extension PlayerViewModel {
+  /// Show the comment input sheet for leaving a timestamped reaction
+  func leaveComment() {
+    guard let currentItem = self.playerManager.currentItem else { return }
+
+    let bookId = currentItem.relativePath
+    let bookTitle = currentItem.title
+    let timestamp = currentItem.currentTime
+
+    self.coordinator.showCommentInput(
+      bookId: bookId,
+      bookTitle: bookTitle,
+      timestamp: timestamp
+    )
+  }
+
+  /// Check if the user can leave comments (authenticated and in a guild)
+  var canLeaveComment: Bool {
+    return SquabbleAuthService.shared.isAuthenticated
+      && GuildService.shared.currentGuildId != nil
+  }
+}

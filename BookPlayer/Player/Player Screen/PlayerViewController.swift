@@ -176,8 +176,9 @@ class PlayerViewController: UIViewController, MVVMControllerProtocol, Storyboard
 
     self.setNeedsStatusBarAppearanceUpdate()
 
-    // SQUABBLE: Setup ghost overlay and fetch markers - see PlayerViewController+Squabble.swift
+    // SQUABBLE: Setup ghost overlay, comment button, and fetch markers - see PlayerViewController+Squabble.swift
     setupSquabbleGhostOverlay(for: progressSlider)
+    setupSquabbleCommentButton()
     fetchAndDisplayGhosts(for: currentItem.title)
   }
 

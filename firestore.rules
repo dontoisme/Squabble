@@ -1,0 +1,51 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Users collection - users can read/write their own document
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // Guilds collection
+    match /guilds/{guildId} {
+      // Anyone authenticated can read guild info (for join by invite code)
+      allow read: if request.auth != null;
+      // Only guild members can write (validated by checking membership subcollection)
+      allow create: if request.auth != null;
+      allow update, delete: if request.auth != null &&
+        exists(/databases/$(database)/documents/guilds/$(guildId)/members/$(request.auth.uid));
+
+      // Members subcollection
+      match /members/{memberId} {
+        allow read: if request.auth != null;
+        allow create: if request.auth != null;
+        allow update, delete: if request.auth != null &&
+          (request.auth.uid == memberId ||
+           get(/databases/$(database)/documents/guilds/$(guildId)/members/$(request.auth.uid)).data.role == 'owner');
+      }
+
+      // Progress subcollection
+      match /progress/{progressId} {
+        allow read: if request.auth != null &&
+          exists(/databases/$(database)/documents/guilds/$(guildId)/members/$(request.auth.uid));
+        allow write: if request.auth != null &&
+          exists(/databases/$(database)/documents/guilds/$(guildId)/members/$(request.auth.uid));
+      }
+
+      // Comments subcollection - timestamped reactions on audiobooks
+      match /comments/{commentId} {
+        // Guild members can read all comments
+        allow read: if request.auth != null &&
+          exists(/databases/$(database)/documents/guilds/$(guildId)/members/$(request.auth.uid));
+        // Guild members can create comments, but userId must match auth
+        allow create: if request.auth != null &&
+          exists(/databases/$(database)/documents/guilds/$(guildId)/members/$(request.auth.uid)) &&
+          request.resource.data.userId == request.auth.uid;
+        // Only the comment author can delete their own comments
+        allow delete: if request.auth != null &&
+          resource.data.userId == request.auth.uid;
+      }
+    }
+  }
+}

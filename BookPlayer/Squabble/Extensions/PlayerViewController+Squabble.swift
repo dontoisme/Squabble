@@ -4,8 +4,9 @@
 //
 //  Created for Squabble - Social Audiobook Features
 //
-//  This extension provides Squabble ghost marker functionality for PlayerViewController.
-//  It manages the ghost overlay view and fetches ghost progress data.
+//  This extension provides Squabble functionality for PlayerViewController:
+//  - Ghost marker overlay for showing guildmates' progress
+//  - Comment button for leaving timestamped reactions
 //
 
 import UIKit
@@ -13,6 +14,7 @@ import UIKit
 // MARK: - Associated Keys
 
 private var ghostOverlayKey: UInt8 = 0
+private var commentButtonKey: UInt8 = 0
 
 // MARK: - PlayerViewController Extension
 
@@ -68,5 +70,54 @@ extension PlayerViewController {
                 SquabbleConfig.log("Error fetching ghosts: \(error.localizedDescription)")
             }
         }
+    }
+
+    // MARK: - Comment Button
+
+    /// The "Add Comment" button (stored via associated object)
+    private var squabbleCommentButton: UIButton? {
+        get {
+            return objc_getAssociatedObject(self, &commentButtonKey) as? UIButton
+        }
+        set {
+            objc_setAssociatedObject(self, &commentButtonKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
+
+    /// Set up the "Add Comment" button above the player controls.
+    /// Call this from setupPlayerView.
+    func setupSquabbleCommentButton() {
+        guard SquabbleConfig.isEnabled else { return }
+        guard squabbleCommentButton == nil else { return }  // Already set up
+
+        let button = UIButton(type: .system)
+        button.setTitle("Add Comment", for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 15, weight: .medium)
+        button.setTitleColor(.systemBlue, for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.accessibilityIdentifier = "player_button_add_comment"
+        button.accessibilityLabel = "Add Comment"
+
+        // Add tap action
+        button.addTarget(self, action: #selector(handleAddCommentTapped), for: .touchUpInside)
+
+        // Add to view hierarchy - position above the player controls
+        view.addSubview(button)
+
+        // Position above containerPlayerControlsStackView
+        NSLayoutConstraint.activate([
+            button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            button.bottomAnchor.constraint(equalTo: containerPlayerControlsStackView.topAnchor, constant: -16)
+        ])
+
+        squabbleCommentButton = button
+
+        SquabbleConfig.log("Comment button added to player")
+    }
+
+    /// Handle tap on "Add Comment" button
+    @objc private func handleAddCommentTapped() {
+        UIImpactFeedbackGenerator(style: .light).impactOccurred()
+        viewModel.leaveComment()
     }
 }

@@ -636,6 +636,10 @@
 		C3FE3F8220A090880055B9C6 /* limitPanAngle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FE3F8120A090880055B9C6 /* limitPanAngle.swift */; };
 		D0E1F2A3B4C547000123DE45 /* SquabbleProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D0E1F2A3B447009012CD34 /* SquabbleProfileView.swift */; };
 		D4E5F6A7B8C947004567DEF0 /* GuildService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3D4E5F6A747002345BCDE /* GuildService.swift */; };
+		COMMENT00001B00000000001 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = COMMENT00001F00000000001 /* Comment.swift */; };
+		COMMENTSVC01B0000000001 /* CommentsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = COMMENTSVC01F0000000001 /* CommentsService.swift */; };
+		COMMENTINP01B0000000001 /* CommentInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = COMMENTINP01F0000000001 /* CommentInputView.swift */; };
+		PLAYCOORD01B00000000001 /* PlayerCoordinator+Squabble.swift in Sources */ = {isa = PBXBuildFile; fileRef = PLAYCOORD01F00000000001 /* PlayerCoordinator+Squabble.swift */; };
 		D6BA8F162A4CA94800C2BD9A /* StorageRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BA8F152A4CA94800C2BD9A /* StorageRowView.swift */; };
 		D6BA8F182A4D66CD00C2BD9A /* StorageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BA8F172A4D66CD00C2BD9A /* StorageView.swift */; };
 		E1F2A3B4C5D6E7F809011234 /* SquabbleTestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3F4A5B6C7D8E901234567 /* SquabbleTestHelper.swift */; };
@@ -1407,6 +1411,10 @@
 		A7B8C9D0E1F247007890AB12 /* SettingsSquabbleSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSquabbleSectionView.swift; sourceTree = "<group>"; };
 		ADECA1C0C4944D7BB6049478 /* SquabbleGhostOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquabbleGhostOverlayView.swift; sourceTree = "<group>"; };
 		B2C3D4E5F6A747002345BCDE /* GuildService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildService.swift; sourceTree = "<group>"; };
+		COMMENT00001F00000000001 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		COMMENTSVC01F0000000001 /* CommentsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsService.swift; sourceTree = "<group>"; };
+		COMMENTINP01F0000000001 /* CommentInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentInputView.swift; sourceTree = "<group>"; };
+		PLAYCOORD01F00000000001 /* PlayerCoordinator+Squabble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerCoordinator+Squabble.swift"; sourceTree = "<group>"; };
 		C30B085E209654E3003F325B /* UIColor+BookPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+BookPlayer.swift"; sourceTree = "<group>"; };
 		C30B66AD20E2D8CF00FC0030 /* ArtworkControl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtworkControl.xib; sourceTree = "<group>"; };
 		C30CD2A0209791FA00258B09 /* UIColor+Sweetercolor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Sweetercolor.swift"; sourceTree = "<group>"; };
@@ -1555,6 +1563,7 @@
 		376B28D9575A441E8B1AFD67 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				COMMENTSVC01F0000000001 /* CommentsService.swift */,
 				8AA9E5CD8B0D4938B597FD5A /* SquabbleAuthService.swift */,
 				F4A825136D314596995B95A0 /* SquabbleSyncService.swift */,
 				B2C3D4E5F6A747002345BCDE /* GuildService.swift */,
@@ -1565,6 +1574,7 @@
 		38CEC4EB1D184F049F67A6CC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				COMMENTINP01F0000000001 /* CommentInputView.swift */,
 				0837180426A349F987DA5C1F /* SquabbleLoginView.swift */,
 				ADECA1C0C4944D7BB6049478 /* SquabbleGhostOverlayView.swift */,
 				E5F6A7B8C9D047005678EF01 /* GuildView.swift */,
@@ -2098,6 +2108,7 @@
 		53C91531D1694CE4ABD50BAB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				COMMENT00001F00000000001 /* Comment.swift */,
 				D8F6F96D719B41F4B3D93B79 /* GhostMarker.swift */,
 				A1B2C3D4E5F647001234ABCD /* Guild.swift */,
 			);
@@ -3085,6 +3096,7 @@
 				3CE693E55D2548DCB5DB39EB /* LoadingCoordinator+Squabble.swift */,
 				61FF1CF826C64177AC8A9899 /* AppDelegate+Squabble.swift */,
 				D7CA717CC4D24DD3A012C990 /* PlayerManager+Squabble.swift */,
+				PLAYCOORD01F00000000001 /* PlayerCoordinator+Squabble.swift */,
 				403A7500DB644543B08C92FA /* PlayerViewController+Squabble.swift */,
 			);
 			path = Extensions;
@@ -3943,6 +3955,10 @@
 				6F91AEF2C20B4BB29B2B3F69 /* GhostMarker.swift in Sources */,
 				C3D4E5F6A7B847003456CDEF /* Guild.swift in Sources */,
 				D4E5F6A7B8C947004567DEF0 /* GuildService.swift in Sources */,
+				COMMENT00001B00000000001 /* Comment.swift in Sources */,
+				COMMENTSVC01B0000000001 /* CommentsService.swift in Sources */,
+				COMMENTINP01B0000000001 /* CommentInputView.swift in Sources */,
+				PLAYCOORD01B00000000001 /* PlayerCoordinator+Squabble.swift in Sources */,
 				BD6585FBDA4D4B0298BCDCEB /* LoadingCoordinator+Squabble.swift in Sources */,
 				7F195CFB4AFB4ECABE88D2FA /* PlayerManager+Squabble.swift in Sources */,
 				B63D683A0F5E41E3BA3E0A80 /* AppDelegate+Squabble.swift in Sources */,
