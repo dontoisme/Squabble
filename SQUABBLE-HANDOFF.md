@@ -237,15 +237,74 @@ Minimal changes to BookPlayer files (marked with `// SQUABBLE:` comments):
 ## Git Remotes
 
 ```
-origin    git@github.com:<your-username>/Squabble.git (your fork)
+origin    git@github.com:dontoisme/Squabble.git (your fork)
 upstream  https://github.com/TortugaPower/BookPlayer.git (original)
 ```
 
-To pull upstream fixes:
+## Upstream Sync Strategy
+
+Squabble is powered by BookPlayer's audio engine. As Squabble develops its own visual identity (Squabble Inn branding), we'll diverge from upstream UI but want to keep the core playback engine updated.
+
+### Current Phase: Full Merge (Safe)
+
+While our changes are limited to the 7 integration points + `/BookPlayer/Squabble/` folder, full merges are safe:
+
 ```bash
+# 1. Fetch and check what changed
 git fetch upstream
-git merge upstream/main
+git diff develop...upstream/develop --stat
+
+# 2. Check if our integration points were touched
+git diff develop...upstream/develop --stat | grep -E "(AppDelegate|LoadingCoordinator|PlayerManager|PlayerViewController|MainView|SettingsView|SettingsScreen)"
+
+# 3. If clean, merge
+git merge upstream/develop
 ```
+
+**Last sync:** Dec 14, 2025 (commit `ac25fec3`) - 17 upstream commits merged cleanly.
+
+### Future Phase: Cherry-Pick Bug Fixes Only
+
+Once we start heavy UI customization (Squabble Inn theming), switch to selective cherry-picking:
+
+```bash
+# Find bug fix commits in upstream (look for "fix" in messages)
+git log upstream/develop --oneline --grep="fix" | head -20
+
+# Cherry-pick specific commits
+git cherry-pick <commit-hash>
+```
+
+**What to cherry-pick:**
+- Audio engine bug fixes (`PlayerManager`, `AudioPlayer`, codecs)
+- Core data / storage fixes
+- Crash fixes
+- Performance improvements
+
+**What to skip:**
+- UI changes (we'll have our own)
+- New BookPlayer features (unless relevant)
+- Theming changes (we have Squabble themes)
+
+### Files We Care About (Audio Engine)
+
+These are the core playback files worth watching for upstream fixes:
+- `Shared/Player/` - Core audio playback
+- `Shared/Services/Sync/` - Sync engine
+- `Shared/Models/` - Data models
+- `BookPlayer/Utils/` - Utilities
+- `BookPlayerKit/` - Core framework
+
+### Integration Points (Our Modifications)
+
+These 7 files have `// SQUABBLE:` markers. Conflicts here need manual resolution:
+1. `AppDelegate.swift`
+2. `LoadingCoordinator.swift`
+3. `PlayerManager.swift`
+4. `PlayerViewController.swift`
+5. `MainView.swift`
+6. `SettingsView.swift`
+7. `SettingsScreen.swift`
 
 ## Next Steps
 
