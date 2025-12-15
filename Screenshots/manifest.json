@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": "1.1",
   "screens": {
     "01-library-empty": {
       "name": "Library (Empty)",
@@ -7,7 +7,8 @@
       "sources": [
         "BookPlayer/Library/ItemList/ItemListView.swift",
         "BookPlayer/Library/LibraryRootView.swift"
-      ]
+      ],
+      "flows_to": ["08-library-add-menu"]
     },
     "02-library-with-books": {
       "name": "Library (With Books)",
@@ -15,28 +16,32 @@
       "sources": [
         "BookPlayer/Library/ItemList/ItemListView.swift",
         "BookPlayer/Library/ItemList/ItemListRowView.swift"
-      ]
+      ],
+      "flows_to": ["03-library-folder", "04-library-search", "05-library-miniplayer", "06-item-details", "07-library-selection-mode", "08-library-add-menu", "14-profile-not-logged-in", "21-settings-main"]
     },
     "03-library-folder": {
       "name": "Library (Folder)",
       "test": "test03_LibraryFolder",
       "sources": [
         "BookPlayer/Library/ItemList/ItemListView.swift"
-      ]
+      ],
+      "flows_to": ["02-library-with-books", "06-item-details"]
     },
     "04-library-search": {
       "name": "Library (Search)",
       "test": "test04_LibrarySearch",
       "sources": [
         "BookPlayer/Search/SearchView.swift"
-      ]
+      ],
+      "flows_to": ["02-library-with-books", "09-player-main"]
     },
     "05-library-miniplayer": {
       "name": "Library (Mini Player)",
       "test": "test05_LibraryMiniPlayer",
       "sources": [
         "BookPlayer/Player/MiniPlayer/MiniPlayerView.swift"
-      ]
+      ],
+      "flows_to": ["09-player-main"]
     },
     "06-item-details": {
       "name": "Item Details (Metadata Editor)",
@@ -45,21 +50,24 @@
         "BookPlayer/Library/ItemDetails/ItemDetailsView.swift",
         "BookPlayer/Library/ItemDetails/ItemDetailsTitleSectionView.swift",
         "BookPlayer/Library/ItemDetails/Views/ItemDetailsArtworkSectionView.swift"
-      ]
+      ],
+      "flows_to": ["02-library-with-books"]
     },
     "07-library-selection-mode": {
       "name": "Library (Selection Mode)",
       "test": "test07_LibrarySelectionMode",
       "sources": [
         "BookPlayer/Library/ItemList/ItemListView.swift"
-      ]
+      ],
+      "flows_to": ["02-library-with-books"]
     },
     "08-library-add-menu": {
       "name": "Library (Add/Sort Menu)",
       "test": "test08_LibraryAddMenu",
       "sources": [
         "BookPlayer/Library/ItemList/ItemListView.swift"
-      ]
+      ],
+      "flows_to": ["02-library-with-books"]
     },
     "09-player-main": {
       "name": "Player Main",
@@ -67,21 +75,24 @@
       "sources": [
         "BookPlayer/Player/PlayerView.swift",
         "BookPlayer/Player/PlayerViewModel.swift"
-      ]
+      ],
+      "flows_to": ["10-player-chapters", "11-player-bookmarks", "12-player-controls", "13-player-sleep-timer", "05-library-miniplayer"]
     },
     "10-player-chapters": {
       "name": "Player Chapters",
       "test": "test10_PlayerChapters",
       "sources": [
         "BookPlayer/Player/Chapters/ChaptersView.swift"
-      ]
+      ],
+      "flows_to": ["09-player-main"]
     },
     "11-player-bookmarks": {
       "name": "Player Bookmarks",
       "test": "test11_PlayerBookmarks",
       "sources": [
         "BookPlayer/Player/Bookmarks/BookmarksView.swift"
-      ]
+      ],
+      "flows_to": ["09-player-main"]
     },
     "12-player-controls": {
       "name": "Player Controls (Speed/Boost)",
@@ -90,7 +101,8 @@
         "BookPlayer/Player/Controls/PlayerControlsView.swift",
         "BookPlayer/Player/Controls/PlayerControlsSpeedSectionView.swift",
         "BookPlayer/Player/Controls/PlayerControlsBoostVolumeSectionView.swift"
-      ]
+      ],
+      "flows_to": ["09-player-main"]
     },
     "13-player-sleep-timer": {
       "name": "Player Sleep Timer",
@@ -98,42 +110,48 @@
       "sources": [
         "BookPlayer/Player/Player Screen/PlayerViewController.swift",
         "BookPlayer/Player/Player Screen/PlayerViewModel.swift"
-      ]
+      ],
+      "flows_to": ["09-player-main"]
     },
     "14-profile-not-logged-in": {
       "name": "Profile (Not Logged In)",
       "test": "test14_ProfileNotLoggedIn",
       "sources": [
         "BookPlayer/Squabble/Views/SquabbleProfileView.swift"
-      ]
+      ],
+      "flows_to": ["15-profile-login-sheet"]
     },
     "15-profile-login-sheet": {
       "name": "Profile Login Sheet",
       "test": "test15_ProfileLoginSheet",
       "sources": [
         "BookPlayer/Squabble/Views/SquabbleLoginView.swift"
-      ]
+      ],
+      "flows_to": ["16-profile-no-guild"]
     },
     "16-profile-no-guild": {
       "name": "Profile (No Guild)",
       "test": "test16_ProfileNoGuild",
       "sources": [
         "BookPlayer/Squabble/Views/SquabbleProfileView.swift"
-      ]
+      ],
+      "flows_to": ["17-guild-create-sheet", "18-guild-join-sheet"]
     },
     "17-guild-create-sheet": {
       "name": "Guild Create Sheet",
       "test": "test17_GuildCreateSheet",
       "sources": [
         "BookPlayer/Squabble/Views/CreateGuildView.swift"
-      ]
+      ],
+      "flows_to": ["19-guild-view"]
     },
     "18-guild-join-sheet": {
       "name": "Guild Join Sheet",
       "test": "test18_GuildJoinSheet",
       "sources": [
         "BookPlayer/Squabble/Views/JoinGuildView.swift"
-      ]
+      ],
+      "flows_to": ["19-guild-view"]
     },
     "19-guild-view": {
       "name": "Guild View",
@@ -141,14 +159,16 @@
       "sources": [
         "BookPlayer/Squabble/Views/SquabbleProfileView.swift",
         "BookPlayer/Squabble/Views/GuildView.swift"
-      ]
+      ],
+      "flows_to": ["20-guild-invite-code"]
     },
     "20-guild-invite-code": {
       "name": "Guild Invite Code",
       "test": "test20_GuildInviteCode",
       "sources": [
         "BookPlayer/Squabble/Views/InviteCodeView.swift"
-      ]
+      ],
+      "flows_to": ["19-guild-view"]
     },
     "21-settings-main": {
       "name": "Settings Main",
@@ -156,56 +176,86 @@
       "sources": [
         "BookPlayer/Settings/SettingsView.swift",
         "BookPlayer/Settings/SettingsScreen.swift"
-      ]
+      ],
+      "flows_to": ["22-settings-themes", "23-settings-icons", "24-settings-controls", "25-settings-storage", "26-settings-integrations", "27-settings-hardcover", "28-settings-debug"]
     },
     "22-settings-themes": {
       "name": "Settings Themes",
       "test": "test22_SettingsThemes",
       "sources": [
         "BookPlayer/Settings/Themes/ThemesView.swift"
-      ]
+      ],
+      "flows_to": ["21-settings-main"]
     },
     "23-settings-icons": {
       "name": "Settings Icons",
       "test": "test23_SettingsIcons",
       "sources": [
         "BookPlayer/Settings/Icons/IconsView.swift"
-      ]
+      ],
+      "flows_to": ["21-settings-main"]
     },
     "24-settings-controls": {
       "name": "Settings Controls",
       "test": "test24_SettingsControls",
       "sources": [
         "BookPlayer/Settings/Controls/ControlsSettingsView.swift"
-      ]
+      ],
+      "flows_to": ["21-settings-main"]
     },
     "25-settings-storage": {
       "name": "Settings Storage",
       "test": "test25_SettingsStorage",
       "sources": [
         "BookPlayer/Settings/Storage/StorageView.swift"
-      ]
+      ],
+      "flows_to": ["21-settings-main"]
     },
     "26-settings-integrations": {
       "name": "Settings Integrations",
       "test": "test26_SettingsIntegrations",
       "sources": [
         "BookPlayer/Settings/Sections/SettingsIntegrationsSectionView.swift"
-      ]
+      ],
+      "flows_to": ["21-settings-main"]
     },
     "27-settings-hardcover": {
       "name": "Settings Hardcover",
       "test": "test27_SettingsHardcover",
       "sources": [
         "BookPlayer/Hardcover/HardcoverSettingsView.swift"
-      ]
+      ],
+      "flows_to": ["21-settings-main"]
     },
     "28-settings-debug": {
       "name": "Settings Debug (Squabble)",
       "test": "test28_SettingsDebug",
       "sources": [
         "BookPlayer/Squabble/Debug/SquabbleTestHelper.swift"
-      ]
+      ],
+      "flows_to": ["21-settings-main"]
+    }
+  },
+  "groups": {
+    "library": {
+      "name": "Library",
+      "color": "#58a6ff",
+      "screens": ["01-library-empty", "02-library-with-books", "03-library-folder", "04-library-search", "05-library-miniplayer", "06-item-details", "07-library-selection-mode", "08-library-add-menu"]
+    },
+    "player": {
+      "name": "Player",
+      "color": "#3fb950",
+      "screens": ["09-player-main", "10-player-chapters", "11-player-bookmarks", "12-player-controls", "13-player-sleep-timer"]
+    },
+    "profile": {
+      "name": "Profile & Guild",
+      "color": "#a371f7",
+      "screens": ["14-profile-not-logged-in", "15-profile-login-sheet", "16-profile-no-guild", "17-guild-create-sheet", "18-guild-join-sheet", "19-guild-view", "20-guild-invite-code"]
+    },
+    "settings": {
+      "name": "Settings",
+      "color": "#f0883e",
+      "screens": ["21-settings-main", "22-settings-themes", "23-settings-icons", "24-settings-controls", "25-settings-storage", "26-settings-integrations", "27-settings-hardcover", "28-settings-debug"]
     }
   }
 }

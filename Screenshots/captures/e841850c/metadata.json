@@ -1,0 +1,12 @@
+{
+  "commit": "e841850c",
+  "commit_full": "e841850c89f6625eb9837b440066e38c3e4abc21",
+  "timestamp": "2025-12-15T06:32:48Z",
+  "mode": "specific",
+  "parent_commit": "null",
+  "captured_screens": [
+  "09-player-main",
+  "13-player-sleep-timer"
+],
+  "screenshot_count": 2
+}

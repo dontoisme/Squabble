@@ -1,0 +1,45 @@
+{
+  "version": "1.0",
+  "captures": [
+    {
+      "id": "baseline-e1ffdc",
+      "commit": "e1ffdc",
+      "commitFull": "e1ffdc",
+      "branch": "develop",
+      "timestamp": "2025-12-10T00:00:00Z",
+      "parent": null,
+      "screenCount": 10,
+      "mode": "baseline"
+    },
+    {
+      "id": "e841850c",
+      "commit": "e841850c",
+      "commitFull": "e841850c",
+      "branch": "develop",
+      "timestamp": "2025-12-12T00:00:00Z",
+      "parent": "baseline-e1ffdc",
+      "screenCount": 5,
+      "mode": "smart"
+    },
+    {
+      "id": "c5efa18c",
+      "commit": "c5efa18c",
+      "commitFull": "c5efa18c",
+      "branch": "develop",
+      "timestamp": "2025-12-13T23:45:00Z",
+      "parent": "e841850c",
+      "screenCount": 28,
+      "mode": "all"
+    },
+    {
+      "id": "baseline",
+      "commit": "9e3b22fd",
+      "commitFull": "9e3b22fde5e56c4d1c99e7941ba4b694a0c74877",
+      "branch": "develop",
+      "timestamp": "2025-12-15T15:35:09Z",
+      "parent": "c5efa18c",
+      "screenCount": 28,
+      "mode": "baseline"
+    }
+  ]
+}

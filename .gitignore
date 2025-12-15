@@ -87,3 +87,17 @@ TestResults/
 
 # Archives (generated)
 Archives/
+
+# Darwin (visual regression testing)
+Screenshots/viewer.html
+Screenshots/map.html
+Screenshots/diffs/
+darwin.json
+
+# Firebase emulator logs
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+
+# Claude Code local config
+.claude/
