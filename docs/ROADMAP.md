@@ -48,7 +48,7 @@ As a [user], I want to [action] so that [benefit]
 | **Epic 0** | Architecture refactor (extension pattern) | Complete |
 | **Epic 1** | Guild system (create, join, leave, invite) | Complete |
 | **Epic 1B** | Screenshot automation | Complete |
-| **Epic 2** | Timestamp comments (2.1 Leave, 2.2 Display only) | Not Started |
+| **Epic 2** | Timestamp comments (2.1 Leave, 2.2 Display only) | In Progress (Code Complete) |
 | **Epic 3** | Progress sync & ghost markers | Partial |
 
 ## What's NOT in MVP (Deferred)
@@ -129,7 +129,7 @@ As a [user], I want to [action] so that [benefit]
 ## Epic 2: Timestamp Comments (Dark Souls Style)
 
 ### 2.1 Leave Comment at Timestamp
-**Status:** Not Started
+**Status:** In Progress (Implementation Complete, Needs Testing)
 **Priority:** P1 (High) - MVP
 **Dependencies:** Guild system complete
 
@@ -137,17 +137,17 @@ As a [user], I want to [action] so that [benefit]
 As a guild member, I want to leave a comment at a specific moment in an audiobook so that my guildmates can see my reaction when they reach that point.
 
 **Acceptance Criteria:**
-- [ ] Comment button available in player UI
-- [ ] Tapping opens comment input with current timestamp shown
-- [ ] Can type reaction/comment (character limit TBD, ~280?)
-- [ ] Post saves comment to Firestore with:
-  - [ ] Timestamp (seconds into audiobook)
-  - [ ] Book ID
-  - [ ] User ID
-  - [ ] Comment text
-  - [ ] Created date
-- [ ] Confirmation that comment was posted
-- [ ] Can cancel without posting
+- [x] Comment button available in player UI
+- [x] Tapping opens comment input with current timestamp shown
+- [x] Can type reaction/comment (280 char limit)
+- [x] Post saves comment to Firestore with:
+  - [x] Timestamp (seconds into audiobook)
+  - [x] Book ID
+  - [x] User ID
+  - [x] Comment text
+  - [x] Created date
+- [x] Confirmation that comment was posted
+- [x] Can cancel without posting
 
 **Technical Notes:**
 - New Firestore collection: `guilds/{guildId}/comments/{commentId}`
@@ -170,7 +170,7 @@ As a guild member, I want to leave a comment at a specific moment in an audioboo
 ---
 
 ### 2.2 Display Comments (Spoiler-Free)
-**Status:** Not Started
+**Status:** In Progress (Implementation Complete, Needs Testing)
 **Priority:** P1 (High) - MVP
 **Dependencies:** Leave Comment (2.1)
 
@@ -178,14 +178,14 @@ As a guild member, I want to leave a comment at a specific moment in an audioboo
 As a guild member, I want to see my guildmates' comments only AFTER I pass that timestamp so that I don't get spoilers.
 
 **Acceptance Criteria:**
-- [ ] Comments only appear after user's progress passes the timestamp
-- [ ] When crossing a comment timestamp:
-  - [ ] Subtle notification/chime
-  - [ ] Comment appears briefly on screen
-  - [ ] Comment indicator added to timeline
-- [ ] Can tap timeline indicator to re-read comment
-- [ ] Multiple comments at same timestamp shown in order
-- [ ] Comments from all guild members shown (not just active readers)
+- [x] Comments only appear after user's progress passes the timestamp
+- [x] When crossing a comment timestamp:
+  - [ ] Subtle notification/chime (haptic feedback only, no audio yet)
+  - [x] Comment appears briefly on screen
+  - [x] Comment indicator added to timeline
+- [x] Can tap timeline indicator to re-read comment
+- [x] Multiple comments at same timestamp shown in order
+- [x] Comments from all guild members shown (not just active readers)
 
 **Technical Notes:**
 - Query comments where `timestamp <= currentProgress`
