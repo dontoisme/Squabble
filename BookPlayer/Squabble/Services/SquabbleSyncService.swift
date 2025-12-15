@@ -7,6 +7,7 @@
 
 import FirebaseFirestore
 import Foundation
+import Combine
 
 /// Service for syncing playback progress to Firestore for Squabble guilds
 final class SquabbleSyncService {
@@ -39,7 +40,27 @@ final class SquabbleSyncService {
     /// Current book ID being tracked
     private var currentBookId: String?
 
-    private init() {}
+    /// Queue of pending syncs that failed or couldn't be sent
+    private var pendingSyncs: [[String: Any]] = []
+
+    /// Maximum number of pending syncs to queue
+    private let maxPendingSyncs = 10
+
+    /// Maximum retry attempts for sync operations
+    private let maxRetries = 3
+
+    /// Cancellables for Combine subscriptions
+    private var cancellables = Set<AnyCancellable>()
+
+    private init() {
+        // Listen for guild becoming ready to process pending syncs
+        GuildService.shared.$isGuildReady
+            .filter { $0 }
+            .sink { [weak self] _ in
+                self?.processPendingSyncs()
+            }
+            .store(in: &cancellables)
+    }
 
     // MARK: - Progress Sync
 
@@ -64,14 +85,6 @@ final class SquabbleSyncService {
             return
         }
 
-        guard let guildId = guildId else {
-            // Debug: Log more details about why guildId is nil
-            let authUserId = SquabbleAuthService.shared.userId ?? "nil"
-            let guildServiceGuild = GuildService.shared.currentGuild?.name ?? "nil"
-            SquabbleConfig.log("Not syncing - no guild. userId=\(authUserId), guildName=\(guildServiceGuild), isMainThread=\(Thread.isMainThread)")
-            return
-        }
-
         // Generate a stable book ID from title (simplified for spike)
         let bookId = bookTitle.lowercased()
             .replacingOccurrences(of: " ", with: "-")
@@ -90,11 +103,7 @@ final class SquabbleSyncService {
         // Update last sync time
         lastSyncTimes[bookId] = now
 
-        // Create progress document
-        let progressRef = db
-            .collection("guilds").document(guildId)
-            .collection("progress").document("\(bookId)_\(userId)")
-
+        // Prepare sync data
         let data: [String: Any] = [
             "bookId": bookId,
             "bookTitle": bookTitle,
@@ -107,12 +116,85 @@ final class SquabbleSyncService {
             "isActive": true
         ]
 
-        progressRef.setData(data, merge: true) { error in
+        // Check if guild is ready
+        guard GuildService.shared.isGuildReady else {
+            // Guild not ready yet - queue for later
+            SquabbleConfig.log("Guild not ready, queuing sync for later")
+            queuePendingSync(data)
+            return
+        }
+
+        guard let guildId = guildId else {
+            // Guild ready but no guild ID - user not in a guild
+            let guildServiceGuild = GuildService.shared.currentGuild?.name ?? "nil"
+            SquabbleConfig.log("Not syncing - no guild. userId=\(userId), guildName=\(guildServiceGuild)")
+            return
+        }
+
+        // Perform the sync with retry
+        performSync(data: data, guildId: guildId, userId: userId, retryCount: 0)
+    }
+
+    /// Perform the actual Firestore sync with retry logic
+    private func performSync(data: [String: Any], guildId: String, userId: String, retryCount: Int) {
+        guard let bookId = data["bookId"] as? String else { return }
+
+        let progressRef = db
+            .collection("guilds").document(guildId)
+            .collection("progress").document("\(bookId)_\(userId)")
+
+        progressRef.setData(data, merge: true) { [weak self] error in
+            guard let self = self else { return }
+
             if let error = error {
-                print("[Squabble] Error syncing progress: \(error.localizedDescription)")
+                print("[Squabble] Error syncing progress (attempt \(retryCount + 1)): \(error.localizedDescription)")
+
+                // Retry if under max attempts
+                if retryCount < self.maxRetries - 1 {
+                    let delay = Double(retryCount + 1) * 2.0 // Exponential backoff: 2s, 4s, 6s
+                    DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+                        self.performSync(data: data, guildId: guildId, userId: userId, retryCount: retryCount + 1)
+                    }
+                } else {
+                    // Max retries reached, queue for later
+                    print("[Squabble] Max retries reached, queuing sync for later")
+                    self.queuePendingSync(data)
+                }
             } else {
-                print("[Squabble] Progress synced: \(bookTitle) - \(String(format: "%.1f", percentCompleted))%")
+                if let bookTitle = data["bookTitle"] as? String,
+                   let percentCompleted = data["progressPercent"] as? Double {
+                    print("[Squabble] Progress synced: \(bookTitle) - \(String(format: "%.1f", percentCompleted))%")
+                }
             }
+        }
+    }
+
+    /// Queue a sync operation for later processing
+    private func queuePendingSync(_ data: [String: Any]) {
+        // Remove oldest if at capacity
+        if pendingSyncs.count >= maxPendingSyncs {
+            pendingSyncs.removeFirst()
+        }
+        pendingSyncs.append(data)
+        SquabbleConfig.log("Queued pending sync, total: \(pendingSyncs.count)")
+    }
+
+    /// Process any pending syncs (called when guild becomes ready)
+    private func processPendingSyncs() {
+        guard !pendingSyncs.isEmpty else { return }
+        guard let guildId = guildId,
+              let userId = SquabbleAuthService.shared.userId else {
+            SquabbleConfig.log("Cannot process pending syncs - no guild or user")
+            return
+        }
+
+        SquabbleConfig.log("Processing \(pendingSyncs.count) pending syncs")
+
+        let syncsToProcess = pendingSyncs
+        pendingSyncs.removeAll()
+
+        for data in syncsToProcess {
+            performSync(data: data, guildId: guildId, userId: userId, retryCount: 0)
         }
     }
 
@@ -123,8 +205,7 @@ final class SquabbleSyncService {
         duration: Double,
         percentCompleted: Double
     ) {
-        guard let userId = SquabbleAuthService.shared.userId,
-              let guildId = guildId else { return }
+        guard SquabbleAuthService.shared.userId != nil else { return }
 
         let bookId = bookTitle.lowercased()
             .replacingOccurrences(of: " ", with: "-")
@@ -133,7 +214,7 @@ final class SquabbleSyncService {
         // Clear throttle for this book
         lastSyncTimes[bookId] = nil
 
-        // Sync immediately
+        // Sync immediately (will queue if guild not ready)
         syncProgress(
             bookTitle: bookTitle,
             currentTime: currentTime,

@@ -59,6 +59,10 @@ final class GuildService: ObservableObject {
     /// Loading state
     @Published private(set) var isLoading = false
 
+    /// Indicates if the guild has been loaded (successfully or not).
+    /// Use this to know when it's safe to check currentGuildId.
+    @Published private(set) var isGuildReady = false
+
     /// Firestore listeners
     private var guildListener: ListenerRegistration?
     private var membersListener: ListenerRegistration?
@@ -121,6 +125,7 @@ final class GuildService: ObservableObject {
         // Start listening to this guild
         await MainActor.run {
             self.currentGuild = guild
+            self.isGuildReady = true
             SquabbleConfig.log("currentGuild set to: \(guild.name), id=\(guild.id)")
         }
         startListening(to: guildId)
@@ -187,6 +192,10 @@ final class GuildService: ObservableObject {
         SquabbleConfig.log("Joined guild: \(guild.name)")
 
         // Start listening to this guild
+        await MainActor.run {
+            self.currentGuild = guild
+            self.isGuildReady = true
+        }
         startListening(to: guild.id)
 
         return guild
@@ -275,10 +284,14 @@ final class GuildService: ObservableObject {
         // Skip Firestore calls in UI test mode - we already have mock state
         if CommandLine.arguments.contains("--uitesting") {
             NSLog("[GuildService] loadCurrentGuild skipped in UI test mode")
+            await MainActor.run { self.isGuildReady = true }
             return
         }
 
-        guard let userId = SquabbleAuthService.shared.userId else { return }
+        guard let userId = SquabbleAuthService.shared.userId else {
+            await MainActor.run { self.isGuildReady = true }
+            return
+        }
 
         await MainActor.run { self.isLoading = true }
 
@@ -291,6 +304,7 @@ final class GuildService: ObservableObject {
                 await MainActor.run {
                     self.isLoading = false
                     self.currentGuild = nil
+                    self.isGuildReady = true
                 }
                 return
             }
@@ -303,6 +317,7 @@ final class GuildService: ObservableObject {
                 await MainActor.run {
                     self.isLoading = false
                     self.currentGuild = nil
+                    self.isGuildReady = true
                 }
                 return
             }
@@ -310,6 +325,7 @@ final class GuildService: ObservableObject {
             await MainActor.run {
                 self.currentGuild = guild
                 self.isLoading = false
+                self.isGuildReady = true
             }
 
             // Start listening for updates
@@ -318,7 +334,10 @@ final class GuildService: ObservableObject {
             SquabbleConfig.log("Loaded current guild: \(guild.name)")
         } catch {
             SquabbleConfig.log("Error loading guild: \(error.localizedDescription)")
-            await MainActor.run { self.isLoading = false }
+            await MainActor.run {
+                self.isLoading = false
+                self.isGuildReady = true
+            }
         }
     }
 
@@ -399,6 +418,7 @@ final class GuildService: ObservableObject {
         self.currentGuild = guild
         self.currentGuildMembers = members
         self.isLoading = false
+        self.isGuildReady = true
 
         NSLog("[GuildService] UI test state configured: %@ with %d members", guildName, members.count)
         NSLog("[GuildService] currentGuild is now: %@", self.currentGuild?.name ?? "nil")
@@ -411,5 +431,6 @@ final class GuildService: ObservableObject {
         currentGuild = nil
         currentGuildMembers = []
         isLoading = false
+        isGuildReady = false
     }
 }
