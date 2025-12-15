@@ -1,23 +1,65 @@
 # Squabble Session Handoff
 
-**Last Updated:** December 14, 2025
+**Last Updated:** December 15, 2025
 
 ---
 
-## Latest Session Summary (Dec 14, 2025)
+## Latest Session Summary (Dec 15, 2025)
 
 **What was done:**
-- Created comprehensive documentation suite in `/docs/`
-- Aligned ROADMAP.md with VISION.md - now covers 100% of vision features
-- Defined MVP scope (Epics 0-3) vs Phase 2 (Delight) vs Phase 3 (Monetization)
-- Finalized monetization tiers (all one-time purchases, no subscriptions):
-  - Traveler (Free) → Resident Adventurer (~$5-7) → Guild Master (~$10-15) → Ascendant Adventurer (TBD)
-- Standardized guild size to 6 members throughout all docs
-- Removed races/leaderboards - app is collaborative, not competitive
+- **Epic 2.1 & 2.2 (Comments)** - Implementation verified complete (code-wise)
+  - CommentInputView, CommentOverlayView, CommentMarkerView all implemented
+  - CommentsService with Firestore operations
+  - PlayerViewController+Squabble extension for comment button and spoiler-free reveal
+  - ROADMAP updated to "In Progress (Code Complete)" status
+- **Darwin Visual Regression Tool** - Major enhancements:
+  - Auto-regenerate viewer after capture
+  - Auto-capture on commit (hook in auto mode)
+  - New `darwin manifest sync` command for test stub generation
+  - New `darwin manifest validate` for checking source file paths
+- **Manifest updated** - Added screen 30-player-comment-input, fixed player source paths
+- **Screenshot test added** - test30_PlayerCommentInput (needs guild state to work)
 
-**Uncommitted Swift changes:** There are uncommitted changes to GuildService, SquabbleAuthService, SquabbleSyncService, SquabbleGhostOverlayView from earlier work. Review with `git diff` before committing.
+**Ready for testing:** Epic 2 comment system with Firebase emulator
 
-**Ready to implement:** Epic 2 (Timestamp Comments) - see ROADMAP.md for acceptance criteria
+**Next steps:** Integration testing of comment flow, then Epic 3.1 (Progress Sync reliability)
+
+---
+
+## Darwin Integration (Visual Regression Testing)
+
+Darwin is installed and configured for automatic visual regression testing.
+
+### Quick Reference
+```bash
+darwin status           # See current state
+darwin capture          # Smart capture (changed screens only)
+darwin capture --all    # Capture all screens
+darwin viewer           # Open visual timeline
+darwin manifest sync    # Check if tests match manifest
+darwin manifest sync --generate  # Generate missing test stubs
+darwin manifest validate  # Check for missing source files
+```
+
+### Automation (Installed)
+The git hook is installed in **auto mode**:
+- After each commit with Swift changes → auto-captures affected screens
+- Viewer is auto-regenerated after each capture
+- Open `Screenshots/viewer.html` anytime to review changes
+
+### Adding New Screens
+1. Add screen entry to `Screenshots/manifest.json`
+2. Run `darwin manifest sync --generate` to get test stub
+3. Copy stub to `ScreenshotTests.swift` and implement navigation
+4. Commit → auto-capture runs → viewer shows new screen
+
+### Key Files
+- `darwin.json` - Project configuration
+- `Screenshots/manifest.json` - Screen definitions (29 screens)
+- `Screenshots/index.json` - Capture timeline
+- `Screenshots/viewer.html` - Interactive viewer (auto-generated)
+- `Screenshots/captures/` - Screenshot storage by commit
+- `BookPlayerUITests/ScreenshotTests.swift` - XCUITest screenshot tests
 
 ---
 
