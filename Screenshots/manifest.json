@@ -73,10 +73,14 @@
       "name": "Player Main",
       "test": "test09_PlayerMain",
       "sources": [
-        "BookPlayer/Player/PlayerView.swift",
-        "BookPlayer/Player/PlayerViewModel.swift"
+        "BookPlayer/Player/Player Screen/PlayerViewController.swift",
+        "BookPlayer/Player/Player Screen/PlayerViewModel.swift",
+        "BookPlayer/Squabble/Extensions/PlayerViewController+Squabble.swift",
+        "BookPlayer/Squabble/Views/SquabbleGhostOverlayView.swift",
+        "BookPlayer/Squabble/Views/CommentMarkerView.swift",
+        "BookPlayer/Squabble/Views/CommentOverlayView.swift"
       ],
-      "flows_to": ["10-player-chapters", "11-player-bookmarks", "12-player-controls", "13-player-sleep-timer", "05-library-miniplayer"]
+      "flows_to": ["10-player-chapters", "11-player-bookmarks", "12-player-controls", "13-player-sleep-timer", "05-library-miniplayer", "30-player-comment-input"]
     },
     "10-player-chapters": {
       "name": "Player Chapters",
@@ -234,6 +238,16 @@
         "BookPlayer/Squabble/Debug/SquabbleTestHelper.swift"
       ],
       "flows_to": ["21-settings-main"]
+    },
+    "30-player-comment-input": {
+      "name": "Player Comment Input",
+      "test": "test30_PlayerCommentInput",
+      "sources": [
+        "BookPlayer/Squabble/Views/CommentInputView.swift",
+        "BookPlayer/Squabble/Extensions/PlayerCoordinator+Squabble.swift",
+        "BookPlayer/Squabble/Services/CommentsService.swift"
+      ],
+      "flows_to": ["09-player-main"]
     }
   },
   "groups": {
@@ -245,7 +259,7 @@
     "player": {
       "name": "Player",
       "color": "#3fb950",
-      "screens": ["09-player-main", "10-player-chapters", "11-player-bookmarks", "12-player-controls", "13-player-sleep-timer"]
+      "screens": ["09-player-main", "10-player-chapters", "11-player-bookmarks", "12-player-controls", "13-player-sleep-timer", "30-player-comment-input"]
     },
     "profile": {
       "name": "Profile & Guild",
