@@ -226,7 +226,6 @@
 		63005A3B2AE7FD8000A4CA2C /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 416A29A62569658100605395 /* SwiftUI.framework */; };
 		63005A3C2AE7FD8000A4CA2C /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 416A29A42569658100605395 /* WidgetKit.framework */; };
 		63005A3E2AE7FD8000A4CA2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 416A29AB2569658300605395 /* Assets.xcassets */; };
-		630494812E6C932100C72387 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 630494802E6C928E00C72387 /* AppIcon.icon */; };
 		630494842E6D1DF000C72387 /* MiniPlayerAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630494832E6D1DF000C72387 /* MiniPlayerAccessoryView.swift */; };
 		6304CF672B4B595400055285 /* SettingsAutoplayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6304CF662B4B595400055285 /* SettingsAutoplayViewModel.swift */; };
 		6304CF6A2B4C2AE800055285 /* SettingsAutoplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6304CF692B4C2AE800055285 /* SettingsAutoplayView.swift */; };
@@ -1004,7 +1003,6 @@
 		62F2F25E25E18C7500E1D6A0 /* ImportableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportableItem.swift; sourceTree = "<group>"; };
 		63005A432AE7FD8000A4CA2C /* BookPlayerWidgetsWatch.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BookPlayerWidgetsWatch.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		63005A442AE7FD8100A4CA2C /* Watch-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Watch-Info.plist"; path = "/Users/pro.gianni.carlo/Workspace/BookPlayer/Watch-Info.plist"; sourceTree = "<absolute>"; };
-		630494802E6C928E00C72387 /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
 		630494832E6D1DF000C72387 /* MiniPlayerAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniPlayerAccessoryView.swift; sourceTree = "<group>"; };
 		6304CF662B4B595400055285 /* SettingsAutoplayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAutoplayViewModel.swift; sourceTree = "<group>"; };
 		6304CF692B4C2AE800055285 /* SettingsAutoplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAutoplayView.swift; sourceTree = "<group>"; };
@@ -1802,7 +1800,6 @@
 			children = (
 				F1C007472EECA05100DDBCDF /* test_audiobook.mp3 */,
 				F14AD4B82ED7FBB900A82ECE /* GoogleService-Info.plist */,
-				630494802E6C928E00C72387 /* AppIcon.icon */,
 				9F00F6EF28084C8800996BBB /* IAP-Configuration.storekit */,
 				9F00F6F128085CCC00996BBB /* StoreKitTestCertificate.cer */,
 				415A9974264CCD2E002BFD35 /* BuildConfiguration */,
@@ -3501,7 +3498,6 @@
 				9F665EDE2A4898F6004BFE27 /* heart-of-glass-ayu@2x.png in Resources */,
 				6397206F2CA71D600045A4DB /* .swift-format in Resources */,
 				C3EA7176218DEC870005D488 /* .swiftformat in Resources */,
-				630494812E6C932100C72387 /* AppIcon.icon in Resources */,
 				41E562FC2239535D00C06BC9 /* neon-ipad@2x.png in Resources */,
 				41E562D222394F5A00C06BC9 /* dark@2x.png in Resources */,
 				41E562E322394FB900C06BC9 /* songs@2x.png in Resources */,
