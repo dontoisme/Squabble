@@ -61,6 +61,14 @@ As a [user], I want to [action] so that [benefit]
 - Guild Library features
 - QoL improvements (error polish, loading states, offline)
 
+## MVP Polish (Ship Blockers)
+
+| Item | Status | Notes |
+|------|--------|-------|
+| App Icon (light + dark) | Not Started | Squabble Inn branding |
+| Splash Screen | Not Started | Launch screen with branding |
+| Default Color Theme (light + dark) | Not Started | Squabble default palette |
+
 ## MVP Success Criteria
 
 - [ ] User can create/join a guild with up to 6 members
@@ -68,6 +76,44 @@ As a [user], I want to [action] so that [benefit]
 - [ ] User can leave comments at timestamps
 - [ ] Comments appear to guildmates only after they pass that point (spoiler-free)
 - [ ] Core loop is functional and testable with real users
+- [ ] App has Squabble branding (icon, splash, theme)
+
+## MVP Punch List
+
+> **Goal:** Get a testable build on device to validate core loop.
+
+### Code Complete - Needs Manual Testing
+| Item | Status | Notes |
+|------|--------|-------|
+| Spoiler-free comment reveal | Ready to test | Toast appears when passing comment timestamp |
+| Comment timeline markers | Ready to test | Markers show on slider for passed comments |
+| Ghost markers display | Ready to test | Shows guildmates' progress |
+
+### Has Known Issues
+| Item | Issue | Fix Needed |
+|------|-------|------------|
+| Progress sync reliability | May not work with newly created guilds | Debug race condition in GuildService |
+
+### Polish (Ship Blockers)
+| Item | Effort | Notes |
+|------|--------|-------|
+| App Icon | ~2-4 hrs | Light + dark variants, 1024x1024 master |
+| Splash Screen | ~1-2 hrs | LaunchScreen.storyboard or SwiftUI |
+| Default Color Theme | ~2-4 hrs | Define Squabble palette, apply to key UI |
+
+### On-Device Testing Checklist
+- [ ] Fresh install → sign up → create guild
+- [ ] Invite friend (or second account) to guild
+- [ ] Both accounts play same audiobook
+- [ ] Ghost markers appear for other user
+- [ ] Leave comment at timestamp
+- [ ] Other user plays past timestamp → sees comment toast
+- [ ] Comment marker appears on timeline
+
+### Suggested Order
+1. **Manual testing on device** - validate core loop with mock data
+2. **Fix progress sync** - if broken with new guilds
+3. **Polish** - icon, splash, theme
 
 ---
 

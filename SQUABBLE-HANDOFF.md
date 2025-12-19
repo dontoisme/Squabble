@@ -1,28 +1,31 @@
 # Squabble Session Handoff
 
-**Last Updated:** December 15, 2025
+**Last Updated:** December 17, 2025
 
 ---
 
-## Latest Session Summary (Dec 15, 2025)
+## Latest Session Summary (Dec 17, 2025)
 
 **What was done:**
-- **Epic 2.1 & 2.2 (Comments)** - Implementation verified complete (code-wise)
-  - CommentInputView, CommentOverlayView, CommentMarkerView all implemented
-  - CommentsService with Firestore operations
-  - PlayerViewController+Squabble extension for comment button and spoiler-free reveal
-  - ROADMAP updated to "In Progress (Code Complete)" status
-- **Darwin Visual Regression Tool** - Major enhancements:
-  - Auto-regenerate viewer after capture
-  - Auto-capture on commit (hook in auto mode)
-  - New `darwin manifest sync` command for test stub generation
-  - New `darwin manifest validate` for checking source file paths
-- **Manifest updated** - Added screen 30-player-comment-input, fixed player source paths
-- **Screenshot test added** - test30_PlayerCommentInput (needs guild state to work)
+- **Epic 2.1 (Leave Comment)** - Integration tested and working with Firebase emulator
+  - `CommentFlowIntegrationTests.swift` added - full flow test passes
+  - Sign up → create guild → open player → post comment → sheet dismisses
+- **Epic 2.2 (Display Comments)** - Code complete, ready for manual testing
+  - Spoiler-free reveal system fully implemented
+  - Real-time Firestore listener fetches comments up to current progress
+  - Toast overlay appears when user passes comment timestamp
+  - Timeline markers show passed comments
+  - **Note:** Listener optimization attempted but deferred (caused test issues)
+- **Firebase Emulator Integration** - Working setup for integration tests
+  - Auth emulator on port 9099, Firestore on port 8080
+  - Requires Node 18 via nvm (Node 25 has compatibility issues)
 
-**Ready for testing:** Epic 2 comment system with Firebase emulator
+**Testing verified:**
+- Comment posting to Firestore emulator works
+- Guild creation and membership works
+- Full comment flow end-to-end passes
 
-**Next steps:** Integration testing of comment flow, then Epic 3.1 (Progress Sync reliability)
+**Next steps:** Manual testing of spoiler-free reveal in simulator, then Epic 3.1
 
 ---
 
@@ -156,11 +159,23 @@ If you see "Not syncing - no guild", the guild hasn't loaded yet.
 
 **Note:** 5-minute throttle on syncs. Use pause (forceSyncProgress) to test faster.
 
-### Not Started (MVP)
+### Code Complete (Needs Manual Testing)
 
-#### Epic 2: Timestamp Comments (Dark Souls Style)
-- **2.1 Leave Comment** - Comment button in player, post at current timestamp
-- **2.2 Display Comments** - Spoiler-free: only show after user passes timestamp
+#### Epic 2: Timestamp Comments (Dark Souls Style) ✅
+- **2.1 Leave Comment** ✅ - Comment button in player, posts to Firestore
+  - `CommentInputView.swift` - Sheet with text input and timestamp badge
+  - `PlayerCoordinator+Squabble.swift` - Presents comment sheet
+  - `CommentsService.postComment()` - Writes to `guilds/{guildId}/comments`
+- **2.2 Display Comments** ✅ - Spoiler-free reveal system
+  - `CommentOverlayView.swift` - Toast popup with auto-dismiss
+  - `CommentMarkerView.swift` - Timeline markers for passed comments
+  - `CommentsService.startListening()` - Real-time Firestore listener
+  - `CommentsService.getNewlyVisibleComments()` - Filters by progress
+  - `PlayerViewController+Squabble.checkForNewlyVisibleComments()` - Called on progress update
+
+**Integration Test:** `CommentFlowIntegrationTests.testUserCanPostCommentFromPlayer()`
+
+### In Progress
 
 #### Epic 3: Progress Sync & Ghost Markers (Partial)
 - **3.1 Progress Sync** - Mostly done, some reliability issues with new guilds
@@ -181,16 +196,22 @@ BookPlayer/Squabble/
 ├── Extensions/
 │   ├── AppDelegate+Squabble.swift    # Setup hook + UI test mode setup
 │   ├── LoadingCoordinator+Squabble.swift  # Launch flow (no auth gate)
+│   ├── PlayerCoordinator+Squabble.swift   # Comment sheet presentation
 │   ├── PlayerManager+Squabble.swift  # Progress sync observer
-│   └── PlayerViewController+Squabble.swift  # Ghost overlay setup
+│   └── PlayerViewController+Squabble.swift  # Ghost overlay + comment display
 ├── Models/
+│   ├── Comment.swift                 # Comment model with timestamp
 │   ├── GhostMarker.swift             # Progress marker model
 │   └── Guild.swift                   # Guild & GuildMember models
 ├── Services/
+│   ├── CommentsService.swift         # Comment CRUD, real-time listener, spoiler-free logic
 │   ├── GuildService.swift            # Guild CRUD, Firestore listeners, UI test state
 │   ├── SquabbleAuthService.swift     # Firebase Auth wrapper, UI test state
 │   └── SquabbleSyncService.swift     # Progress sync to Firestore
 ├── Views/
+│   ├── CommentInputView.swift        # Comment sheet with text input
+│   ├── CommentMarkerView.swift       # Timeline markers for passed comments
+│   ├── CommentOverlayView.swift      # Toast popup for revealed comments
 │   ├── GuildView.swift               # Guild management UI (used in Settings)
 │   ├── SettingsSquabbleSectionView.swift  # Settings section (unused now)
 │   ├── SquabbleGhostOverlayView.swift     # Ghost markers on slider

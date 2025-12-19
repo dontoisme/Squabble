@@ -142,8 +142,8 @@ class CommentFlowIntegrationTests: FirebaseIntegrationTests {
                 postButton.tap()
             }
 
-            // Wait for posting to complete
-            sleep(3)
+            // Wait for posting to complete (async Firebase write can take time)
+            sleep(5)
 
             // Verify sheet is dismissed by checking text field is gone
             let sheetDismissed = !commentTextField.exists && !addCommentTitle.exists
@@ -159,9 +159,13 @@ class CommentFlowIntegrationTests: FirebaseIntegrationTests {
                     XCTFail("Comment posting failed: User not in guild")
                 } else {
                     // Debug: print visible UI elements
-                    print("DEBUG: Sheet still visible. Looking for errors...")
-                    let texts = app.staticTexts
-                    print("DEBUG: Number of static texts: \(texts.count)")
+                    print("DEBUG: Sheet still visible. Dumping first 10 static texts...")
+                    let texts = app.staticTexts.allElementsBoundByIndex
+                    let count = min(10, texts.count)
+                    for i in 0..<count {
+                        let text = texts[i]
+                        print("DEBUG TEXT[\(i)]: \(text.label)")
+                    }
                 }
             }
 

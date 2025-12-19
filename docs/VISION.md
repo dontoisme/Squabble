@@ -403,6 +403,32 @@ See [The Core Feature](#the-core-feature) section. This is no longer a wild idea
 
 ---
 
+### 3D Guild Hall Exploration (Ascendant Tier)
+
+**Concept:** Myst/Riven-style 3D exploration of your Guild Hall and personal adventurer rooms. Navigate through spaces to view the breadth and depth of trinkets and trophies you and your guildmates have gathered.
+
+**Why Ascendant:** This is a premium "wow" feature that rewards the most dedicated adventurers with a deeply immersive way to explore their reading history.
+
+**Potential:**
+- Your room reflects your reading journey
+- Visit guildmates' rooms to see their collections
+- Hidden easter eggs and interactive elements
+- Seasonal decorations and events
+
+---
+
+### Trinket Quality Tiers
+
+**Concept:** Trinkets have visual quality based on how the book was completed.
+
+**Tiers:**
+- **"Shinies" (Golden)** - Books listened to in the app, fully tracked
+- **"Wooden"** - Books added manually or imported (e.g., Goodreads import)
+
+**Philosophy:** Rewards engagement with the app while still honoring reading done elsewhere. Your golden trinkets are badges of listening through Squabble; wooden ones show your broader reading history.
+
+---
+
 ### Audio Stingers
 
 **Concept:** Short audio clips for key moments:
@@ -433,9 +459,11 @@ Could license from games or commission original.
 
 1. **Theme asset pipeline**: How do we scale theme creation? Templates? User-generated?
 
-2. **Audio clips licensing**: Can we get permissions for book-specific sounds?
+2. **Theme storage architecture**: Should custom/author/community themes be stored in Firebase (not bundled in app)? This keeps them separate from GPL open-source requirements. Proposed: A theming service to import themes + a theming template for creators.
 
-3. **Ascendant Adventurer features**: What global social features make sense? Public guilds? Cross-guild events?
+3. **Audio clips licensing**: Can we get permissions for book-specific sounds?
+
+4. **Ascendant Adventurer features**: What global social features make sense? Public guilds? Cross-guild events?
 
 ### Business Questions
 
