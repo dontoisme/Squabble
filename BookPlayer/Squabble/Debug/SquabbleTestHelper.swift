@@ -322,13 +322,14 @@ final class SquabbleTestHelper {
         print("[SquabbleTest] Seeded race scenario for '\(bookTitle)'")
     }
 
-    // MARK: - Mage Tank Test Scenario
+    // MARK: - Test Book Scenario
 
-    /// Seed a complete test scenario for "Mage Tank" by Cornman
+    /// Seed a complete test scenario for "Tavern of Infinite Levels"
+    /// A fictional LitRPG for testing purposes
     /// Duration: 20:38:01 (74281 seconds)
     /// User is at ~19:10 (1150 seconds) in Chapter 2
-    func seedMageTankScenario() async throws {
-        let bookTitle = "Mage Tank"
+    func seedTestBookScenario() async throws {
+        let bookTitle = "Tavern of Infinite Levels"
         let totalDuration: Double = 74281 // 20:38:01
 
         // Add 4 fake guildmates
@@ -356,33 +357,33 @@ final class SquabbleTestHelper {
         // Seed comments - mix of before and after user's position (1150s / 19:10)
         let comments: [(userId: String, timestamp: Double, text: String)] = [
             // BEFORE user position (will be visible immediately)
-            ("fake-charlie-003", 330, "Starting this one finally! Heard great things about Mage Tank"),
+            ("fake-charlie-003", 330, "Starting this one finally! Heard great things"),
             ("fake-alice-001", 720, "The intro is setting up something good..."),
             ("fake-diana-004", 945, "Wait did he just...?"),
 
             // AFTER user position (will reveal as user progresses)
             ("fake-alice-001", 1500, "OK this is getting interesting"),
-            ("fake-bob-002", 2700, "LMAO the system messages are hilarious"),
+            ("fake-bob-002", 2700, "LMAO the narrator is hilarious"),
             ("fake-diana-004", 5400, "I did NOT see that coming"),
             ("fake-alice-001", 10800, "This book is so good, I can't stop listening"),
-            ("fake-bob-002", 18000, "The dungeon mechanics are chef's kiss"),
+            ("fake-bob-002", 18000, "The world building is chef's kiss"),
             ("fake-alice-001", 26000, "WHAT. NO. WHAT."),
             ("fake-bob-002", 44000, "OK that twist though..."),
         ]
 
         try await seedFakeComments(bookTitle: bookTitle, comments: comments)
 
-        print("[SquabbleTest] ✓ Mage Tank scenario seeded!")
+        print("[SquabbleTest] ✓ Test book scenario seeded!")
         print("[SquabbleTest]   - 4 guildmates at various positions")
         print("[SquabbleTest]   - 3 comments before your position (visible now)")
         print("[SquabbleTest]   - 7 comments ahead (will reveal as you progress)")
     }
 
-    /// Clear all Mage Tank test data
-    func clearMageTankScenario() async throws {
+    /// Clear all test book data
+    func clearTestBookScenario() async throws {
         try await clearFakeData()
-        try await clearComments(bookTitle: "Mage Tank")
-        print("[SquabbleTest] ✓ Mage Tank scenario cleared!")
+        try await clearComments(bookTitle: "Tavern of Infinite Levels")
+        print("[SquabbleTest] ✓ Test book scenario cleared!")
     }
 }
 
@@ -415,18 +416,18 @@ struct SquabbleDebugView: View {
 
     var body: some View {
         Form {
-            Section("Mage Tank Scenario") {
-                Text("Pre-configured test with 4 guildmates and 10 comments")
+            Section("Test Book Scenario") {
+                Text("\"Tavern of Infinite Levels\" - 4 guildmates, 10 comments")
                     .font(.caption)
                     .foregroundColor(.secondary)
 
-                Button("Seed Mage Tank Scenario") {
-                    seedMageTank()
+                Button("Seed Test Book Scenario") {
+                    seedTestBook()
                 }
                 .disabled(isLoading)
 
-                Button("Clear Mage Tank Data", role: .destructive) {
-                    clearMageTank()
+                Button("Clear Test Book Data", role: .destructive) {
+                    clearTestBook()
                 }
                 .disabled(isLoading)
             }
@@ -526,15 +527,15 @@ struct SquabbleDebugView: View {
         }
     }
 
-    private func seedMageTank() {
+    private func seedTestBook() {
         isLoading = true
-        statusMessage = "Seeding Mage Tank scenario..."
+        statusMessage = "Seeding test book scenario..."
 
         Task {
             do {
-                try await SquabbleTestHelper.shared.seedMageTankScenario()
+                try await SquabbleTestHelper.shared.seedTestBookScenario()
                 await MainActor.run {
-                    statusMessage = "✓ Mage Tank scenario ready!\n  • 4 guildmates seeded\n  • 3 comments visible now\n  • 7 comments ahead to discover"
+                    statusMessage = "✓ Test book scenario ready!\n  • 4 guildmates seeded\n  • 3 comments visible now\n  • 7 comments ahead to discover"
                     isLoading = false
                 }
             } catch {
@@ -546,15 +547,15 @@ struct SquabbleDebugView: View {
         }
     }
 
-    private func clearMageTank() {
+    private func clearTestBook() {
         isLoading = true
-        statusMessage = "Clearing Mage Tank data..."
+        statusMessage = "Clearing test book data..."
 
         Task {
             do {
-                try await SquabbleTestHelper.shared.clearMageTankScenario()
+                try await SquabbleTestHelper.shared.clearTestBookScenario()
                 await MainActor.run {
-                    statusMessage = "✓ Mage Tank scenario cleared"
+                    statusMessage = "✓ Test book scenario cleared"
                     isLoading = false
                 }
             } catch {
