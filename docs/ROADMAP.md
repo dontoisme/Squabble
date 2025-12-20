@@ -65,9 +65,11 @@ As a [user], I want to [action] so that [benefit]
 
 | Item | Status | Notes |
 |------|--------|-------|
-| App Icon (light + dark) | Not Started | Squabble Inn branding |
-| Splash Screen | Not Started | Launch screen with branding |
-| Default Color Theme (light + dark) | Not Started | Squabble default palette |
+| App Icon (light + dark) | Complete | Squabble Inn branding |
+| Splash Screen | Complete | Launch screen with branding |
+| Default Color Theme (light + dark) | Complete | "Squabble Inn" theme (teal/purple) |
+| URL Scheme | Complete | Changed to `squabble://` |
+| Credits/Attribution | Complete | "Powered by BookPlayer" in Credits.html |
 
 ## MVP Success Criteria
 
@@ -76,7 +78,7 @@ As a [user], I want to [action] so that [benefit]
 - [ ] User can leave comments at timestamps
 - [ ] Comments appear to guildmates only after they pass that point (spoiler-free)
 - [ ] Core loop is functional and testable with real users
-- [ ] App has Squabble branding (icon, splash, theme)
+- [x] App has Squabble branding (icon, splash, theme)
 
 ## MVP Punch List
 
@@ -94,12 +96,14 @@ As a [user], I want to [action] so that [benefit]
 |------|-------|------------|
 | Progress sync reliability | May not work with newly created guilds | Debug race condition in GuildService |
 
-### Polish (Ship Blockers)
-| Item | Effort | Notes |
+### Polish (Ship Blockers) - COMPLETE
+| Item | Status | Notes |
 |------|--------|-------|
-| App Icon | ~2-4 hrs | Light + dark variants, 1024x1024 master |
-| Splash Screen | ~1-2 hrs | LaunchScreen.storyboard or SwiftUI |
-| Default Color Theme | ~2-4 hrs | Define Squabble palette, apply to key UI |
+| App Icon | Done | Light + dark variants |
+| Splash Screen | Done | Launch screen with branding |
+| Default Color Theme | Done | "Squabble Inn" teal/purple theme |
+| URL Scheme | Done | `squabble://` |
+| Credits | Done | "Powered by BookPlayer" attribution |
 
 ### On-Device Testing Checklist
 - [ ] Fresh install → sign up → create guild
@@ -930,6 +934,7 @@ These are potential features not yet scoped (from VISION Wild Ideas):
 
 - [VISION.md](./VISION.md) - Product vision and philosophy
 - [ARCHITECTURE.md](./ARCHITECTURE.md) - Technical architecture
+- [REBRANDING-STRATEGY.md](./REBRANDING-STRATEGY.md) - Rebrand and upstream sync strategy
 - [USER-JOURNEYS.md](./USER-JOURNEYS.md) - User flows
 - [SCREEN-INVENTORY.md](./SCREEN-INVENTORY.md) - Screen reference
 - [SCREEN-MOCKUPS.md](./SCREEN-MOCKUPS.md) - ASCII mockups

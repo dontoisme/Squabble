@@ -20,14 +20,16 @@ final class ScreenshotTests: BookPlayerUITests {
     // MARK: - Library Tab Screenshots
 
     func test01_LibraryEmpty() throws {
+        // Relaunch with fresh state to ensure empty library
+        relaunchWithState(.fresh)
         dismissImportDialogIfPresent()
         app.navigateToTab(.library)
 
-        // Wait for empty view or list to appear
+        // Wait for empty view to appear
         let emptyView = findElement(ScreenIdentifiers.Library.viewEmpty)
-        let listView = app.collectionViews[ScreenIdentifiers.Library.listItems]
-
-        _ = emptyView.waitForExistence(timeout: 3) || listView.waitForExistence(timeout: 3)
+        guard emptyView.waitForExistence(timeout: 5) else {
+            throw XCTSkip("Library is not empty - data may have persisted")
+        }
 
         takeScreenshot("01-library-empty")
     }

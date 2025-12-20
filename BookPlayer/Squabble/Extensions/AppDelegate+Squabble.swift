@@ -94,9 +94,18 @@ extension AppDelegate {
         CommandLine.arguments.contains("--disable-animations")
     }
 
+    private var isFreshInstall: Bool {
+        CommandLine.arguments.contains("--fresh-install")
+    }
+
     /// Configure the app for UI testing with mock data
     private func setupUITestMode() {
         NSLog("[UITestMode] Running in UI test mode")
+
+        // Clear all data for fresh install simulation
+        if isFreshInstall {
+            clearLibraryData()
+        }
 
         // Disable animations for faster tests
         if disableAnimationsTest {
@@ -180,5 +189,93 @@ extension AppDelegate {
         } catch {
             NSLog("[UITestMode] Failed to copy test audiobook: %@", error.localizedDescription)
         }
+    }
+
+    /// Clear all library data for fresh install simulation.
+    /// Removes files from Documents, Inbox, and Core Data database.
+    private func clearLibraryData() {
+        NSLog("[UITestMode] Clearing library data for fresh install...")
+
+        let fileManager = FileManager.default
+        let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
+
+        // Clear Inbox folder (pending imports)
+        let inboxURL = documentsURL.appendingPathComponent("Inbox")
+        if let contents = try? fileManager.contentsOfDirectory(at: inboxURL, includingPropertiesForKeys: nil) {
+            for file in contents {
+                try? fileManager.removeItem(at: file)
+            }
+            NSLog("[UITestMode] Cleared Inbox folder")
+        }
+
+        // Clear Processed folder (imported files)
+        let processedURL = documentsURL.appendingPathComponent("Processed")
+        if let contents = try? fileManager.contentsOfDirectory(at: processedURL, includingPropertiesForKeys: nil) {
+            for file in contents {
+                try? fileManager.removeItem(at: file)
+            }
+            NSLog("[UITestMode] Cleared Processed folder")
+        }
+
+        // Clear root Documents folder (audiobook files)
+        if let contents = try? fileManager.contentsOfDirectory(at: documentsURL, includingPropertiesForKeys: nil) {
+            for file in contents {
+                // Skip folders we've already handled
+                let filename = file.lastPathComponent
+                if filename == "Inbox" || filename == "Processed" {
+                    continue
+                }
+                // Remove audio files and folders (but not system files)
+                let audioExtensions = ["mp3", "m4b", "m4a", "mp4", "aac", "wav", "flac"]
+                if audioExtensions.contains(file.pathExtension.lowercased()) {
+                    try? fileManager.removeItem(at: file)
+                }
+                // Also remove any folder that's not a system folder
+                var isDirectory: ObjCBool = false
+                if fileManager.fileExists(atPath: file.path, isDirectory: &isDirectory),
+                   isDirectory.boolValue,
+                   !filename.hasPrefix(".") {
+                    try? fileManager.removeItem(at: file)
+                }
+            }
+            NSLog("[UITestMode] Cleared Documents audio files and folders")
+        }
+
+        // Clear Core Data database from App Group container
+        let appGroupId = "group.\(Bundle.main.bundleIdentifier ?? "com.tortugapower.audiobookplayer").files"
+        if let containerURL = fileManager.containerURL(forSecurityApplicationGroupIdentifier: appGroupId) {
+            let sqliteURL = containerURL.appendingPathComponent("BookPlayer.sqlite")
+            let walURL = containerURL.appendingPathComponent("BookPlayer.sqlite-wal")
+            let shmURL = containerURL.appendingPathComponent("BookPlayer.sqlite-shm")
+
+            try? fileManager.removeItem(at: sqliteURL)
+            try? fileManager.removeItem(at: walURL)
+            try? fileManager.removeItem(at: shmURL)
+            NSLog("[UITestMode] Cleared Core Data database")
+
+            // Also clear any audiobook files in the app group container
+            if let contents = try? fileManager.contentsOfDirectory(at: containerURL, includingPropertiesForKeys: nil) {
+                for file in contents {
+                    let audioExtensions = ["mp3", "m4b", "m4a", "mp4", "aac", "wav", "flac"]
+                    if audioExtensions.contains(file.pathExtension.lowercased()) {
+                        try? fileManager.removeItem(at: file)
+                    }
+                }
+            }
+        }
+
+        // Clear shared UserDefaults
+        if let sharedDefaults = UserDefaults(suiteName: appGroupId) {
+            sharedDefaults.removePersistentDomain(forName: appGroupId)
+            sharedDefaults.synchronize()
+            NSLog("[UITestMode] Cleared shared UserDefaults")
+        }
+
+        // Clear standard UserDefaults for library state
+        UserDefaults.standard.removeObject(forKey: "library_items")
+        UserDefaults.standard.synchronize()
+        NSLog("[UITestMode] Cleared library UserDefaults")
+
+        NSLog("[UITestMode] Fresh install state ready")
     }
 }

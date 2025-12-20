@@ -44,7 +44,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   }
 
   // Handles audio file urls, like when receiving files through AirDrop
-  // Also handles custom URL scheme 'bookplayer://'
+  // Also handles custom URL scheme 'squabble://'
   func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
     handleOpening(URLContexts: URLContexts)
   }

@@ -1,0 +1,74 @@
+# Squabble Inn Upstream Merge Strategy
+# See docs/REBRANDING-STRATEGY.md for details
+#
+# merge=ours    - Keep our version (branding, UI)
+# merge=theirs  - Accept upstream version (engine)
+# merge=manual  - Requires manual resolution (has SQUABBLE hooks)
+
+# =============================================================================
+# ALWAYS OURS - Squabble branding and UI customizations
+# =============================================================================
+
+# App identity and branding
+BookPlayer/Info.plist merge=ours
+BookPlayer/Credits.html merge=ours
+BookPlayer/Assets.xcassets/** merge=ours
+
+# Localization (rebranded strings)
+BookPlayer/*.lproj/** merge=ours
+
+# Build configuration (bundle ID, code signing)
+BuildConfiguration/*.xcconfig merge=ours
+
+# All Squabble-specific code
+BookPlayer/Squabble/** merge=ours
+
+# App lifecycle (has Squabble initialization)
+BookPlayer/AppDelegate.swift merge=ours
+BookPlayer/MainView.swift merge=ours
+
+# UI customizations
+BookPlayer/Settings/** merge=ours
+BookPlayer/Profile/** merge=ours
+BookPlayer/Coordinators/LoadingCoordinator.swift merge=ours
+
+# Player UI (has ghost overlay, comment UI)
+"BookPlayer/Player/Player Screen/PlayerViewController.swift" merge=ours
+
+# Tests (Squabble-specific test scenarios)
+BookPlayerUITests/** merge=ours
+
+# Binary assets (always keep our versions)
+*.png binary merge=ours
+*.jpg binary merge=ours
+*.pdf binary merge=ours
+
+# =============================================================================
+# ALWAYS THEIRS - Accept upstream engine improvements
+# =============================================================================
+
+# Core playback engine
+Shared/Services/PlaybackService.swift merge=theirs
+
+# Artwork handling
+Shared/Artwork/** merge=theirs
+
+# Core Data models and migrations
+Shared/CoreData/** merge=theirs
+
+# Network layer
+Shared/Network/** merge=theirs
+
+# Player services (non-UI)
+BookPlayer/Player/PlayerLoaderService.swift merge=theirs
+BookPlayer/Player/SpeedService.swift merge=theirs
+BookPlayer/Player/SleepTimer.swift merge=theirs
+BookPlayer/Player/Bookmarks/** merge=theirs
+BookPlayer/Player/Chapters/** merge=theirs
+
+# =============================================================================
+# MANUAL - Requires careful merge (has SQUABBLE integration hooks)
+# =============================================================================
+
+# PlayerManager has SQUABBLE: markers at lines 1184-1186 for progress sync
+BookPlayer/Player/PlayerManager.swift merge=manual

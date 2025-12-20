@@ -98,7 +98,7 @@ public class CommandParser {
   }
 
   public class func createActionString(from command: Command, parameters: [URLQueryItem]) -> String {
-    var actionString = "bookplayer://\(command.rawValue)?"
+    var actionString = "squabble://\(command.rawValue)?"
 
     actionString = parameters.reduce(actionString) { (text, item) -> String in
       guard let value = item.value else { return text }
@@ -114,7 +114,7 @@ public class CommandParser {
     autoplay: Bool,
     timerSeconds: Double?
   ) -> String {
-    var actionString = "bookplayer://widget?autoplay=\(autoplay)"
+    var actionString = "squabble://widget?autoplay=\(autoplay)"
 
     if let identifier = bookIdentifier {
       actionString += "&identifier=\(identifier)"
@@ -135,7 +135,7 @@ public class CommandParser {
     with bookIdentifier: String?,
     playbackToggle: Bool
   ) -> String {
-    var actionString = "bookplayer://widget?playbackToggle=\(playbackToggle)"
+    var actionString = "squabble://widget?playbackToggle=\(playbackToggle)"
 
     if let identifier = bookIdentifier {
       actionString += "&identifier=\(identifier)"

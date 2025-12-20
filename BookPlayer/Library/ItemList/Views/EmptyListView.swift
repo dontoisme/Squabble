@@ -40,6 +40,7 @@ struct EmptyListView: View {
       .buttonStyle(.plain)
     }
     .frame(maxWidth: .infinity, maxHeight: .infinity)
+    .accessibilityIdentifier("library_view_empty")
   }
 }
 
