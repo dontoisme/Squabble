@@ -1,10 +1,57 @@
 # Squabble Session Handoff
 
-**Last Updated:** December 17, 2025
+**Last Updated:** December 19, 2025
 
 ---
 
-## Latest Session Summary (Dec 17, 2025)
+## Latest Session Summary (Dec 19, 2025)
+
+**What was done:**
+- **Branding Complete** - Squabble Inn visual identity implemented
+  - App icon (1024x1024 tavern theme - book + ale mug)
+  - Splash screen with brown background (#432618)
+  - Empty library image updated with Squabble Inn branding
+  - Display name set to "Squabble Inn"
+  - Removed legacy `AppIcon.icon` folder from project
+
+- **Test Scenario for Device Testing** - "Tavern of Infinite Levels"
+  - `SquabbleTestHelper.seedTestBookScenario()` - seeds 4 fake guildmates + 10 comments
+  - Debug UI: Settings → Squabble Debug → "Seed Test Book Scenario"
+  - 3 comments before user's position (visible immediately)
+  - 7 comments ahead (reveal as you progress)
+  - Duration matches real 20hr audiobook for realistic testing
+
+- **MVP Documentation**
+  - Added MVP punch list to ROADMAP.md
+  - Added wild ideas to VISION.md (3D Guild Hall, Trinket Quality Tiers)
+  - Theme storage architecture question documented
+
+- **Brain PRD Archived**
+  - Moved old PRD docs to `_archive/` folder
+  - index.md now redirects to Squabble/docs/ as source of truth
+
+- **Darwin Manifest Fixed**
+  - Updated 9 file paths to match actual locations
+  - `darwin manifest validate` now passes with no warnings
+
+**MVP Polish Status:**
+| Item | Status |
+|------|--------|
+| App Icon | ✅ Done |
+| Splash Screen | ✅ Done |
+| Empty Library Image | ✅ Done |
+| Display Name | ✅ Done |
+| Default Color Theme | Not started |
+
+**Next steps:**
+1. On-device testing with "Tavern of Infinite Levels" scenario
+2. Manual test of spoiler-free comment reveal
+3. Default color theme (if needed)
+4. Then → TestFlight!
+
+---
+
+## Previous Session Summary (Dec 17, 2025)
 
 **What was done:**
 - **Epic 2.1 (Leave Comment)** - Integration tested and working with Firebase emulator
