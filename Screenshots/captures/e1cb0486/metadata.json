@@ -1,0 +1,13 @@
+{
+  "id": "e1cb0486",
+  "commit": "e1cb0486",
+  "commitFull": "e1cb04866a070df8e57efc25bf1aca10e71ac689",
+  "branch": "develop",
+  "timestamp": "2025-12-20T17:21:26Z",
+  "mode": "smart",
+  "parent": "baseline",
+  "capturedScreens": [
+  "28-settings-debug"
+],
+  "screenCount": 1
+}

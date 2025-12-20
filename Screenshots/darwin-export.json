@@ -1,0 +1,710 @@
+{
+  "version": "1.0",
+  "exportedAt": "2025-12-20T17:38:26Z",
+  "manifest": {
+    "version": "1.1",
+    "description": "",
+    "changeThreshold": 0.5
+  },
+  "flow": {
+    "nodes": [
+  {
+    "id": "01-library-empty",
+    "name": "Library (Empty)",
+    "description": null,
+    "sources": [
+      "BookPlayer/Library/ItemList/ItemListView.swift",
+      "BookPlayer/Library/ItemList/LibraryRootView.swift"
+    ]
+  },
+  {
+    "id": "02-library-with-books",
+    "name": "Library (With Books)",
+    "description": null,
+    "sources": [
+      "BookPlayer/Library/ItemList/ItemListView.swift"
+    ]
+  },
+  {
+    "id": "03-library-folder",
+    "name": "Library (Folder)",
+    "description": null,
+    "sources": [
+      "BookPlayer/Library/ItemList/ItemListView.swift"
+    ]
+  },
+  {
+    "id": "04-library-search",
+    "name": "Library (Search)",
+    "description": null,
+    "sources": [
+      "BookPlayer/Search/SearchView.swift"
+    ]
+  },
+  {
+    "id": "05-library-miniplayer",
+    "name": "Library (Mini Player)",
+    "description": null,
+    "sources": [
+      "BookPlayer/Library/MiniPlayer/MiniPlayerView.swift"
+    ]
+  },
+  {
+    "id": "06-item-details",
+    "name": "Item Details (Metadata Editor)",
+    "description": null,
+    "sources": [
+      "BookPlayer/Library/ItemDetails/ItemDetailsView.swift",
+      "BookPlayer/Library/ItemDetails/ItemDetailsTitleSectionView.swift",
+      "BookPlayer/Library/ItemDetails/Views/ItemDetailsArtworkSectionView.swift"
+    ]
+  },
+  {
+    "id": "07-library-selection-mode",
+    "name": "Library (Selection Mode)",
+    "description": null,
+    "sources": [
+      "BookPlayer/Library/ItemList/ItemListView.swift"
+    ]
+  },
+  {
+    "id": "08-library-add-menu",
+    "name": "Library (Add/Sort Menu)",
+    "description": null,
+    "sources": [
+      "BookPlayer/Library/ItemList/ItemListView.swift"
+    ]
+  },
+  {
+    "id": "09-player-main",
+    "name": "Player Main",
+    "description": null,
+    "sources": [
+      "BookPlayer/Player/Player Screen/PlayerViewController.swift",
+      "BookPlayer/Player/Player Screen/PlayerViewModel.swift",
+      "BookPlayer/Squabble/Extensions/PlayerViewController+Squabble.swift",
+      "BookPlayer/Squabble/Views/SquabbleGhostOverlayView.swift",
+      "BookPlayer/Squabble/Views/CommentMarkerView.swift",
+      "BookPlayer/Squabble/Views/CommentOverlayView.swift"
+    ]
+  },
+  {
+    "id": "10-player-chapters",
+    "name": "Player Chapters",
+    "description": null,
+    "sources": [
+      "BookPlayer/Player/Chapters/ChaptersView.swift"
+    ]
+  },
+  {
+    "id": "11-player-bookmarks",
+    "name": "Player Bookmarks",
+    "description": null,
+    "sources": [
+      "BookPlayer/Player/Bookmarks/BookmarksView.swift"
+    ]
+  },
+  {
+    "id": "12-player-controls",
+    "name": "Player Controls (Speed/Boost)",
+    "description": null,
+    "sources": [
+      "BookPlayer/Player/Controls/PlayerControlsView.swift",
+      "BookPlayer/Player/Controls/PlayerControlsSpeedSectionView.swift",
+      "BookPlayer/Player/Controls/PlayerControlsBoostVolumeSectionView.swift"
+    ]
+  },
+  {
+    "id": "13-player-sleep-timer",
+    "name": "Player Sleep Timer",
+    "description": null,
+    "sources": [
+      "BookPlayer/Player/Player Screen/PlayerViewController.swift",
+      "BookPlayer/Player/Player Screen/PlayerViewModel.swift"
+    ]
+  },
+  {
+    "id": "14-profile-not-logged-in",
+    "name": "Profile (Not Logged In)",
+    "description": null,
+    "sources": [
+      "BookPlayer/Squabble/Views/SquabbleProfileView.swift"
+    ]
+  },
+  {
+    "id": "15-profile-login-sheet",
+    "name": "Profile Login Sheet",
+    "description": null,
+    "sources": [
+      "BookPlayer/Squabble/Views/SquabbleLoginView.swift"
+    ]
+  },
+  {
+    "id": "16-profile-no-guild",
+    "name": "Profile (No Guild)",
+    "description": null,
+    "sources": [
+      "BookPlayer/Squabble/Views/SquabbleProfileView.swift"
+    ]
+  },
+  {
+    "id": "17-guild-create-sheet",
+    "name": "Guild Create Sheet",
+    "description": null,
+    "sources": [
+      "BookPlayer/Squabble/Views/GuildView.swift"
+    ]
+  },
+  {
+    "id": "18-guild-join-sheet",
+    "name": "Guild Join Sheet",
+    "description": null,
+    "sources": [
+      "BookPlayer/Squabble/Views/GuildView.swift"
+    ]
+  },
+  {
+    "id": "19-guild-view",
+    "name": "Guild View",
+    "description": null,
+    "sources": [
+      "BookPlayer/Squabble/Views/SquabbleProfileView.swift",
+      "BookPlayer/Squabble/Views/GuildView.swift"
+    ]
+  },
+  {
+    "id": "20-guild-invite-code",
+    "name": "Guild Invite Code",
+    "description": null,
+    "sources": [
+      "BookPlayer/Squabble/Views/GuildView.swift"
+    ]
+  },
+  {
+    "id": "21-settings-main",
+    "name": "Settings Main",
+    "description": null,
+    "sources": [
+      "BookPlayer/Settings/SettingsView.swift",
+      "BookPlayer/Settings/SettingsScreen.swift"
+    ]
+  },
+  {
+    "id": "22-settings-themes",
+    "name": "Settings Themes",
+    "description": null,
+    "sources": [
+      "BookPlayer/Settings/Themes/ThemesView.swift"
+    ]
+  },
+  {
+    "id": "23-settings-icons",
+    "name": "Settings Icons",
+    "description": null,
+    "sources": [
+      "BookPlayer/Settings/Icons/SettingsAppIconsView.swift"
+    ]
+  },
+  {
+    "id": "24-settings-controls",
+    "name": "Settings Controls",
+    "description": null,
+    "sources": [
+      "BookPlayer/Settings/Sections/PlayerControls/SettingsPlayerControlsView.swift"
+    ]
+  },
+  {
+    "id": "25-settings-storage",
+    "name": "Settings Storage",
+    "description": null,
+    "sources": [
+      "BookPlayer/Settings/Storage/StorageView.swift"
+    ]
+  },
+  {
+    "id": "26-settings-integrations",
+    "name": "Settings Integrations",
+    "description": null,
+    "sources": [
+      "BookPlayer/Settings/Sections/SettingsIntegrationsSectionView.swift"
+    ]
+  },
+  {
+    "id": "27-settings-hardcover",
+    "name": "Settings Hardcover",
+    "description": null,
+    "sources": [
+      "BookPlayer/Hardcover/Settings Page/HardcoverSettingsView.swift"
+    ]
+  },
+  {
+    "id": "28-settings-debug",
+    "name": "Settings Debug (Squabble)",
+    "description": null,
+    "sources": [
+      "BookPlayer/Squabble/Debug/SquabbleTestHelper.swift"
+    ]
+  },
+  {
+    "id": "30-player-comment-input",
+    "name": "Player Comment Input",
+    "description": null,
+    "sources": [
+      "BookPlayer/Squabble/Views/CommentInputView.swift",
+      "BookPlayer/Squabble/Extensions/PlayerCoordinator+Squabble.swift",
+      "BookPlayer/Squabble/Services/CommentsService.swift"
+    ]
+  }
+],
+    "edges": [
+  {
+    "from": "01-library-empty",
+    "to": "08-library-add-menu",
+    "element": null,
+    "type": "navigation"
+  },
+  {
+    "from": "02-library-with-books",
+    "to": "03-library-folder",
+    "element": null,
+    "type": "navigation"
+  },
+  {
+    "from": "02-library-with-books",
+    "to": "04-library-search",
+    "element": null,
+    "type": "navigation"
+  },
+  {
+    "from": "02-library-with-books",
+    "to": "05-library-miniplayer",
+    "element": null,
+    "type": "navigation"
+  },
+  {
+    "from": "02-library-with-books",
+    "to": "06-item-details",
+    "element": null,
+    "type": "navigation"
+  },
+  {
+    "from": "02-library-with-books",
+    "to": "07-library-selection-mode",
+    "element": null,
+    "type": "navigation"
+  },
+  {
+    "from": "02-library-with-books",
+    "to": "08-library-add-menu",
+    "element": null,
+    "type": "navigation"
+  },
+  {
+    "from": "02-library-with-books",
+    "to": "14-profile-not-logged-in",
+    "element": null,
+    "type": "navigation"
+  },
+  {
+    "from": "02-library-with-books",
+    "to": "21-settings-main",
+    "element": null,
+    "type": "navigation"
+  },
+  {
+    "from": "03-library-folder",
+    "to": "02-library-with-books",
+    "element": null,
+    "type": "navigation"
+  },
+  {
+    "from": "03-library-folder",
+    "to": "06-item-details",
+    "element": null,
+    "type": "navigation"
+  },
+  {
+    "from": "04-library-search",
+    "to": "02-library-with-books",
+    "element": null,
+    "type": "navigation"
+  },
+  {
+    "from": "04-library-search",
+    "to": "09-player-main",
+    "element": null,
+    "type": "navigation"
+  },
+  {
+    "from": "05-library-miniplayer",
+    "to": "09-player-main",
+    "element": null,
+    "type": "navigation"
+  },
+  {
+    "from": "06-item-details",
+    "to": "02-library-with-books",
+    "element": null,
+    "type": "navigation"
+  },
+  {
+    "from": "07-library-selection-mode",
+    "to": "02-library-with-books",
+    "element": null,
+    "type": "navigation"
+  },
+  {
+    "from": "08-library-add-menu",
+    "to": "02-library-with-books",
+    "element": null,
+    "type": "navigation"
+  },
+  {
+    "from": "09-player-main",
+    "to": "10-player-chapters",
+    "element": null,
+    "type": "navigation"
+  },
+  {
+    "from": "09-player-main",
+    "to": "11-player-bookmarks",
+    "element": null,
+    "type": "navigation"
+  },
+  {
+    "from": "09-player-main",
+    "to": "12-player-controls",
+    "element": null,
+    "type": "navigation"
+  },
+  {
+    "from": "09-player-main",
+    "to": "13-player-sleep-timer",
+    "element": null,
+    "type": "navigation"
+  },
+  {
+    "from": "09-player-main",
+    "to": "05-library-miniplayer",
+    "element": null,
+    "type": "navigation"
+  },
+  {
+    "from": "09-player-main",
+    "to": "30-player-comment-input",
+    "element": null,
+    "type": "navigation"
+  },
+  {
+    "from": "10-player-chapters",
+    "to": "09-player-main",
+    "element": null,
+    "type": "navigation"
+  },
+  {
+    "from": "11-player-bookmarks",
+    "to": "09-player-main",
+    "element": null,
+    "type": "navigation"
+  },
+  {
+    "from": "12-player-controls",
+    "to": "09-player-main",
+    "element": null,
+    "type": "navigation"
+  },
+  {
+    "from": "13-player-sleep-timer",
+    "to": "09-player-main",
+    "element": null,
+    "type": "navigation"
+  },
+  {
+    "from": "14-profile-not-logged-in",
+    "to": "15-profile-login-sheet",
+    "element": null,
+    "type": "navigation"
+  },
+  {
+    "from": "15-profile-login-sheet",
+    "to": "16-profile-no-guild",
+    "element": null,
+    "type": "navigation"
+  },
+  {
+    "from": "16-profile-no-guild",
+    "to": "17-guild-create-sheet",
+    "element": null,
+    "type": "navigation"
+  },
+  {
+    "from": "16-profile-no-guild",
+    "to": "18-guild-join-sheet",
+    "element": null,
+    "type": "navigation"
+  },
+  {
+    "from": "17-guild-create-sheet",
+    "to": "19-guild-view",
+    "element": null,
+    "type": "navigation"
+  },
+  {
+    "from": "18-guild-join-sheet",
+    "to": "19-guild-view",
+    "element": null,
+    "type": "navigation"
+  },
+  {
+    "from": "19-guild-view",
+    "to": "20-guild-invite-code",
+    "element": null,
+    "type": "navigation"
+  },
+  {
+    "from": "20-guild-invite-code",
+    "to": "19-guild-view",
+    "element": null,
+    "type": "navigation"
+  },
+  {
+    "from": "21-settings-main",
+    "to": "22-settings-themes",
+    "element": null,
+    "type": "navigation"
+  },
+  {
+    "from": "21-settings-main",
+    "to": "23-settings-icons",
+    "element": null,
+    "type": "navigation"
+  },
+  {
+    "from": "21-settings-main",
+    "to": "24-settings-controls",
+    "element": null,
+    "type": "navigation"
+  },
+  {
+    "from": "21-settings-main",
+    "to": "25-settings-storage",
+    "element": null,
+    "type": "navigation"
+  },
+  {
+    "from": "21-settings-main",
+    "to": "26-settings-integrations",
+    "element": null,
+    "type": "navigation"
+  },
+  {
+    "from": "21-settings-main",
+    "to": "27-settings-hardcover",
+    "element": null,
+    "type": "navigation"
+  },
+  {
+    "from": "21-settings-main",
+    "to": "28-settings-debug",
+    "element": null,
+    "type": "navigation"
+  },
+  {
+    "from": "22-settings-themes",
+    "to": "21-settings-main",
+    "element": null,
+    "type": "navigation"
+  },
+  {
+    "from": "23-settings-icons",
+    "to": "21-settings-main",
+    "element": null,
+    "type": "navigation"
+  },
+  {
+    "from": "24-settings-controls",
+    "to": "21-settings-main",
+    "element": null,
+    "type": "navigation"
+  },
+  {
+    "from": "25-settings-storage",
+    "to": "21-settings-main",
+    "element": null,
+    "type": "navigation"
+  },
+  {
+    "from": "26-settings-integrations",
+    "to": "21-settings-main",
+    "element": null,
+    "type": "navigation"
+  },
+  {
+    "from": "27-settings-hardcover",
+    "to": "21-settings-main",
+    "element": null,
+    "type": "navigation"
+  },
+  {
+    "from": "28-settings-debug",
+    "to": "21-settings-main",
+    "element": null,
+    "type": "navigation"
+  },
+  {
+    "from": "30-player-comment-input",
+    "to": "09-player-main",
+    "element": null,
+    "type": "navigation"
+  }
+],
+    "groups": {
+  "library": {
+    "name": "Library",
+    "color": "#58a6ff",
+    "screens": [
+      "01-library-empty",
+      "02-library-with-books",
+      "03-library-folder",
+      "04-library-search",
+      "05-library-miniplayer",
+      "06-item-details",
+      "07-library-selection-mode",
+      "08-library-add-menu"
+    ]
+  },
+  "player": {
+    "name": "Player",
+    "color": "#3fb950",
+    "screens": [
+      "09-player-main",
+      "10-player-chapters",
+      "11-player-bookmarks",
+      "12-player-controls",
+      "13-player-sleep-timer",
+      "30-player-comment-input"
+    ]
+  },
+  "profile": {
+    "name": "Profile & Guild",
+    "color": "#a371f7",
+    "screens": [
+      "14-profile-not-logged-in",
+      "15-profile-login-sheet",
+      "16-profile-no-guild",
+      "17-guild-create-sheet",
+      "18-guild-join-sheet",
+      "19-guild-view",
+      "20-guild-invite-code"
+    ]
+  },
+  "settings": {
+    "name": "Settings",
+    "color": "#f0883e",
+    "screens": [
+      "21-settings-main",
+      "22-settings-themes",
+      "23-settings-icons",
+      "24-settings-controls",
+      "25-settings-storage",
+      "26-settings-integrations",
+      "27-settings-hardcover",
+      "28-settings-debug"
+    ]
+  }
+}
+  },
+  "captures": [
+  {
+    "id": "baseline-e1ffdc",
+    "commit": "e1ffdc",
+    "timestamp": "2025-12-10T00:00:00Z",
+    "changes": {}
+  },
+  {
+    "id": "e841850c",
+    "commit": "e841850c",
+    "timestamp": "2025-12-12T00:00:00Z",
+    "changes": {}
+  },
+  {
+    "id": "c5efa18c",
+    "commit": "c5efa18c",
+    "timestamp": "2025-12-13T23:45:00Z",
+    "changes": {
+      "09-player-main": 0.8761,
+      "13-player-sleep-timer": 6.2094
+    }
+  },
+  {
+    "id": "baseline",
+    "commit": "9e3b22fd",
+    "timestamp": "2025-12-15T15:35:09Z",
+    "changes": {
+      "01-library-empty": 0,
+      "02-library-with-books": 22.9504,
+      "03-library-folder": 0.9973,
+      "04-library-search": 8.7475,
+      "05-library-miniplayer": 0.0885,
+      "06-item-details": 0.3404,
+      "07-library-selection-mode": 13.7639,
+      "08-library-add-menu": 0,
+      "09-player-main": 0.9910,
+      "10-player-chapters": 0.0885,
+      "11-player-bookmarks": 0.0885,
+      "12-player-controls": 0.1159,
+      "13-player-sleep-timer": 9.7418,
+      "14-profile-not-logged-in": 13.6880,
+      "15-profile-login-sheet": 0.0885,
+      "16-profile-no-guild": 17.6835,
+      "17-guild-create-sheet": 0.0885,
+      "18-guild-join-sheet": 0.0885,
+      "19-guild-view": 8.1211,
+      "20-guild-invite-code": 0.0885,
+      "21-settings-main": 4.9343,
+      "22-settings-themes": 4.9771,
+      "23-settings-icons": 4.9772,
+      "24-settings-controls": 4.9771,
+      "25-settings-storage": 0,
+      "26-settings-integrations": 0,
+      "27-settings-hardcover": 4.9256,
+      "28-settings-debug": 0
+    }
+  },
+  {
+    "id": "e1cb0486",
+    "commit": "e1cb0486",
+    "timestamp": "2025-12-20T17:21:26Z",
+    "changes": {
+      "28-settings-debug": 2.7637
+    }
+  },
+  {
+    "id": "f779c250",
+    "commit": "f779c250",
+    "timestamp": "2025-12-20T17:27:19Z",
+    "changes": {
+      "28-settings-debug": 2.7304
+    }
+  }
+],
+  "timeline": {
+    "captureCount": 6,
+    "latestCommit": "f779c250"
+  },
+  "aiHints": {
+    "purpose": "Visual regression tracking and app flow documentation for iOS apps",
+    "useCases": [
+      "Identify what changed visually between commits",
+      "Understand app navigation structure",
+      "Track UI evolution over time",
+      "Find screens affected by source file changes"
+    ],
+    "keyFields": {
+      "flow.nodes": "List of app screens with metadata",
+      "flow.edges": "Navigation connections between screens with tap target elements",
+      "captures": "Timeline of screenshot captures with per-screen change detection",
+      "captures[].changes": "Per-screen change percentages vs previous capture"
+    }
+  }
+}
