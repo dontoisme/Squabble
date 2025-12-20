@@ -6,7 +6,7 @@
       "test": "test01_LibraryEmpty",
       "sources": [
         "BookPlayer/Library/ItemList/ItemListView.swift",
-        "BookPlayer/Library/LibraryRootView.swift"
+        "BookPlayer/Library/ItemList/LibraryRootView.swift"
       ],
       "flows_to": ["08-library-add-menu"]
     },
@@ -14,8 +14,7 @@
       "name": "Library (With Books)",
       "test": "test02_LibraryWithBooks",
       "sources": [
-        "BookPlayer/Library/ItemList/ItemListView.swift",
-        "BookPlayer/Library/ItemList/ItemListRowView.swift"
+        "BookPlayer/Library/ItemList/ItemListView.swift"
       ],
       "flows_to": ["03-library-folder", "04-library-search", "05-library-miniplayer", "06-item-details", "07-library-selection-mode", "08-library-add-menu", "14-profile-not-logged-in", "21-settings-main"]
     },
@@ -39,7 +38,7 @@
       "name": "Library (Mini Player)",
       "test": "test05_LibraryMiniPlayer",
       "sources": [
-        "BookPlayer/Player/MiniPlayer/MiniPlayerView.swift"
+        "BookPlayer/Library/MiniPlayer/MiniPlayerView.swift"
       ],
       "flows_to": ["09-player-main"]
     },
@@ -145,7 +144,7 @@
       "name": "Guild Create Sheet",
       "test": "test17_GuildCreateSheet",
       "sources": [
-        "BookPlayer/Squabble/Views/CreateGuildView.swift"
+        "BookPlayer/Squabble/Views/GuildView.swift"
       ],
       "flows_to": ["19-guild-view"]
     },
@@ -153,7 +152,7 @@
       "name": "Guild Join Sheet",
       "test": "test18_GuildJoinSheet",
       "sources": [
-        "BookPlayer/Squabble/Views/JoinGuildView.swift"
+        "BookPlayer/Squabble/Views/GuildView.swift"
       ],
       "flows_to": ["19-guild-view"]
     },
@@ -170,7 +169,7 @@
       "name": "Guild Invite Code",
       "test": "test20_GuildInviteCode",
       "sources": [
-        "BookPlayer/Squabble/Views/InviteCodeView.swift"
+        "BookPlayer/Squabble/Views/GuildView.swift"
       ],
       "flows_to": ["19-guild-view"]
     },
@@ -195,7 +194,7 @@
       "name": "Settings Icons",
       "test": "test23_SettingsIcons",
       "sources": [
-        "BookPlayer/Settings/Icons/IconsView.swift"
+        "BookPlayer/Settings/Icons/SettingsAppIconsView.swift"
       ],
       "flows_to": ["21-settings-main"]
     },
@@ -203,7 +202,7 @@
       "name": "Settings Controls",
       "test": "test24_SettingsControls",
       "sources": [
-        "BookPlayer/Settings/Controls/ControlsSettingsView.swift"
+        "BookPlayer/Settings/Sections/PlayerControls/SettingsPlayerControlsView.swift"
       ],
       "flows_to": ["21-settings-main"]
     },
@@ -227,7 +226,7 @@
       "name": "Settings Hardcover",
       "test": "test27_SettingsHardcover",
       "sources": [
-        "BookPlayer/Hardcover/HardcoverSettingsView.swift"
+        "BookPlayer/Hardcover/Settings Page/HardcoverSettingsView.swift"
       ],
       "flows_to": ["21-settings-main"]
     },
